@@ -1,8 +1,11 @@
 import React from "react";
-import { Facebook, Instagram, Twitter } from "react-feather";
+import Image from "next/image";
+
+import facebook from "../public/facebook.svg";
+import instagram from "../public/instagram.svg";
+import twitter from "../public/twitter.svg";
 
 import { Raleway } from "next/font/google";
-
 const raleway = Raleway({ subsets: ["latin"] });
 
 const Footer = () => {
@@ -113,7 +116,12 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/newcyclofficial"
               >
-                <Facebook />
+                <Image
+                  src={facebook}
+                  alt="Follow us on Facebook"
+                  width="24"
+                  height="24"
+                />
               </a>
             </li>
             <li>
@@ -121,7 +129,12 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 href="https://twitter.com/NewcyclOfficial"
               >
-                <Twitter />
+                <Image
+                  src={twitter}
+                  alt="Follow us on Twitter"
+                  width="24"
+                  height="24"
+                />
               </a>
             </li>
             <li>
@@ -129,7 +142,12 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/newcycl/"
               >
-                <Instagram />
+                <Image
+                  src={instagram}
+                  alt="Follow us on Instagram"
+                  width="24"
+                  height="24"
+                />
               </a>
             </li>
           </ul>
