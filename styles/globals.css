@@ -25,3 +25,12 @@ body {
   background-color: #5433ff;
   opacity: 0.81;
 }
+
+.bg-nc-gradient {
+  background: linear-gradient(
+    104deg,
+    #a5fecb 0.83%,
+    #20bdff 49.99%,
+    #5433ff 100%
+  );
+}
