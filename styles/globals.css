@@ -20,3 +20,8 @@ body {
   color: #000;
   background: #fff;
 }
+
+.bg-nc-purple {
+  background-color: #5433ff;
+  opacity: 0.81;
+}

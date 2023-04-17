@@ -3,6 +3,9 @@
 import Head from "next/head";
 
 import Navbar from "./Navbar";
+import WeHearYou from "./WeHearYou";
+import AboutTheProduct from "./AboutTheProduct";
+import Empowering from "./Empowering";
 import Footer from "./Footer";
 
 const Index = ({ user }) => {
@@ -17,7 +20,12 @@ const Index = ({ user }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Navbar />
-      <section className="h-screen" />
+      <section className="">
+        <WeHearYou />
+        <AboutTheProduct />
+
+        <Empowering />
+      </section>
       <Footer />
     </>
   );
