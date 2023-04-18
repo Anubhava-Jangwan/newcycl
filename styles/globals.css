@@ -35,22 +35,35 @@ body {
   );
 }
 
+nav {
+  background-color: #daf5e9;
+}
+
+.hero {
+  background-image: linear-gradient(180deg, #daf5e9, #fff);
+}
+
 .card {
-  width: 350px;
   padding: 20px;
-  border: 1px solid rgb(84 51 255 / 15%);
   border-radius: 5px;
-  background: linear-gradient(
-    332deg,
-    rgb(32 189 255 / 15%),
-    rgb(165 254 203 / 15%)
-  );
+  background-color: #f7f7f7;
   margin-right: 2em;
 }
 
 .earth-gradient-bg {
   background-image: url(../public/earth-gradient-bg.png);
-  background-size: contain;
   width: 100%;
-  margin-top: -2px;
+  margin-top: -1px;
+  background-size: cover;
+}
+
+@media (max-width: 599px) {
+  .earth-gradient-bg {
+    background-size: contain;
+  }
+}
+
+.smoke {
+  background: #bdc3c7;
+  background: linear-gradient(180deg, #fff, #2c3e50);
 }

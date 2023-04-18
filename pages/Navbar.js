@@ -5,7 +5,6 @@ import { Disclosure } from "@headlessui/react";
 import { Menu as MenuButton, X } from "react-feather";
 
 import { Raleway } from "next/font/google";
-
 const raleway = Raleway({ subsets: ["latin"] });
 
 const navigation = [
@@ -23,10 +22,7 @@ export default function Index({ user }) {
 
   return (
     <>
-      <Disclosure
-        as="nav"
-        className={`bg-white shadow-sm ${raleway.className}`}
-      >
+      <Disclosure as="nav" className={`${raleway.className}`}>
         {({ open }) => (
           <>
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,107 +31,115 @@ export default function Index({ user }) {
                   <div className="flex flex-shrink-0 items-center">
                     <svg
                       width="103"
-                      height="60"
-                      viewBox="0 0 103 60"
+                      height="50"
+                      viewBox="0 0 627 369"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M54.5102 54.1253L70.7835 38.4658L77.5201 51.725C79.2854 55.1985 76.6556 59.7548 72.9254 59.9368C67.5093 60.2027 60.6592 59.7428 54.3514 56.3435L53.589 55.4452L54.5102 54.1253Z"
-                        fill="url(#paint0_linear_122_4)"
-                      />
+                        d="M323.896 335.22L419.76 242.971L458.906 320.019L458.907 320.02C463.743 329.536 462.62 340.675 457.531 349.669C452.436 358.674 443.6 365.125 433.484 365.619L433.483 365.619C400.926 367.218 360.104 364.447 322.557 344.382L319.783 341.113L323.896 335.22Z"
+                        fill="url(#paint0_linear_269_3)"
+                        stroke="white"
+                        stroke-width="6"
+                      ></path>
                       <path
-                        d="M47.9007 54.1253L31.6274 38.4658L24.8908 51.725C23.1255 55.1985 25.7553 59.7548 29.4855 59.9368C34.9016 60.2027 41.7517 59.7428 48.0595 56.3435L48.8219 55.4452L47.9007 54.1253Z"
-                        fill="url(#paint1_linear_122_4)"
-                      />
+                        d="M304.104 335.22L208.24 242.971L169.094 320.019L169.093 320.02C164.257 329.536 165.38 340.675 170.469 349.669C175.564 358.674 184.4 365.125 194.516 365.619L194.517 365.619C227.074 367.218 267.896 364.447 305.443 344.382L308.217 341.113L304.104 335.22Z"
+                        fill="url(#paint1_linear_269_3)"
+                        stroke="white"
+                        stroke-width="6"
+                      ></path>
                       <path
-                        d="M48.5144 56.5479C48.7238 56.434 48.9039 56.2682 49.0393 56.0648C49.1747 55.8614 49.2613 55.6264 49.2919 55.3799C49.3224 55.1334 49.2959 54.8828 49.2146 54.6495C49.1333 54.4162 48.9997 54.2071 48.8251 54.0402L1.5301 8.47551C-2.19571 4.88623 1.47339 -1.50267 6.21287 0.320679L43.5414 13.3186C46.986 14.6443 50.3013 18.0517 50.3013 22.2966V54.8897C50.3039 55.1378 50.2134 55.3769 50.0496 55.5549C49.7027 55.9354 48.816 56.3828 48.528 56.5408L48.5144 56.5479Z"
-                        fill="url(#paint2_linear_122_4)"
-                      />
+                        d="M298.129 348C299.403 347.307 300.499 346.298 301.322 345.061C302.146 343.824 302.673 342.394 302.859 340.894C303.045 339.395 302.884 337.87 302.389 336.451C301.894 335.032 301.081 333.76 300.019 332.745L12.3081 55.5594C-10.3573 33.7246 11.9631 -5.14127 40.7949 5.9508L267.877 85.0218C288.831 93.0861 309 113.815 309 139.638V337.912C309.015 339.421 308.465 340.876 307.469 341.959C305.358 344.274 299.964 346.996 298.212 347.956L298.129 348Z"
+                        fill="url(#paint2_linear_269_3)"
+                        stroke="white"
+                        stroke-width="6"
+                      ></path>
                       <path
-                        d="M53.7322 56.5479C53.5228 56.434 53.3427 56.2682 53.2073 56.0648C53.0719 55.8614 52.9852 55.6264 52.9547 55.3799C52.9242 55.1334 52.9506 54.8828 53.0319 54.6495C53.1132 54.4162 53.2469 54.2071 53.4215 54.0402L100.716 8.47551C104.442 4.88623 100.773 -1.50267 96.0337 0.320679L58.7052 13.3186C55.2606 14.6443 51.9453 18.0517 51.9453 22.2966V54.8897C51.9427 55.1378 52.0332 55.3769 52.1969 55.5549C52.5439 55.9354 53.4306 56.3828 53.7186 56.5408L53.7322 56.5479Z"
-                        fill="url(#paint3_linear_122_4)"
-                      />
+                        d="M328.871 348C327.597 347.307 326.501 346.298 325.678 345.061C324.854 343.824 324.327 342.394 324.141 340.894C323.955 339.395 324.116 337.87 324.611 336.451C325.106 335.032 325.919 333.76 326.981 332.745L614.692 55.5594C637.357 33.7246 615.037 -5.14127 586.205 5.9508L359.123 85.0218C338.169 93.0861 318 113.815 318 139.638V337.912C317.985 339.421 318.535 340.876 319.531 341.959C321.642 344.274 327.036 346.996 328.788 347.956L328.871 348Z"
+                        fill="url(#paint3_linear_269_3)"
+                        stroke="white"
+                        stroke-width="6"
+                      ></path>
                       <defs>
                         <linearGradient
-                          id="paint0_linear_122_4"
-                          x1="54.0774"
-                          y1="60"
-                          x2="81.2578"
-                          y2="54.0977"
+                          id="paint0_linear_269_3"
+                          x1="318.971"
+                          y1="369"
+                          x2="484.318"
+                          y2="333.094"
                           gradientUnits="userSpaceOnUse"
                         >
                           <stop
                             offset="0.152251"
-                            stopColor="#5433FF"
-                            stopOpacity="0.81"
-                          />
-                          <stop offset="0.555615" stopColor="#20BDFF" />
+                            stop-color="#5433FF"
+                            stop-opacity="0.81"
+                          ></stop>
+                          <stop offset="0.555615" stop-color="#20BDFF"></stop>
                           <stop
                             offset="1"
-                            stopColor="#A5FECB"
-                            stopOpacity="0.8"
-                          />
+                            stop-color="#A5FECB"
+                            stop-opacity="0.8"
+                          ></stop>
                         </linearGradient>
                         <linearGradient
-                          id="paint1_linear_122_4"
-                          x1="48.3335"
-                          y1="60"
-                          x2="21.1531"
-                          y2="54.0977"
+                          id="paint1_linear_269_3"
+                          x1="309.029"
+                          y1="369"
+                          x2="143.682"
+                          y2="333.094"
                           gradientUnits="userSpaceOnUse"
                         >
                           <stop
                             offset="0.152251"
-                            stopColor="#5433FF"
-                            stopOpacity="0.81"
-                          />
-                          <stop offset="0.555615" stopColor="#20BDFF" />
+                            stop-color="#5433FF"
+                            stop-opacity="0.81"
+                          ></stop>
+                          <stop offset="0.555615" stop-color="#20BDFF"></stop>
                           <stop
                             offset="1"
-                            stopColor="#A5FECB"
-                            stopOpacity="0.8"
-                          />
+                            stop-color="#A5FECB"
+                            stop-opacity="0.8"
+                          ></stop>
                         </linearGradient>
                         <linearGradient
-                          id="paint2_linear_122_4"
-                          x1="61.4795"
-                          y1="63.863"
-                          x2="51.482"
-                          y2="-10.2528"
+                          id="paint2_linear_269_3"
+                          x1="377"
+                          y1="392.5"
+                          x2="316.182"
+                          y2="-58.371"
                           gradientUnits="userSpaceOnUse"
                         >
                           <stop
                             offset="0.152251"
-                            stopColor="#5433FF"
-                            stopOpacity="0.81"
-                          />
-                          <stop offset="0.555615" stopColor="#20BDFF" />
+                            stop-color="#5433FF"
+                            stop-opacity="0.81"
+                          ></stop>
+                          <stop offset="0.555615" stop-color="#20BDFF"></stop>
                           <stop
                             offset="1"
-                            stopColor="#A5FECB"
-                            stopOpacity="0.8"
-                          />
+                            stop-color="#A5FECB"
+                            stop-opacity="0.8"
+                          ></stop>
                         </linearGradient>
                         <linearGradient
-                          id="paint3_linear_122_4"
-                          x1="40.7671"
-                          y1="63.863"
-                          x2="50.7646"
-                          y2="-10.2528"
+                          id="paint3_linear_269_3"
+                          x1="250"
+                          y1="392.5"
+                          x2="310.818"
+                          y2="-58.371"
                           gradientUnits="userSpaceOnUse"
                         >
                           <stop
                             offset="0.152251"
-                            stopColor="#5433FF"
-                            stopOpacity="0.81"
-                          />
-                          <stop offset="0.555615" stopColor="#20BDFF" />
+                            stop-color="#5433FF"
+                            stop-opacity="0.81"
+                          ></stop>
+                          <stop offset="0.555615" stop-color="#20BDFF"></stop>
                           <stop
                             offset="1"
-                            stopColor="#A5FECB"
-                            stopOpacity="0.8"
-                          />
+                            stop-color="#A5FECB"
+                            stop-opacity="0.8"
+                          ></stop>
                         </linearGradient>
                       </defs>
                     </svg>
@@ -158,9 +162,9 @@ export default function Index({ user }) {
                     </a>
                   ))}
                 </div>
-                <div className="hidden sm:ml-6 sm:flex sm:items-center"></div>
+                <div className="hidden sm:flex sm:items-center"></div>
                 <div className="-mr-2 flex items-center sm:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
                     <span className="sr-only">Open main menu</span>
                     {open ? <X /> : <MenuButton />}
                   </Disclosure.Button>
