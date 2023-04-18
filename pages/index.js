@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import WeHearYou from "./WeHearYou";
 import AboutTheProduct from "./AboutTheProductV2";
 import Empowering from "./Empowering";
+import Curve from "./Curve";
 import Footer from "./Footer";
 
 const Index = ({ user }) => {
@@ -27,6 +28,7 @@ const Index = ({ user }) => {
 
         <Empowering />
       </section>
+      <Curve />
       <Footer />
     </>
   );
