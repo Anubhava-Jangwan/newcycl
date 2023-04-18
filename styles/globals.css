@@ -39,7 +39,7 @@ nav {
   background-color: #daf5e9;
 }
 
-.hero {
+.hero-gradient {
   background-image: linear-gradient(180deg, #daf5e9, #fff);
 }
 
@@ -66,4 +66,9 @@ nav {
 .smoke {
   background: #bdc3c7;
   background: linear-gradient(180deg, #fff, #2c3e50);
+}
+
+.reverse-smoke {
+  background: #fff;
+  background: linear-gradient(180deg, #2c3e50, #daf5e9);
 }

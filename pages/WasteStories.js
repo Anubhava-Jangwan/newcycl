@@ -8,7 +8,7 @@ const WS = () => {
   return (
     <div className="pt-24">
       <div className="py-24 "></div>
-      <div className="smoke pb-12">
+      <div className="smoke pb-48">
         <div className={`mx-auto text-center px-12 py-6 ${raleway.className}`}>
           <h1 className="w-full my-2 text-3xl font-bold text-center">
             Waste Stories

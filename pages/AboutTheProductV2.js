@@ -6,7 +6,9 @@ const raleway = Raleway({ subsets: ["latin"] });
 
 const WeHearYou = () => {
   return (
-    <div className={`mx-auto text-center px-12 py-48 ${raleway.className}`}>
+    <div
+      className={`hero-gradient mx-auto text-center px-12 py-48 relative flex flex-col justify-center items-center ${raleway.className}`}
+    >
       <h1 className="w-full my-2 text-3xl font-bold">
         Simple, Affordable, Rewarding
       </h1>

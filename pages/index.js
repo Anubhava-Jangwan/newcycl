@@ -3,7 +3,7 @@
 import Head from "next/head";
 
 import Navbar from "./Navbar";
-import WasteStories from "./WasteStories.js";
+import WasteStories from "./WasteStories";
 import WeHearYou from "./WeHearYou";
 import AboutTheProduct from "./AboutTheProductV2";
 import Empowering from "./Empowering";
@@ -23,7 +23,7 @@ const Index = ({ user }) => {
       </Head>
       <Navbar />
       <section className="">
-        <section className="hero h-64"></section>
+        <section className="hero-gradient h-64"></section>
         <WasteStories />
         <WeHearYou />
         <AboutTheProduct />
