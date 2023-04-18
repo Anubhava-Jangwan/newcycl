@@ -50,7 +50,7 @@ body {
 
 .earth-gradient-bg {
   background-image: url(../public/earth-gradient-bg.png);
-  background-size: cover;
+  background-size: contain;
   width: 100%;
-  background-position: center;
+  margin-top: -2px;
 }
