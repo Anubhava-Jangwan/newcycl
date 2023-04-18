@@ -7,7 +7,7 @@ const raleway = Raleway({ subsets: ["latin"] });
 const WeHearYou = () => {
   return (
     <div
-      className={`mx-auto text-center px-12 py-24 bg-nc-purple ${raleway.className}`}
+      className={`mx-auto text-center px-12 py-48 bg-nc-purple ${raleway.className}`}
     >
       <h1 className="w-full my-2 text-5xl font-bold text-center text-slate-50">
         We hear you

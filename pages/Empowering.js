@@ -9,7 +9,7 @@ import Wave from "./components/Wave";
 const Empowering = () => {
   return (
     <section
-      className={`mx-auto text-center px-12 py-24 bg-nc-gradient relative ${raleway.className}`}
+      className={`mx-auto text-center px-12 py-48 bg-nc-gradient relative ${raleway.className}`}
     >
       <h1 className="w-full my-2 text-3xl font-bold text-center">
         World&lsquo;s first company empowering self waste management.

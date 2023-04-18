@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import Navbar from "./Navbar";
 import WeHearYou from "./WeHearYou";
-import AboutTheProduct from "./AboutTheProduct";
+import AboutTheProduct from "./AboutTheProductV2";
 import Empowering from "./Empowering";
 import Footer from "./Footer";
 
@@ -21,6 +21,7 @@ const Index = ({ user }) => {
       </Head>
       <Navbar />
       <section className="">
+        {/* <WasteStories /> */}
         <WeHearYou />
         <AboutTheProduct />
 
