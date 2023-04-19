@@ -25,6 +25,7 @@ const Index = ({ user }) => {
       <section className="">
         <section className="hero-gradient h-64"></section>
         <WasteStories />
+
         <WeHearYou />
         <AboutTheProduct />
 
