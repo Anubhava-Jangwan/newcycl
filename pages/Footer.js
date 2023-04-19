@@ -5,12 +5,9 @@ import facebook from "../public/facebook.svg";
 import instagram from "../public/instagram.svg";
 import twitter from "../public/twitter.svg";
 
-import { Raleway } from "next/font/google";
-const raleway = Raleway({ subsets: ["latin"] });
-
 const Footer = () => {
   return (
-    <footer className={`px-4 py-8 sm:px-6 lg:px-8 ${raleway.className}`}>
+    <footer className={`px-4 py-8 sm:px-6 lg:px-8`}>
       <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
         <div className="flex flex-row pr-3 space-x-4 sm:space-x-8">
           <svg

@@ -1,15 +1,11 @@
 import React from "react";
 
-import { Raleway } from "next/font/google";
-
-const raleway = Raleway({ subsets: ["latin"] });
-
 import Wave from "./components/Wave";
 
 const Empowering = () => {
   return (
     <section
-      className={`mx-auto text-center px-12 py-48 bg-nc-gradient relative ${raleway.className}`}
+      className={`mx-auto text-center px-12 py-48 bg-nc-gradient relative`}
     >
       <h1 className="w-full my-2 text-3xl font-bold text-center">
         World&lsquo;s first company empowering self waste management.

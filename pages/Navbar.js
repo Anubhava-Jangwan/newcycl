@@ -4,9 +4,6 @@ import { usePathname } from "next/navigation";
 import { Disclosure } from "@headlessui/react";
 import { Menu as MenuButton, X } from "react-feather";
 
-import { Raleway } from "next/font/google";
-const raleway = Raleway({ subsets: ["latin"] });
-
 const navigation = [
   { name: "Dashboard", href: "/" },
   { name: "About", href: "/about" },
@@ -22,7 +19,7 @@ export default function Index({ user }) {
 
   return (
     <>
-      <Disclosure as="nav" className={`${raleway.className}`}>
+      <Disclosure as="nav">
         {({ open }) => (
           <>
             <div className="mx-auto px-4 sm:px-6 lg:px-8">

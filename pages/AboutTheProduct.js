@@ -1,12 +1,9 @@
 import React from "react";
 
-import { Raleway } from "next/font/google";
-const raleway = Raleway({ subsets: ["latin"] });
-
 const AboutTheProduct = () => {
   return (
     <section
-      className={`px-12 py-12 md:py-24 lg:py-24 xl:py-25 2xl:py-24 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 ${raleway.className}`}
+      className={`px-12 py-12 md:py-24 lg:py-24 xl:py-25 2xl:py-24 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6`}
     >
       <div className="bg-gray-100 text-center p-12">
         <div className="flex items-center justify-center mb-6">
