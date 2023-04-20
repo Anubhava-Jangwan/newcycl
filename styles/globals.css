@@ -36,6 +36,11 @@ h6 {
   opacity: 0.81;
 }
 
+.text-nc-purple {
+  color: #5433ff;
+  opacity: 0.81;
+}
+
 .bg-nc-gradient {
   background: linear-gradient(
     104deg,
