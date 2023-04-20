@@ -50,6 +50,19 @@ h6 {
   );
 }
 
+.text-nc-gradient {
+  background: linear-gradient(
+    104deg,
+    #a5fecb 0.83%,
+    #20bdff 49.99%,
+    #5433ff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 nav {
   background-color: #daf5e9;
 }

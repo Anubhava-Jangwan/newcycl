@@ -9,6 +9,7 @@ import AboutTheProduct from "./AboutTheProductV2";
 import Empowering from "./Empowering";
 import Curve from "./Curve";
 import Footer from "./Footer";
+import Hero from "./components/Hero";
 
 const Index = ({ user }) => {
   return (
@@ -23,7 +24,7 @@ const Index = ({ user }) => {
       </Head>
       <Navbar />
       <section className="">
-        <section className="hero-gradient h-64"></section>
+        <Hero />
         <WasteStories />
 
         <WeHearYou />

@@ -49,7 +49,7 @@ const stories = [
 
 const WS = () => {
   return (
-    <div className="pt-24">
+    <>
       <div className="py-24 "></div>
       <div className="smoke pb-24">
         <div className={`mx-auto text-center px-12 py-6`}>
@@ -61,13 +61,13 @@ const WS = () => {
             with waste daily.
           </div>
         </div>
-        <div className="flex flex-row mx-6 pb-12 overflow-x-auto">
+        <div className="flex flex-row mx-6 overflow-x-auto">
           {stories.map((story, index) => {
             return <WasteStoryCard key={index} story={story} index={index} />;
           })}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
