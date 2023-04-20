@@ -22,6 +22,8 @@ const Index = ({ user }) => {
         <div className="relative px-12 lg:px-48 mx-auto">
           <h1 className="text-5xl leading-none">
             We&lsquo;re on a mission to make zero waste a <br />
+          </h1>
+          <h1 className="text-5xl leading-none">
             <span className="text-nc-purple">new normal</span>
           </h1>
 
