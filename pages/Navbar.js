@@ -4,6 +4,11 @@ import { usePathname } from "next/navigation";
 import { Disclosure } from "@headlessui/react";
 import { Menu as MenuButton, X } from "react-feather";
 
+import { Raleway } from "next/font/google";
+const raleway = Raleway({ subsets: ["latin"] });
+
+import Banner from "./components/Banner";
+
 const navigation = [
   { name: "Dashboard", href: "/" },
   { name: "About", href: "/about" },
@@ -22,6 +27,7 @@ export default function Index({ user }) {
       <Disclosure as="nav">
         {({ open }) => (
           <>
+            <Banner />
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex h-20 justify-between">
                 <div className="flex">
@@ -159,7 +165,6 @@ export default function Index({ user }) {
                     </a>
                   ))}
                 </div>
-                <div className="hidden sm:flex sm:items-center"></div>
                 <div className="-mr-2 flex items-center sm:hidden">
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
                     <span className="sr-only">Open main menu</span>

@@ -93,3 +93,30 @@ nav {
   background: #fff;
   background: linear-gradient(180deg, #2c3e50, #daf5e9);
 }
+
+.dark-bg {
+  background-color: #2c3e50;
+}
+
+/* .hero-icon-broccoli {
+  top: 4rem;
+  left: 20rem;
+  transform: rotate(340deg);
+}
+
+.hero-icon-forkspoon {
+  top: 16rem;
+  transform: rotate(215deg);
+}
+
+.hero-icon-banana {
+  top: 22rem;
+  left: 8rem;
+  transform: rotate(0deg);
+}
+
+.hero-icons {
+  position: absolute;
+  left: 12rem;
+  top: 2rem;
+} */
