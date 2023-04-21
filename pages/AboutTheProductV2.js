@@ -3,13 +3,13 @@ import React from "react";
 const WeHearYou = () => {
   return (
     <div className={`mx-auto text-center px-12 py-24 relative `}>
-      <h1 className="w-full my-2 text-3xl font-bold">
+      <h1 className="w-full my-2 text-3xl font-bold ai-tech-science relative">
         A decentralised system for your house waste.
       </h1>
       <div className="my-4">
         AI powered tools that make waste reduction a part of your lifestyle
         because zero waste is not just a fancy trend,
-        <br /> it&lsquo;s a lifestyle to be embraced and rewarded.
+        <br /> it&rsquo;s a lifestyle to be embraced and rewarded.
       </div>
       <div className="flex items-center justify-center">
         <section className={`gap-6 grid grid-cols-3 mt-12 w-80`}>
