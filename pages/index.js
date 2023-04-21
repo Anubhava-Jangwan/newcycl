@@ -25,11 +25,10 @@ const Index = ({ user }) => {
       <Navbar />
       <section className="">
         <Hero />
-        <WasteStories />
-
-        <WeHearYou />
         <AboutTheProduct />
-
+        <WasteStories />
+        <section />
+        <WeHearYou />
         <Empowering />
       </section>
       <Curve />

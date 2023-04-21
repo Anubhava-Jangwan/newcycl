@@ -1,16 +1,18 @@
 import React from "react";
 
-const WeHearYou = () => {
+const Hero = () => {
   return (
-    <div className={`hero-gradient mx-auto text-center px-12 py-24 sm:py-48`}>
-      <h1 className="text-nc-gradient leading-normal w-full my-2 text-5xl font-bold text-center">
-        Transform the way you throw waste.
-      </h1>
-      <h3 className="text-xl">
-        Because our modern lifestyle needs a fundamental change.
-      </h3>
-    </div>
+    <>
+      <div className={`hero-gradient mx-auto text-center px-12 py-24 sm:py-48`}>
+        <h1 className="text-nc-gradient w-full py-2 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center">
+          Transform the way you throw waste.
+        </h1>
+        <h3 className="text-xl">
+          Because our modern lifestyle needs a fundamental change.
+        </h3>
+      </div>
+    </>
   );
 };
 
-export default WeHearYou;
+export default Hero;
