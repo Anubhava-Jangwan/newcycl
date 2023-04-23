@@ -2,6 +2,9 @@ import React from "react";
 
 import WasteStoryCard from "./WasteStoryCard";
 
+import { Dancing_Script } from "next/font/google";
+const dancingScript = Dancing_Script({ subsets: ["latin"] });
+
 const stories = [
   {
     feedback:
@@ -50,10 +53,11 @@ const stories = [
 const WS = () => {
   return (
     <>
-      <div className="py-24 "></div>
       <div className="smoke pb-24">
         <div className={`mx-auto text-center px-12 py-6`}>
-          <h1 className="w-full my-2 text-3xl font-bold text-center">
+          <h1
+            className={`w-full my-2 text-5xl font-bold text-center ${dancingScript.className}`}
+          >
             Waste Stories
           </h1>
           <div className="my-4">
