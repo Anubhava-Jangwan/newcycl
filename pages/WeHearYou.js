@@ -15,6 +15,9 @@ const WeHearYou = () => {
       <div className="absolute -top-24 -left-96 -rotate-180">
         <Wave />
       </div>
+      <div className="absolute -top-24 -right-96 -rotate-180">
+        <Wave />
+      </div>
     </div>
   );
 };
