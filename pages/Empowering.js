@@ -1,5 +1,8 @@
 import React from "react";
 
+import { Homemade_Apple } from "next/font/google";
+const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: ["400"] });
+
 const Empowering = () => {
   return (
     <section className={`mx-auto container px-12 py-48 relative`}>
@@ -13,11 +16,11 @@ const Empowering = () => {
         it so that our future generations aren&rsquo;t born into a world
         drowning in waste.
       </div>
-      <h4 className="text-3xl mt-48 text-nc-purple">
-        Here&rsquo;s what does it mean to reduce one&rsquo;s own waste,
-      </h4>
-      <h4 className="text-3xl mt-2 text-nc-purple">
-        in terms of CO2 emissions.
+      <h4
+        className={`text-3xl text-center leading-loose mt-48 text-nc-gradient ${homemadeApple.className}`}
+      >
+        Here&rsquo;s what does it mean to reduce one&rsquo;s own waste, in terms
+        of CO2 emissions.
       </h4>
     </section>
   );
