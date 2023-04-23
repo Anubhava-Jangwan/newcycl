@@ -12,7 +12,7 @@ import Banner from "./components/Banner";
 const navigation = [
   { name: "Dashboard", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "#footer" },
 ];
 
 function classNames(...classes) {
