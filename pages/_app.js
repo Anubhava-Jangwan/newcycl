@@ -18,6 +18,17 @@ export default function App({ Component, pageProps }) {
         `}
       </Script>
 
+      <div
+        data-tf-sidetab="OMfYjXTE"
+        data-tf-opacity="100"
+        data-tf-iframe-props="title=Contact Form (copy)"
+        data-tf-transitive-search-params
+        data-tf-button-color="#5433FF"
+        data-tf-button-text="Reach out!"
+        data-tf-medium="snippet"
+      ></div>
+      <Script src="//embed.typeform.com/next/embed.js"></Script>
+
       <Component {...pageProps} />
     </>
   );
