@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import { Open_Sans } from "next/font/google";
-
-const openSans = Open_Sans({ subsets: ["latin"] });
-
 export default function WasteStoryCard({ story, index }) {
   const [count, setCount] = useState(0);
 
@@ -28,7 +24,7 @@ export default function WasteStoryCard({ story, index }) {
   return (
     <div
       key={index}
-      className={`flex flex-col shrink-0 p-6 bg-slate-50 mr-6 rounded-md w-80 md:w-96 lg:w-96 xl:w-96 2xl:w-96 min-h-60 ${openSans.className}`}
+      className={`flex flex-col justify-between shrink-0 p-6 bg-slate-50 mr-6 rounded-md w-80 md:w-96 lg:w-96 xl:w-96 2xl:w-96 min-h-60`}
     >
       <div className="flex shrink-0">
         <div className="text-lg mr-4">{story && story.feedback}</div>
