@@ -21,18 +21,16 @@ const Index = ({ user }) => {
       <section className="mt-36">
         <div className="relative px-12 lg:px-48 mx-auto">
           <h1 className="text-5xl leading-none">
-            We&lsquo;re on a mission to make zero waste a <br />
-          </h1>
-          <h1 className="text-5xl leading-none">
+            We&rsquo;re on a mission to make zero waste a{" "}
             <span className="text-nc-purple">new normal</span>
           </h1>
 
           <div className="mt-12 text-lg leading-relaxed">
             Hey there, we are a small team of engineers and data scientists who
             are super pumped to reduce household waste through decentralized
-            solutions! Honestly, we&lsquo;re pretty obsessed with it. We started
+            solutions! Honestly, we&rsquo;re pretty obsessed with it. We started
             Newcycl when we realized just how much waste we produce and how
-            it&lsquo;s wrecking our environment. It&lsquo;s crazy to think that
+            it&rsquo;s wrecking our environment. It&rsquo;s crazy to think that
             all that trash is impacting our soil, air, water, and ultimately us.
           </div>
 
@@ -60,22 +58,22 @@ const Index = ({ user }) => {
             </a>
             .<h3 className="mt-12 text-2xl">Our Vision</h3>
             <div className="mt-2 text-lg leading-relaxed">
-              But that&lsquo;s where we come in. Our company is harnessing the
+              But that&rsquo;s where we come in. Our company is harnessing the
               power of technology to create some seriously cool solutions for
               waste reduction and management that eliminates the need of garbage
-              collection for micro waste generators i.e. households. We&lsquo;re
+              collection for micro waste generators i.e. households. We&rsquo;re
               making the{" "}
               <span className="text-nc-purple font-medium">
                 RRR - Reduce, Reuse, Recycle
               </span>{" "}
               easier for everyone and relentlessly finding new ways to repurpose
-              and reuse waste. It&lsquo;s all about making sustainable living
+              and reuse waste. It&rsquo;s all about making sustainable living
               accessible to everyone and make waste reduction a part of our
               lifestyle. We truly believe that the key to success lies in
               empowering individuals to take control of their own waste and
-              together, we can make a real difference. It&lsquo;s not just about
-              making the world a better place, it&lsquo;s about creating a
-              better future for all of us. And that&lsquo;s something worth
+              together, we can make a real difference. It&rsquo;s not just about
+              making the world a better place, it&rsquo;s about creating a
+              better future for all of us. And that&rsquo;s something worth
               getting excited about!
             </div>
           </div>

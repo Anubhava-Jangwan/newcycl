@@ -7,6 +7,7 @@ import WasteStories from "./WasteStories";
 import WeHearYou from "./WeHearYou";
 import AboutTheProduct from "./AboutTheProductV2";
 import Empowering from "./Empowering";
+import Earth from "./Earth";
 import Curve from "./Curve";
 import Footer from "./Footer";
 import Hero from "./components/Hero";
@@ -27,9 +28,9 @@ const Index = ({ user }) => {
         <Hero />
         <AboutTheProduct />
         <WasteStories />
-        <section />
         <WeHearYou />
         <Empowering />
+        <Earth />
       </section>
       <Curve />
       <Footer />

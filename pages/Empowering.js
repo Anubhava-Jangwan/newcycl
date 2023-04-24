@@ -16,12 +16,6 @@ const Empowering = () => {
         it so that our future generations aren&rsquo;t born into a world
         drowning in waste.
       </div>
-      <h4
-        className={`text-2xl text-center leading-loose mt-48 text-nc-gradient ${homemadeApple.className}`}
-      >
-        Here&rsquo;s what does it mean to reduce one&rsquo;s own waste, in terms
-        of CO2 emissions.
-      </h4>
     </section>
   );
 };
