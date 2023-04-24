@@ -1,12 +1,14 @@
 import React from "react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+
+// Default theme
+import "@splidejs/react-splide/css";
 
 import WasteStoryCard from "./WasteStoryCard";
 
 import { Dancing_Script, Pangolin } from "next/font/google";
-
 const dancingScript = Dancing_Script({ subsets: ["latin"] });
 const pangolin = Pangolin({ subsets: ["latin"], weight: ["400"] });
-
 
 const stories = [
   {
@@ -17,10 +19,17 @@ const stories = [
   },
   {
     feedback:
-      "The trash truck's timing is so unpredictable; I need to make sure I am home when it comes.",
-    name: "Ram Gowda",
-    location: "Yelahanka",
+      "I don’t do segregation because I feel like my efforts won't matter since not everyone in my society does it.",
+    name: "Selvaraj A K",
+    location: "Rajaji Nagar",
   },
+  {
+    feedback:
+      "The first thing I do in the morning is run behind the garbage truck. Its a pursuit of garbage truck.",
+    name: "Divya Sharma",
+    location: "HSR layout",
+  },
+
   {
     feedback:
       "Occasionally, they don't come consecutively for days, and my waste stinks :( Once, it got fungus too. :O",
@@ -41,15 +50,9 @@ const stories = [
   },
   {
     feedback:
-      "The first thing I do in the morning is run behind the garbage truck. Its a pursuit of garbage truck.",
-    name: "Divya Sharma",
-    location: "HSR layout",
-  },
-  {
-    feedback:
-      "I wanna separate my trash, but not everyone in my area is doing it. It makes me feel like my efforts won't matter, so I give up on doing it too.",
-    name: "Selvaraj A K",
-    location: "Rajaji Nagar",
+      "The trash truck's timing is so unpredictable; I need to make sure I am home when it comes.",
+    name: "Ram Gowda",
+    location: "Yelahanka",
   },
 ];
 
@@ -68,10 +71,32 @@ const WS = () => {
             with waste daily.
           </div>
         </div>
-        <div className="flex flex-row mx-6 overflow-x-auto">
-          {stories.map((story, index) => {
-            return <WasteStoryCard key={index} story={story} index={index} />;
-          })}
+        <div className="flex flex-row px-6 mx-auto">
+          <Splide
+            options={{
+              rewind: true,
+              width: "100%",
+              gap: "1rem",
+              perPage: 4,
+              breakpoints: {
+                600: {
+                  perPage: 1,
+                },
+                1024: {
+                  perPage: 2,
+                },
+              },
+            }}
+            aria-label="Waste Stories"
+          >
+            {stories.map((story, index) => {
+              return (
+                <SplideSlide>
+                  <WasteStoryCard key={index} story={story} index={index} />
+                </SplideSlide>
+              );
+            })}
+          </Splide>
         </div>
       </div>
     </>
