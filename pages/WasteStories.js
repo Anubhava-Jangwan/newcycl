@@ -85,6 +85,9 @@ const WS = () => {
                 1024: {
                   perPage: 2,
                 },
+                1280: {
+                  perPage: 3
+                }
               },
             }}
             aria-label="Waste Stories"
