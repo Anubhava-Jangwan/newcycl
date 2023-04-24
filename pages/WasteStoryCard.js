@@ -30,7 +30,7 @@ export default function WasteStoryCard({ story, index }) {
         <div className="text-lg mr-4">{story && story.feedback}</div>
         <button
           onClick={upVote}
-          className="upvote text-center w-36 h-8 p-1 rounded-md border border-gray-500 bg-transparent"
+          className="upvote text-center min-w-[4rem] h-8 p-1 rounded-md border border-gray-500 bg-transparent"
         >
           {count} 👍
         </button>

@@ -17,7 +17,7 @@ const Empowering = () => {
         drowning in waste.
       </div>
       <h4
-        className={`text-3xl text-center leading-loose mt-48 text-nc-gradient ${homemadeApple.className}`}
+        className={`text-2xl text-center leading-loose mt-48 text-nc-gradient ${homemadeApple.className}`}
       >
         Here&rsquo;s what does it mean to reduce one&rsquo;s own waste, in terms
         of CO2 emissions.
