@@ -3,8 +3,10 @@ import React from "react";
 import WasteStoryCard from "./WasteStoryCard";
 
 import { Dancing_Script, Pangolin } from "next/font/google";
+
 const dancingScript = Dancing_Script({ subsets: ["latin"] });
-const pangolin = Pangolin({ subsets: ["latin"] });
+const pangolin = Pangolin({ subsets: ["latin"], weight: ["400"] });
+
 
 const stories = [
   {
@@ -61,7 +63,7 @@ const WS = () => {
           >
             Waste Stories
           </h1>
-          <div className="my-4">
+          <div className={`my-4 ${pangolin.className}`}>
             These are some feedbacks we collected from Bengaluru people who deal
             with waste daily.
           </div>
