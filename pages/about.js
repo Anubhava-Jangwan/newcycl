@@ -26,7 +26,7 @@ const Index = ({ user }) => {
         <div className="flex flex-col-reverse sm:flex-row justify-center items-center">
           <h1 className="px-12 sm:px-0 text-5xl leading-none sm:mr-12">
             We&rsquo;re on a mission to make zero waste a{" "}
-            <span className="text-nc-gradient">new normal</span>
+            <span className="text-nc-purple">new normal</span>
           </h1>{" "}
           <div className="sm:w-10/12 mt-12">
             <Image src={art} width={"100%"} alt="Art" className="w-full" />

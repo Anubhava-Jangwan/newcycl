@@ -60,8 +60,8 @@ export default function WasteStoryCard({ story, index }) {
             <Image
               src={story ? icons[story.icon] : avatarm1}
               alt="Avatar"
-              width="24"
-              height="24"
+              width="36"
+              height="36"
             />
           </div>
         </div>
