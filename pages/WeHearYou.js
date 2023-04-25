@@ -4,7 +4,7 @@ import Wave from "./components/Wave";
 
 const WeHearYou = () => {
   return (
-    <div className={`mx-auto text-center px-12 pt-36 pb-48 dark-bg relative overflow-hidden`}>
+    <div className={`-mt-1 sm:mt-0 mx-auto text-center px-12 pt-36 pb-48 dark-bg relative overflow-hidden`}>
       <h1 className="w-full my-2 text-5xl font-bold text-center text-slate-50">
         We hear you
       </h1>

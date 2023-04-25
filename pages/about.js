@@ -23,8 +23,8 @@ const Index = ({ user }) => {
       </Head>
       <Navbar />
       <div className="relative lg:px-48 mx-auto">
-        <div className="flex flex-col-reverse sm:flex-row justify-center items-center">
-          <h1 className="px-12 sm:px-0 text-5xl leading-none sm:mr-12">
+        <div className="flex flex-col-reverse justify-center items-center">
+          <h1 className="px-12 text-5xl leading-none sm:mr-12">
             We&rsquo;re on a mission to make zero waste a{" "}
             <span className="text-nc-purple">new normal</span>
           </h1>{" "}
