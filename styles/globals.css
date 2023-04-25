@@ -41,6 +41,14 @@ h6 {
   opacity: 0.81;
 }
 
+.upvote {
+  border-color: #5433ff;
+}
+
+.upvote:hover {
+  background-color: #5433ff;
+}
+
 .bg-nc-gradient {
   background: linear-gradient(
     104deg,
@@ -160,5 +168,5 @@ nav {
   background-color: rgb(37, 90, 235);
   box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
     rgba(165, 254, 203, 0.8) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
-    color: #fff;
+  color: #fff;
 }

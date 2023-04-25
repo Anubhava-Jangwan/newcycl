@@ -1,54 +1,24 @@
-// import React, { useEffect, useState } from "react";
-
-// export default function WasteStoryCard({ story, index }) {
-//   const [count, setCount] = useState(0);
-
-//   useEffect(() => {
-//     fetch(`https://api.countapi.xyz/get/newcycle/ws${index}`)
-//       .then((response) => response.json())
-//       .then((data) => {
-//         setCount(data.value);
-//       });
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   }, []);
-
-//   const upVote = () => {
-//     fetch(`https://api.countapi.xyz/hit/newcycle/ws${index}`)
-//       .then((response) => response.json())
-//       .then(function (data) {
-//         console.log({ data });
-//         setCount(data.value || count + 1);
-//       });
-//   };
-
-//   return (
-//     <div
-//       key={index}
-//       className={`ws-card flex flex-col justify-between shrink-0 p-4 bg-slate-50 rounded-md`}
-//     >
-//       <div className="flex shrink-0">
-//         <div className="text-lg mr-4">{story && story.feedback}</div>
-//         <button
-//           onClick={upVote}
-//           className="upvote text-center min-w-[4rem] h-8 p-1 rounded-md border border-gray-500 bg-transparent"
-//         >
-//           {count} 👍
-//         </button>
-//       </div>
-//       <div className="flex gap-2 mt-12">
-//         <div className="avatar mt-2">
-//           <div className="w-8 h-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-nc-purple"></div>
-//         </div>
-//         <div className="ml-2">
-//           <p className="font-medium">{story && story.name}</p>
-//           <p className="text-size-small">{story && story.location}</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+
+import avatarw1 from "../public/avatar-w-1.svg";
+import avatarw2 from "../public/avatar-w-2.svg";
+import avatarw3 from "../public/avatar-w-3.svg";
+import avatarw4 from "../public/avatar-w-4.svg";
+
+import avatarm1 from "../public/avatar-m-1.svg";
+import avatarm2 from "../public/avatar-m-2.svg";
+import avatarm3 from "../public/avatar-m-3.svg";
+
+const icons = {
+  avatarw1,
+  avatarw2,
+  avatarw3,
+  avatarw4,
+  avatarm1,
+  avatarm2,
+  avatarm3,
+};
 
 export default function WasteStoryCard({ story, index }) {
   const [count, setCount] = useState(0);
@@ -66,7 +36,6 @@ export default function WasteStoryCard({ story, index }) {
     fetch(`https://api.countapi.xyz/hit/newcycle/ws${index}`)
       .then((response) => response.json())
       .then(function (data) {
-        console.log({ data });
         setCount(data.value || count + 1);
       });
   };
@@ -80,16 +49,23 @@ export default function WasteStoryCard({ story, index }) {
         <div className="text-lg mr-4">{story && story.feedback}</div>
         <button
           onClick={upVote}
-          className="upvote text-center min-w-[4rem] h-8 p-1 rounded-md border border-gray-500 bg-transparent"
+          className="upvote text-center min-w-[4rem] h-8 p-1 rounded border border-gray-500 bg-transparent hover:border-transparent hover:text-white"
         >
           {count} 👍
         </button>
       </div>
       <div className="flex gap-2 mt-12">
         <div className="avatar mt-2">
-          <div className="w-8 h-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-nc-purple"></div>
+          <div className="flex items-center justify-center w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <Image
+              src={icons[story.icon]}
+              alt="Avatar"
+              width="24"
+              height="24"
+            />
+          </div>
         </div>
-        <div className="ml-2">
+        <div className="ml-2 mt-2">
           <p className="font-medium">{story && story.name}</p>
           <p className="text-size-small">{story && story.location}</p>
         </div>

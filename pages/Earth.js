@@ -75,11 +75,11 @@ const Earth = () => {
         </section>
       </div>
       <div className="mt-24 flex items-center justify-center">
-        <div class="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl w-3/5 p-12">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight">
+        <div className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl w-3/5 p-12">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight">
             {cardsTitle[key]}
           </h5>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             Here are the biggest enterprise technology acquisitions of 2021 so
             far, in reverse chronological order.
           </p>
