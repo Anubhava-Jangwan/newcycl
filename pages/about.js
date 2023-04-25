@@ -22,19 +22,19 @@ const Index = ({ user }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Navbar />
-      <section className="mt-36">
-        <div className="relative px-12 lg:px-48 mx-auto">
+      <section className="pt-24">
+        <div className="relative lg:px-48 mx-auto">
           <div className="flex flex-col-reverse sm:flex-row justify-center items-center">
-            <h1 className="text-5xl leading-none sm:mr-12">
+            <h1 className="px-12 sm:px-0 text-5xl leading-none sm:mr-12">
               We&rsquo;re on a mission to make zero waste a{" "}
-              <span className="text-nc-purple">new normal</span>
+              <span className="text-nc-gradient">new normal</span>
             </h1>{" "}
             <div className="sm:w-10/12 mt-12">
               <Image src={art} width={"100%"} alt="Art" className="w-full" />
             </div>
           </div>
 
-          <div className="mt-12 text-lg leading-relaxed">
+          <div className="px-12 mt-12 text-lg leading-relaxed">
             Hey there, we are a small team of engineers and data scientists who
             are super pumped to reduce household waste through{" "}
             <span className="text-nc-purple font-medium">
@@ -57,8 +57,8 @@ const Index = ({ user }) => {
             in a modern age form.
           </div>
 
-          <h3 className="mt-12 text-2xl">Our Approach & Vision</h3>
-          <div className="mt-2 text-lg leading-relaxed">
+          <h3 className="px-12 mt-12 text-2xl">Our Approach & Vision</h3>
+          <div className="px-12 mt-2 text-lg leading-relaxed">
             Our company is harnessing the power of{" "}
             <span className="text-nc-purple font-medium">
               AI, Technology, and Science
@@ -77,8 +77,8 @@ const Index = ({ user }) => {
             </span>
           </div>
 
-          <h3 className="mt-12 text-2xl">Our Approach & Vision</h3>
-          <div className="mt-2 text-lg leading-relaxed">
+          <h3 className="px-12 mt-12 text-2xl">What we Believe</h3>
+          <div className="px-12 mt-2 text-lg leading-relaxed">
             We truly believe that the key to success lies in{" "}
             <span className="text-nc-purple font-medium">
               empowering individuals
