@@ -18,7 +18,7 @@ const Index = ({ user }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Navbar />
-      <section className="mt-36">
+      <section className="hero-gradient pt-36">
         <div className="relative px-12 lg:px-48 mx-auto">
           <h1 className="text-5xl leading-none">
             We&rsquo;re on a mission to make zero waste a{" "}

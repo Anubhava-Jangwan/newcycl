@@ -130,29 +130,6 @@ nav {
   );
 }
 
-/* .hero-icon-broccoli {
-  top: 4rem;
-  left: 20rem;
-  transform: rotate(340deg);
-}
-
-.hero-icon-forkspoon {
-  top: 16rem;
-  transform: rotate(215deg);
-}
-
-.hero-icon-banana {
-  top: 22rem;
-  left: 8rem;
-  transform: rotate(0deg);
-}
-
-.hero-icons {
-  position: absolute;
-  left: 12rem;
-  top: 2rem;
-} */
-
 .splide {
   width: 100%;
   height: 100%;
@@ -171,4 +148,17 @@ nav {
   .splide__arrows {
     display: none;
   }
+}
+
+.emission-icons {
+  background-color: rgba(57, 255, 20, 55%);
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
+    rgba(165, 254, 203, 0.8) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+.emission-icons-selected {
+  background-color: rgb(37, 90, 235);
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
+    rgba(165, 254, 203, 0.8) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    color: #fff;
 }
