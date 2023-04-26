@@ -28,7 +28,7 @@ const Earth = () => {
       <h4
         className={` text-2xl sm:text-3xl text-center leading-loose ${homemadeApple.className}`}
       >
-        Here&rsquo;s what does it mean to reduce one&rsquo;s own waste, in terms
+        Here&rsquo;s what does it mean to reduce one&rsquo;s monthly waste, in terms
         of CO2 emissions.
       </h4>
       <div className="flex items-center justify-center">
