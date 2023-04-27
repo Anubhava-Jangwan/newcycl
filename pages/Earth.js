@@ -1,34 +1,70 @@
 import React, { useState } from "react";
+import Image from "next/image";
+import { BatteryCharging, Droplet, Edit, Truck } from "react-feather";
+
+import earth from "../public/polluted-earth.png";
 
 import { Homemade_Apple } from "next/font/google";
 const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: ["400"] });
 
 const icons = [
-  { key: "car", icon: "" },
-  { key: "bag", icon: "" },
-  { key: "phone", icon: "" },
-  { key: "waterbottle", icon: "" },
-  { key: "burger", icon: "" },
-  { key: "banana", icon: "" },
+  { key: "car", icon: "Truck" },
+  { key: "paper", icon: "Edit" },
+  { key: "charging", icon: "BatteryCharging" },
+  { key: "waterbottle", icon: "Droplet" },
+  { key: "burger", icon: "Truck" },
+  { key: "banana", icon: "Truck" },
 ];
 
+const fIcons = { BatteryCharging, Edit, Droplet, Truck };
+
 const cardsTitle = {
-  car: "Driving a car for 120 miles (193 km)",
-  bag: "Using 2,800 plastic bags",
-  phone: "Charging a smartphone 16,000 times",
-  waterbottle: "Drinking 2,000 bottles of water",
-  burger: "Consuming 600 hamburgers",
-  banana: "Eating 2,000 bananas",
+  car: {
+    title: "Driving a car for 120 miles (193 km)",
+    subTitle: "which is like driving 🚗 from Bengaluru to Mysuru and back.",
+  },
+  paper: {
+    title: "Printing 50,000 sheets of paper",
+    subTitle: "which is like cutting 6 trees 🌳",
+  },
+  charging: {
+    title: "Charging a smartphone 16,000 times",
+    subTitle:
+      "which is like consuming 300 KW of electricity 🔌 that could run your refrigerator for 4 months.",
+  },
+  waterbottle: {
+    title: "Drinking 2,000 bottles of water",
+    subTitle:
+      "which is like drinking all water🚰 that approximately 500 people drink in a day",
+  },
+  burger: {
+    title: "Eating 2,000 bananas",
+    subTitle:
+      "which is like eating your 40 years of bananas 🍌 quota in a month (an average person eats 51 bananas in a year)",
+  },
+  banana: {
+    title: "Running a computer for 3,000 hours",
+    subTitle: "which is like doing 1 year of full time job 💻 in a month.",
+  },
 };
 
 const Earth = () => {
   const [key, setKey] = useState("car");
   return (
     <div className={`mx-auto text-center px-12`}>
+      <div className="pb-16 mx-auto w-full sm:w-6/12">
+        <Image
+          style={{ borderRadius: "50%", border: "2px solid rgb(0 0 0 / 16%)" }}
+          src={earth}
+          width={"100%"}
+          alt="Polluted Earth"
+          className="w-full"
+        />
+      </div>
       <h4
         className={` text-2xl sm:text-3xl text-center leading-loose ${homemadeApple.className}`}
       >
-        Here&rsquo;s what does it mean to reduce one&rsquo;s monthly waste, in terms
+        Here&rsquo;s what does it mean to reduce one&rsquo;s own waste, in terms
         of CO2 emissions.
       </h4>
       <div className="flex items-center justify-center">
@@ -36,38 +72,16 @@ const Earth = () => {
           className={`gap-6 grid grid-cols-3 sm:grid-cols-6 mt-24 w-full sm:w-8/12`}
         >
           {icons.map((icon) => {
+            const Icon = fIcons[icon.icon];
             return (
               <div className="flex items-center justify-center">
                 <button
                   onClick={() => setKey(icon.key)}
-                  className={`hover:bg-blue-600 hover:text-white flex h-16 items-center justify-center ring rounded-full w-16 ${
-                    key === icon.key
-                      ? "emission-icons-selected"
-                      : "emission-icons"
+                  className={`hover:bg-nc-purple-900 hover:text-white flex h-16 items-center justify-center ring ring-offset-2 rounded-full w-16 ${
+                    key === icon.key ? "bg-nc-purple-900 text-white" : ""
                   }`}
                 >
-                  <svg
-                    width="35"
-                    height="35"
-                    viewBox="0 0 50 50"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_112_32)">
-                      <path
-                        d="M41.6667 19.7875L20.8334 48.9541L25 30.2041H8.33337L29.1667 1.03748L25 19.7875H41.6667Z"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_112_32">
-                        <rect width="50" height="50" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <Icon />
                 </button>
               </div>
             );
@@ -75,13 +89,12 @@ const Earth = () => {
         </section>
       </div>
       <div className="mt-24 flex items-center justify-center">
-        <div className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl w-3/5 p-12">
+        <div className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl w-full sm:w-3/5 p-12">
           <h5 className="mb-2 text-2xl font-bold tracking-tight">
-            {cardsTitle[key]}
+            {cardsTitle[key].title}
           </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
+          <p className="my-3 text-xl font-normal text-gray-700">
+            {cardsTitle[key].subTitle}
           </p>
         </div>
       </div>

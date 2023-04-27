@@ -24,20 +24,20 @@ export default function WasteStoryCard({ story, index }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    fetch(`https://api.countapi.xyz/get/newcycle/ws${index}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setCount(data.value);
-      });
+    // fetch(`https://api.countapi.xyz/get/newcycle/ws${index}`)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setCount(data.value);
+    //   });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const upVote = () => {
-    fetch(`https://api.countapi.xyz/hit/newcycle/ws${index}`)
-      .then((response) => response.json())
-      .then(function (data) {
-        setCount(data.value || count + 1);
-      });
+    // fetch(`https://api.countapi.xyz/hit/newcycle/ws${index}`)
+    //   .then((response) => response.json())
+    //   .then(function (data) {
+    //     setCount(data.value || count + 1);
+    //   });
   };
 
   return (
@@ -49,7 +49,7 @@ export default function WasteStoryCard({ story, index }) {
         <div className="text-lg mr-4">{story && story.feedback}</div>
         <button
           onClick={upVote}
-          className="upvote text-center min-w-[4rem] h-8 p-1 rounded border border-gray-500 bg-transparent hover:border-transparent hover:text-white"
+          className="hidden upvote text-center min-w-[4rem] h-8 p-1 rounded border border-gray-500 bg-transparent hover:border-transparent hover:text-white"
         >
           {count} 👍
         </button>
@@ -58,7 +58,7 @@ export default function WasteStoryCard({ story, index }) {
         <div className="avatar mt-2">
           <div className="flex items-center justify-center w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <Image
-              src={story ? icons[story.icon] : avatarm1}
+              src={icons[story.icon]}
               alt="Avatar"
               width="36"
               height="36"

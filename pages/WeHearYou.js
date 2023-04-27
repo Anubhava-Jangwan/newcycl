@@ -4,7 +4,9 @@ import Wave from "./components/Wave";
 
 const WeHearYou = () => {
   return (
-    <div className={`-mt-1 sm:mt-0 mx-auto text-center px-12 pt-36 pb-48 dark-bg relative overflow-hidden`}>
+    <div
+      className={`-mt-1 sm:mt-0 mx-auto text-center px-12 pt-36 pb-48 dark-bg relative overflow-hidden`}
+    >
       <h1 className="w-full my-2 text-5xl font-bold text-center text-slate-50">
         We hear you
       </h1>
@@ -12,10 +14,10 @@ const WeHearYou = () => {
         What if we told you that we are working on a solution that eliminates
         the need to throw your stinky garbage altogether?
       </div>
-      <div className="absolute -top-24 -left-96 -rotate-180">
+      <div className="absolute -top-24 sm:-left-96 -left-112 -rotate-180">
         <Wave />
       </div>
-      <div className="absolute -top-24 -right-96">
+      <div className="absolute -top-24 sm:-right-96 -right-112">
         <Wave />
       </div>
     </div>
