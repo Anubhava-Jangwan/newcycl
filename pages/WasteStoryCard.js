@@ -58,7 +58,7 @@ export default function WasteStoryCard({ story, index }) {
         <div className="avatar mt-2">
           <div className="flex items-center justify-center w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <Image
-              src={icons[story.icon]}
+              src={story && icons[story.icon]}
               alt="Avatar"
               width="36"
               height="36"
