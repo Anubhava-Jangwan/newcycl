@@ -80,7 +80,7 @@ const Index = ({ user }) => {
           <span className="text-nc-purple font-medium">
             empowering individuals
           </span>{" "}
-          to take control of their own waste and together, we can
+          to take control of their own waste and together, we can{" "}
           <span className="text-nc-purple font-medium">
             make a real difference,
           </span>{" "}
