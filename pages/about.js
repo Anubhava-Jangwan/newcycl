@@ -14,12 +14,46 @@ const Index = ({ user }) => {
   return (
     <>
       <Head>
-        <title>About Newcycl | Transforming the way people throw waste</title>
+        <title>Newcycl | Transform the way you throw waste</title>{" "}
+        <meta
+          name="title"
+          content="Newcycl | Transform the way you throw waste"
+        />
         <meta
           name="description"
           content="Newcycl is making household waste management easy, exciting, and rewarding."
         ></meta>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        {/*  */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newcycl.com/" />
+        <meta
+          property="og:title"
+          content="Newcycl | Transform the way you throw waste"
+        />
+        <meta
+          property="og:description"
+          content="Newcycl is making household waste management easy, exciting, and rewarding."
+        />
+        <meta
+          property="og:image"
+          content="https://newcycl.com/newcycl-banner.png"
+        />
+        {/*  */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://newcycl.com/" />
+        <meta
+          property="twitter:title"
+          content="Newcycl | Transform the way you throw waste"
+        />
+        <meta
+          property="twitter:description"
+          content="Newcycl is making household waste management easy, exciting, and rewarding."
+        />
+        <meta
+          property="twitter:image"
+          content="https://newcycl.com/newcycl-banner.png"
+        />
       </Head>
       <Navbar />
       <div className="hero-gradient relative lg:px-48 pt-24 mx-auto">
