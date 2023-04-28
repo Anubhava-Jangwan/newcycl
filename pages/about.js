@@ -23,14 +23,11 @@ const Index = ({ user }) => {
       </Head>
       <Navbar />
       <div className="hero-gradient relative lg:px-48 pt-24 mx-auto">
-        <div className="flex flex-col-reverse justify-center items-center">
-          <h1 className="px-12 text-5xl leading-none sm:mr-12">
-            We&rsquo;re on a mission to make zero waste a{" "}
-            <span className="text-nc-purple">new normal</span>
-          </h1>{" "}
-        </div>
-
-        <div className="px-12 mt-12 text-lg leading-relaxed">
+        <h1 className="px-12 text-5xl leading-none sm:mr-12">
+          We&rsquo;re on a mission to make zero waste a{" "}
+          <span className="text-nc-purple">new normal</span>
+        </h1>
+        <div className="px-12 mt-12 text-lg text-justify leading-relaxed">
           Hey there, we are a small team of engineers and data scientists who
           are super pumped to reduce household waste through{" "}
           <span className="text-nc-purple font-bold">
@@ -41,23 +38,20 @@ const Index = ({ user }) => {
             hectic lifestyles and instant gratification
           </span>{" "}
           being the norm, most of our old traditions that were designed to keep{" "}
-          <span className="text-nc-purple font-bold">
-            harmony with nature
-          </span>
-          , cannot be practiced in its old form. Notwithstanding this unpleasant
+          <span className="text-nc-purple font-bold">harmony with nature</span>,
+          cannot be practiced in its old form. Notwithstanding this unpleasant
           reality of urban life, we have decided to{" "}
           <span className="text-nc-purple font-bold">
             unravel the old valuable principles
           </span>{" "}
           in a modern age form.
         </div>
-
         <h3 className="px-12 mt-12 text-2xl">Our Approach & Vision</h3>
-        <div className="px-12 mt-2 text-lg leading-relaxed">
+        <div className="px-12 mt-2 text-lg text-justify leading-relaxed">
           Our company is harnessing the power of{" "}
           <span className="text-nc-purple font-bold">
             AI, Technology, and Science
-          </span>
+          </span>{" "}
           to create some seriously cool solutions for waste reduction and
           management that eliminates the need of garbage collection for micro
           waste generators i.e. households. We're making the{" "}
@@ -70,9 +64,8 @@ const Index = ({ user }) => {
             waste reduction a part of our lifestyle.
           </span>
         </div>
-
         <h3 className="px-12 mt-12 text-2xl">What we Believe</h3>
-        <div className="px-12 mt-2 text-lg leading-relaxed">
+        <div className="px-12 mt-2 text-lg text-justify leading-relaxed">
           We truly believe that the key to success lies in{" "}
           <span className="text-nc-purple font-bold">
             empowering individuals

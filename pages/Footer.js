@@ -109,7 +109,20 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap pl-3">
-          <div className="mr-6">Get in touch</div>
+          <div className="mr-6">
+            <button
+              data-tf-popup="OMfYjXTE"
+              data-tf-opacity="100"
+              data-tf-size="100"
+              data-tf-iframe-props="title=Contact Form (copy)"
+              data-tf-transitive-search-params
+              data-tf-medium="snippet"
+              className="underline text-nc-purple-900"
+            >
+              Get in touch
+            </button>
+            <script src="//embed.typeform.com/next/embed.js"></script>
+          </div>
           <ul className="flex space-x-4 sm:space-x-4">
             <li>
               <a

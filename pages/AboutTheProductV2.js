@@ -197,6 +197,7 @@ const WeHearYou = () => {
           </div>
         </section>
       </div>
+      <hr className="h-0 mt-20 w-5/12 mx-auto border-t border-nc-blue" />
     </div>
   );
 };
