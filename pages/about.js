@@ -3,8 +3,8 @@
 import Head from "next/head";
 
 import Navbar from "../components/Navbar";
-import Curve from "./Curve";
-import Footer from "./Footer";
+import Curve from "../components/Curve";
+import Footer from "../components/Footer";
 
 import Image from "next/image";
 
