@@ -17,7 +17,7 @@
 }
 
 body {
-  color: #000;
+  color: #273266;
   background: #fff;
   font-family: "Open Sans", sans-serif;
 }
@@ -37,8 +37,7 @@ h6 {
 }
 
 .text-nc-purple {
-  color: #5433ff;
-  opacity: 0.81;
+  color: rgba(84, 51, 255, 0.81);
 }
 
 .upvote {

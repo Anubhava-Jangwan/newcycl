@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import Image from "next/image";
 
 import avatarw1 from "../public/avatar-w-1.svg";
@@ -23,17 +24,7 @@ const icons = {
 export default function WasteStoryCard({ story, index }) {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    
-  }, []);
-
-  const upVote = () => {
-    // fetch(`https://api.countapi.xyz/hit/newcycle/ws${index}`)
-    //   .then((response) => response.json())
-    //   .then(function (data) {
-    //     setCount(data.value || count + 1);
-    //   });
-  };
+  const upVote = () => {};
 
   return (
     <div
