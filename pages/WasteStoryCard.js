@@ -24,12 +24,7 @@ export default function WasteStoryCard({ story, index }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // fetch(`https://api.countapi.xyz/get/newcycle/ws${index}`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setCount(data.value);
-    //   });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   const upVote = () => {

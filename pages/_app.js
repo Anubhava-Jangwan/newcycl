@@ -18,6 +18,9 @@ export default function App({ Component, pageProps }) {
         `}
       </Script>
 
+      <Script src="https://apis.google.com/js/api.js"></Script>
+      <Script>{`gapi.load('client', {'apiKey': 'AIzaSyAMOnbYTCn3u3MpDPvshY0wtFUJsg_8r0k', 'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4']});`}</Script>
+
       <div
         data-tf-sidetab="OMfYjXTE"
         data-tf-opacity="100"
