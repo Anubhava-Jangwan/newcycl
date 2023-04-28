@@ -39,7 +39,7 @@ const Index = ({ user }) => {
         />
         <meta
           property="og:image"
-          content="https://newcycl.com/newcycl-banner.png"
+          content="https://www.newcycl.com/newcycl-banner.png"
         />
         {/*  */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -54,7 +54,7 @@ const Index = ({ user }) => {
         />
         <meta
           property="twitter:image"
-          content="https://newcycl.com/newcycl-banner.png"
+          content="https://www.newcycl.com/newcycl-banner.png"
         />
       </Head>
       <Navbar />
