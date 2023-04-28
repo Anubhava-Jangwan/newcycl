@@ -2,7 +2,7 @@
 
 import Head from "next/head";
 
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 import Curve from "./Curve";
 import Footer from "./Footer";
 

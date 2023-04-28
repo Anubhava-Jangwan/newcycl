@@ -2,15 +2,15 @@
 
 import Head from "next/head";
 
-import Navbar from "./Navbar";
-import WasteStories from "./WasteStories";
-import WeHearYou from "./WeHearYou";
-import AboutTheProduct from "./AboutTheProductV2";
-import Empowering from "./Empowering";
-import Earth from "./Earth";
-import Curve from "./Curve";
-import Footer from "./Footer";
-import Hero from "./components/Hero";
+import Navbar from "../components/Navbar";
+import WasteStories from "../components/WasteStories";
+import WeHearYou from "../components/WeHearYou";
+import AboutTheProduct from "../components/AboutTheProductV2";
+import Empowering from "../components/Empowering";
+import Earth from "../components/Earth";
+import Curve from "../components/Curve";
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
 
 const Index = ({ user }) => {
   return (
