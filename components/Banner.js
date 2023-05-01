@@ -12,7 +12,7 @@ const Banner = () => {
     >
       <div className="flex items-center mx-auto">
         <p className="flex items-center text-md text-slate-50">
-          <span>There is no better way to show gratitude to our own mothers than by taking care of the mother we all share, Mother Earth. - Mother's day month 🌏</span>
+          <span>There is no better way to show gratitude to our own mothers than by taking care of the mother we all share, Mother Earth. 🌏</span>
         </p>
       </div>
       <div className="flex items-center">
