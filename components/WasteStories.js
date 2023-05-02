@@ -37,7 +37,7 @@ const stories = [
     feedback:
       "Occasionally, they don't come consecutively for days, and my waste stinks :( Once, it got fungus too. :O",
     name: "Mahalakshami Rao",
-    location: "Malleshawaram, Dollars colony",
+    location: "Malleshawaram",
     icon: "avatarw4",
   },
   {
