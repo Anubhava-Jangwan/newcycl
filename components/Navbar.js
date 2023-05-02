@@ -40,7 +40,6 @@ export default function Index({ user }) {
                         viewBox="0 0 192 44"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-4/5 sm:w-full"
                       >
                         <path
                           d="M36.3402 36.0837L47.1891 25.644L51.6802 34.4835C52.857 36.7992 51.1038 39.8367 48.617 39.9581C45.0063 40.1353 40.4396 39.8287 36.2343 37.5626L35.7261 36.9637L36.3402 36.0837Z"
