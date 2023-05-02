@@ -1,15 +1,48 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Autoplay, Pagination, Navigation } from "swiper";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Hero = () => {
   return (
     <>
-      <div className={`hero-gradient mx-auto text-center px-12 py-24 sm:py-48`}>
-        <h1 className="text-nc-gradient w-full py-2 font-extrabold text-5xl lg:text-6xl tracking-tight text-center">
-          Transform the way you throw waste.
+      <div className={`mx-auto text-center py-24 sm:py-48`}>
+        <h1 className="w-full py-2 font-extrabold text-5xl lg:text-6xl tracking-tight text-center">
+          Transform the way you throw
         </h1>
-        <h3 className="my-4 text-xl">
+        <div className="textSlider mt-6">
+          <Swiper
+            direction={"vertical"}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay, Pagination, Navigation]}
+            spaceBetween={0}
+          >
+            <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
+              Banana Peels
+            </SwiperSlide>
+            <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
+              Leftover curry
+            </SwiperSlide>
+            <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
+              Extra rice
+            </SwiperSlide>
+            <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
+              Rotten Dough
+            </SwiperSlide>
+            <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
+              Coffee grounds
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div className="px-12 mt-12 mb-4 font-light">
           Because our modern lifestyle needs a fundamental change.
-        </h3>
+        </div>
       </div>
     </>
   );

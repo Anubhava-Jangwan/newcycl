@@ -56,7 +56,7 @@ const Index = ({ user }) => {
         />
       </Head>
       <Navbar />
-      <div className="hero-gradient relative lg:px-48 pt-24 mx-auto">
+      <div className="relative lg:px-48 pt-24 mx-auto">
         <h1 className="px-12 text-5xl leading-none sm:mr-12">
           We&rsquo;re on a mission to make zero waste a{" "}
           <span className="text-nc-purple">new normal</span>
