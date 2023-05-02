@@ -82,7 +82,7 @@ h6 {
 }
 
 @media (max-width: 599px) {
-  .earth-gradient-bg:not(".banner") {
+  .earth-gradient-bg {
     background-size: contain;
   }
 }
@@ -170,6 +170,12 @@ h6 {
   border-radius: 1.25rem;
   margin: 0 1.25rem;
   width: calc(100% - 40px);
+}
+
+.banner-gradient-bg {
+  background-image: url(../public/earth-gradient-bg.png);
+  margin-top: -1px;
+  background-size: cover;
 }
 
 @media print, screen and (max-width: 37.5em) {

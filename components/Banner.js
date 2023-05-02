@@ -9,7 +9,7 @@ const Banner = () => {
     <div className="banner-container">
       <div className="h-3"></div>
       <div
-        className={`banner text-center z-50 flex justify-between w-full px-4 py-2 earth-gradient-bg transition-all ${
+        className={`banner text-center z-50 flex justify-between w-full px-4 py-2 banner-gradient-bg transition-all ${
           hideBanner ? "hidden" : ""
         }`}
       >
