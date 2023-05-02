@@ -70,7 +70,8 @@ h6 {
   text-fill-color: transparent;
 }
 
-nav {
+nav,
+.banner-container {
   background-color: #daf5e9;
 }
 
@@ -168,4 +169,17 @@ nav {
   box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
     rgba(165, 254, 203, 0.8) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   color: #fff;
+}
+
+.banner {
+  border-radius: 1.25rem;
+  margin: 0 1.25rem;
+  width: calc(100% - 40px);
+}
+
+@media print, screen and (max-width: 37.5em) {
+  .banner {
+    margin: 0 0.625rem;
+    width: calc(100% - 20px);
+  }
 }
