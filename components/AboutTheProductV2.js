@@ -3,9 +3,9 @@ import React from "react";
 const WeHearYou = () => {
   return (
     <div className={`mx-auto text-center px-12 py-24 relative `}>
-      <h1 className="w-full my-2 text-3xl font-bold ai-tech-science relative">
+      <h2 className="w-full my-2 text-3xl font-bold ai-tech-science relative">
         A decentralised system for your house waste.
-      </h1>
+      </h2>
       <div className="my-4">
         AI powered tools that make waste reduction a part of your lifestyle
         because zero waste is not just a fancy trend,
