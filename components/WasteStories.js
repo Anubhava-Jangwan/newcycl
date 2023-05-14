@@ -68,11 +68,11 @@ const WS = () => {
     <>
       <div className="smoke pb-24">
         <div className={`mx-auto text-center px-12 py-6`}>
-          <h1
+          <h2
             className={`w-full my-2 text-5xl font-bold text-center ${dancingScript.className}`}
           >
             Waste Stories
-          </h1>
+          </h2>
           <div className={`my-4 ${pangolin.className}`}>
             These are some feedbacks we collected from Bengaluru people who deal
             with waste daily.

@@ -6,9 +6,9 @@ const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: ["400"] });
 const Empowering = () => {
   return (
     <section className={`mx-auto container px-12 py-36 relative`}>
-      <h1 className="w-full my-2 text-5xl font-bold text-center waste-nothing relative">
+      <h2 className="w-full my-2 text-5xl font-bold text-center waste-nothing relative">
         World&rsquo;s first company empowering self waste management.
-      </h1>
+      </h2>
       <div className="my-4 text-center">
         Enabling individuals to take control of their own waste. Whether
         you&rsquo;re a GenZ, Millenial, or Baby Boomer, waste is something that
