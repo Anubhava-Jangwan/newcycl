@@ -16,12 +16,12 @@ const Banner = () => {
       >
         <div className="mx-auto">
           <div className="text-md">
-            What was the original name of the international environmental
-            organisation Greenpeace Foundation?
+            Do you know the estimated economic cost of global food waste per
+            year?
           </div>
           <div className="mt-2">
             {revealAnswer ? (
-              <div className="italic">Don't Make a Wave Committee.</div>
+              <div className="italic">$1 trillion</div>
             ) : (
               <div
                 onClick={() => setRevealAnswer(!revealAnswer)}
