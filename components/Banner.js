@@ -1,9 +1,7 @@
-import Link from "next/link";
 import React, { useState } from "react";
 import { X } from "react-feather";
 
 const Banner = () => {
-  const [revealAnswer, setRevealAnswer] = useState(false);
   const [hideBanner, setHideBanner] = useState(false);
 
   return (
@@ -16,20 +14,8 @@ const Banner = () => {
       >
         <div className="mx-auto">
           <div className="text-md">
-            Do you know the estimated economic cost of global food waste per
-            year?
-          </div>
-          <div className="mt-2">
-            {revealAnswer ? (
-              <div className="italic">$1 trillion</div>
-            ) : (
-              <div
-                onClick={() => setRevealAnswer(!revealAnswer)}
-                className="underline cursor-pointer"
-              >
-                Reveal Answer
-              </div>
-            )}
+            The estimated economic cost of global food waste per year is{" "}
+            <span className="italic">$1 trillion.</span>
           </div>
         </div>
         <div className="flex items-center">
