@@ -29,7 +29,7 @@ export default function Index({ user }) {
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex h-20 justify-between">
                 <div className="flex">
-                  <div className="flex flex-shrink-0 items-center">
+                  <div className="flex flex-shrink-0 items-center relative">
                     <Link href="/">
                       <svg
                         width="192"
@@ -142,6 +142,9 @@ export default function Index({ user }) {
                         </defs>
                       </svg>
                     </Link>
+                    <div class="absolute -bottom-3 font-normal px-2 py-1 right-0 rounded-full text-xs border-2 border-nc-purple-900">
+                      Coming Soon
+                    </div>
                   </div>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
