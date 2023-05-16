@@ -12,7 +12,7 @@ const Banner = () => {
           hideBanner ? "hidden" : ""
         }`}
       >
-        <div className="mx-auto">
+        <div className="flex items-center mx-auto">
           <div className="text-md">
             The estimated economic cost of global food waste per year is{" "}
             <span className="italic">$1 trillion.</span>
