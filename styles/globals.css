@@ -205,3 +205,101 @@ h6 {
 .textSlider .swiper-slide {
   text-align: center;
 }
+
+.globe-container-main {
+  width: 50rem;
+  height: 50rem;
+  max-height: none;
+  max-width: none;
+}
+
+@media screen and (max-width: 991px) {
+  .globe-container-main {
+    width: 100%;
+    height: 40rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .globe-container-main {
+    height: 35rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .globe-container-main {
+    height: 24rem;
+  }
+}
+
+.canvas-3dglobe-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.fs-3dglobe-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.fs-3dglobe-labels {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  color: white;
+}
+.fs-3dglobe-labels > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  font-size: small;
+  user-select: none;
+}
+
+.fs-3dglobe-arrow-box {
+  margin-top: -118%;
+}
+div.fs-3dglobe-arrow_box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid 5px #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+.fs-3dglobe-arrow_box:after {
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #fff;
+  border-width: 15px;
+  z-index: 10;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -50%);
+}
+.fs-3dglobe-info-box {
+  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+}
+.fs-3dglobe-labels > div:hover .fs-3dglobe-info-box {
+  display: block;
+  cursor: pointer;
+}
+.finsweet-globe {
+  height: 100%;
+  width: 100%;
+}

@@ -61,7 +61,6 @@ const BananaIcon = () => {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <script xmlns="">window._wordtune_extension_installed = true;</script>
       <path d="M4 13c3.5-2 8-2 10 2a5.5 5.5 0 0 1 8 5" />
       <path d="M5.15 17.89c5.52-1.52 8.65-6.89 7-12C11.55 4 11.5 2 13 2c3.22 0 5 5.5 5 8 0 6.5-4.2 12-10.49 12C5.11 22 2 22 2 20c0-1.5 1.14-1.55 3.15-2.11Z" />
     </svg>
@@ -162,14 +161,14 @@ const Earth = () => {
   const [key, setKey] = useState("car");
   return (
     <div className={`mx-auto text-center px-12`}>
-      <div className="pb-16 mx-auto w-full sm:w-6/12">
-        <Image
-          style={{ borderRadius: "50%", border: "2px solid rgb(0 0 0 / 16%)" }}
-          src={earth}
-          width={"100%"}
-          alt="Polluted Earth"
-          className="w-full"
-        />
+      <div className="flex items-center justify-center mx-auto pb-16">
+        <div className="globe-container-main">
+          <div
+            fs-3dglobe-element="container"
+            fs-3dglobe-img="https://assets-global.website-files.com/6357008bb1dd16395e9e2e70/6364f9b51295f31d12be7bd1_Patch%20homepage%20globe%20skin%2001.jpg"
+            className="fs-3dglobe-container"
+          ></div>
+        </div>
       </div>
       <h4
         className={` text-2xl sm:text-3xl text-center leading-loose ${homemadeApple.className}`}
