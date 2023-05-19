@@ -18,7 +18,10 @@ export default function App({ Component, pageProps }) {
         `}
       </Script>
 
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></Script>
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"
+        strategy="beforeInteractive"
+      ></Script>
 
       <Component {...pageProps} />
     </>
