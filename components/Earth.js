@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { BatteryCharging, Droplet, Edit, Monitor, Truck } from "react-feather";
+import Script from "next/script";
 
-import earth from "../public/polluted-earth.png";
+import { BatteryCharging, Droplet, Edit, Monitor, Truck } from "react-feather";
 
 import { Homemade_Apple } from "next/font/google";
 const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: ["400"] });
@@ -159,64 +159,69 @@ const cardsTitle = {
 
 const Earth = () => {
   const [key, setKey] = useState("car");
+
   return (
-    <div className={`mx-auto text-center px-12`}>
-      <div className="flex items-center justify-center mx-auto pb-16">
-        <div className="globe-container-main">
-          <div
-            fs-3dglobe-element="container"
-            fs-3dglobe-img="https://assets-global.website-files.com/6357008bb1dd16395e9e2e70/6364f9b51295f31d12be7bd1_Patch%20homepage%20globe%20skin%2001.jpg"
-            className="fs-3dglobe-container"
-          ></div>
+    <>
+      <Script src="https://cdn.jsdelivr.net/npm/@finsweet/3dglobes@1/OrbitControls.min.js"></Script>
+      <Script src="https://cdn.jsdelivr.net/npm/@finsweet/3dglobes@1/FsGlobe.min.js"></Script>
+      <div className={`mx-auto text-center px-12`}>
+        <div className="flex items-center justify-center mx-auto pb-16">
+          <div className="globe-container-main">
+            <div
+              fs-3dglobe-element="container"
+              fs-3dglobe-img="https://assets-global.website-files.com/6357008bb1dd16395e9e2e70/6364f9b51295f31d12be7bd1_Patch%20homepage%20globe%20skin%2001.jpg"
+              className="fs-3dglobe-container"
+            ></div>
+          </div>
         </div>
-      </div>
-      <h4
-        className={` text-2xl sm:text-3xl text-center leading-loose ${homemadeApple.className}`}
-      >
-        Here&rsquo;s what does it mean to reduce one&rsquo;s monthly waste, in
-        terms of CO2 emissions.
-      </h4>
-      <div className="flex items-center justify-center">
-        <section
-          className={`gap-6 grid grid-cols-3 sm:grid-cols-6 mt-24 w-full sm:w-8/12`}
+        <h4
+          className={` text-2xl sm:text-3xl text-center leading-loose ${homemadeApple.className}`}
         >
-          {icons.map((icon) => {
-            const Icon = fIcons[icon.icon];
-            return (
-              <div className="flex items-center justify-center">
-                <button
-                  onClick={() => setKey(icon.key)}
-                  className={`hover:bg-nc-purple-900 hover:text-white flex h-16 items-center justify-center ring ring-offset-2 rounded-full w-16 ${
-                    key === icon.key ? "bg-nc-purple-900 text-white" : ""
-                  }`}
-                >
-                  {icon.svgType ? (
-                    <Image
-                      src={icon.icon}
-                      width={36}
-                      height={32}
-                      alt={icon.key}
-                    ></Image>
-                  ) : (
-                    <Icon />
-                  )}
-                </button>
-              </div>
-            );
-          })}
-        </section>
-      </div>
-      <div className="mt-24 flex items-center justify-center">
-        <div className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl w-full sm:w-3/5 p-12">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight">
-            {cardsTitle[key].title}
-          </h5>
-          <p className="my-3 text-xl font-normal text-gray-700">
-            {cardsTitle[key].subTitle}
-          </p>
+          Here&rsquo;s what does it mean to reduce one&rsquo;s monthly waste, in
+          terms of CO2 emissions.
+        </h4>
+        <div className="flex items-center justify-center">
+          <section
+            className={`gap-6 grid grid-cols-3 sm:grid-cols-6 mt-24 w-full sm:w-8/12`}
+          >
+            {icons.map((icon) => {
+              const Icon = fIcons[icon.icon];
+              return (
+                <div className="flex items-center justify-center">
+                  <button
+                    onClick={() => setKey(icon.key)}
+                    className={`hover:bg-nc-purple-900 hover:text-white flex h-16 items-center justify-center ring ring-offset-2 rounded-full w-16 ${
+                      key === icon.key ? "bg-nc-purple-900 text-white" : ""
+                    }`}
+                  >
+                    {icon.svgType ? (
+                      <Image
+                        src={icon.icon}
+                        width={36}
+                        height={32}
+                        alt={icon.key}
+                      ></Image>
+                    ) : (
+                      <Icon />
+                    )}
+                  </button>
+                </div>
+              );
+            })}
+          </section>
+        </div>
+        <div className="mt-24 flex items-center justify-center">
+          <div className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl w-full sm:w-3/5 p-12">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight">
+              {cardsTitle[key].title}
+            </h5>
+            <p className="my-3 text-xl font-normal text-gray-700">
+              {cardsTitle[key].subTitle}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

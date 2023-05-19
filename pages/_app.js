@@ -20,10 +20,6 @@ export default function App({ Component, pageProps }) {
 
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></Script>
 
-      <Script src="https://cdn.jsdelivr.net/npm/@finsweet/3dglobes@1/OrbitControls.min.js"></Script>
-
-      <Script src="https://cdn.jsdelivr.net/npm/@finsweet/3dglobes@1/FsGlobe.min.js"></Script>
-
       <Component {...pageProps} />
     </>
   );
