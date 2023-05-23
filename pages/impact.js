@@ -7,7 +7,6 @@ import Navbar from "../components/Navbar";
 import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 
-
 import foodWaste from "../public/foodWaste.jpg";
 import soilDegradation from "../public/soilDegradation.jpg";
 import costOfLivingCrisis from "../public/costOfLivingCrisis.jpg";
@@ -80,7 +79,7 @@ const Index = ({ user }) => {
                 alt="Food Waste"
                 className="w-full"
               />
-              Food waste
+              <div className="text-sm mt-2 text-gray-500">Food waste</div>
             </div>
             <div className="">
               <Image
@@ -89,7 +88,7 @@ const Index = ({ user }) => {
                 alt="Food Waste"
                 className="w-full"
               />
-              Soil degradation
+              <div className="text-sm mt-2 text-gray-500">Soil degradation</div>
             </div>
             <div className="">
               <Image
@@ -98,7 +97,9 @@ const Index = ({ user }) => {
                 alt="Food Waste"
                 className=""
               />
-              Cost of living crisis
+              <div className="text-sm mt-2 text-gray-500">
+                Cost of living crisis
+              </div>
             </div>
           </div>
         </div>
