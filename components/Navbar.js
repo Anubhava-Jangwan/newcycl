@@ -11,6 +11,7 @@ import Banner from "./Banner";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Who we are", href: "/about" },
+  { name: "Impact", href: "/impact" },
 ];
 
 function classNames(...classes) {
