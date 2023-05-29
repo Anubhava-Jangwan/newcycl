@@ -10,6 +10,7 @@ const Cookie = () => {
   useEffect(() => {
     if (!cookie) {
       setHideCookie(false);
+      console.log("hide the cookie.");
     }
   }, [cookie]);
 
