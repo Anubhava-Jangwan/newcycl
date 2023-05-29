@@ -15,11 +15,11 @@ const Cookie = () => {
 
   return (
     <section
-      className={`fixed flex items-center justify-between max-w-screen-lg mx-auto bg-white inset-x-5 p-3 bottom-16 md:w-2/3 rounded-lg drop-shadow-2xl ${
+      className={`fixed flex items-center justify-between max-w-screen-lg mx-auto bg-nc-purple-900 text-white inset-x-5 p-2 bottom-16 md:w-2/3 rounded-lg drop-shadow-2xl z-50 ${
         hideCookie ? "hidden" : ""
       }`}
     >
-      <p className="text-sm text-gray-60">
+      <p className="ml-4 text-sm text-gray-60">
         By continuing to use this site you consent to the use of cookies in
         accordance with our cookie policy.
       </p>
