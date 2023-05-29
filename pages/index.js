@@ -1,6 +1,7 @@
 "use client";
 
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 import Navbar from "../components/Navbar";
 import WasteStories from "../components/WasteStories";
@@ -11,6 +12,7 @@ import Earth from "../components/Earth";
 import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+const Cookie = dynamic(() => import("../components/Cookie"), { ssr: false });
 
 const Index = ({ user }) => {
   return (
@@ -62,6 +64,7 @@ const Index = ({ user }) => {
         <Earth />
       </section>
       <Curve />
+      <Cookie />
       <Footer />
     </>
   );
