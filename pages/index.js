@@ -8,7 +8,7 @@ import WasteStories from "../components/WasteStories";
 import WeHearYou from "../components/WeHearYou";
 import AboutTheProduct from "../components/AboutTheProductV2";
 import Empowering from "../components/Empowering";
-import Earth from "../components/Earth";
+const Earth = dynamic(() => import("../components/Earth"), { ssr: false });
 import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
@@ -19,7 +19,7 @@ const Index = ({ user }) => {
     <>
       <Head>
         <title>Newcycl | Transform the way you throw waste</title>
-        
+
         <meta
           name="description"
           content="Newcycl is making household waste management easy, exciting, and rewarding."
