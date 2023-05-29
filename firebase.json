@@ -22,7 +22,7 @@
     "public": "public",
     "rewrites": [
       {
-        "source": "**/**"
+        "source": "**"
       }
     ],
     "ignore": [
