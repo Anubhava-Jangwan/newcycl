@@ -20,10 +20,9 @@
   },
   "hosting": {
     "public": "public",
-    "source": ".",
     "rewrites": [
       {
-        "source": "**"
+        "source": "**/**"
       }
     ],
     "ignore": [
