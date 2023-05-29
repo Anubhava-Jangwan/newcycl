@@ -24,7 +24,7 @@ const Hero = () => {
             spaceBetween={0}
           >
             <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
-              Banana Peels
+              Banana peels
             </SwiperSlide>
             <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
               Leftover curry
@@ -33,10 +33,19 @@ const Hero = () => {
               Extra rice
             </SwiperSlide>
             <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
-              Rotten Dough
+              Rotten dough
             </SwiperSlide>
             <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
               Coffee grounds
+            </SwiperSlide>
+            <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
+              Eggshells
+            </SwiperSlide>
+            <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
+              Stale bread
+            </SwiperSlide>
+            <SwiperSlide className="font-extrabold text-5xl lg:text-6xl tracking-tight text-nc-gradient">
+              Expired curd
             </SwiperSlide>
           </Swiper>
         </div>
