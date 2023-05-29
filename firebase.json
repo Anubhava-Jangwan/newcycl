@@ -20,9 +20,11 @@
   },
   "hosting": {
     "public": "public",
+    "cleanUrls": true,
     "rewrites": [
       {
-        "source": "**"
+        "source": "/**",
+        "destination": "/index.html"
       }
     ],
     "ignore": [
