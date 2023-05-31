@@ -19,14 +19,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "build",
-    "cleanUrls": true,
-    "rewrites": [
-      {
-        "source": "/**",
-        "destination": "/index.html"
-      }
-    ],
+    "source": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -71,7 +64,7 @@
     "singleProjectMode": true
   },
   "remoteconfig": {
-    "template": " remoteconfig.template.json"
+    "template": "remoteconfig.template.json"
   },
   "extensions": {}
 }
