@@ -8,11 +8,10 @@ const Cookie = () => {
   const [cookie, updateCookie] = useCookie("nck");
 
   useEffect(() => {
-    if (!cookie) {
-      setHideCookie(false);
-      console.log("hide the cookie.");
+    if (cookie) {
+      setHideCookie(true);
     }
-  }, [cookie]);
+  }, []);
 
   return (
     <section
