@@ -4,12 +4,14 @@ import { X } from "react-feather";
 import useCookie from "../hooks/useCookie";
 
 const Cookie = () => {
-  const [hideCookie, setHideCookie] = useState(false);
+  const [hideCookie, setHideCookie] = useState(true);
   const [cookie, updateCookie] = useCookie("nck");
 
   useEffect(() => {
     if (cookie) {
       setHideCookie(true);
+    } else {
+      setHideCookie(false);
     }
   }, []);
 
