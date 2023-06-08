@@ -60,7 +60,7 @@ const Index = ({ user }) => {
             contributing to global warming and taking away life. It is crucial
             that we preserve this energy in its positive form so that it can be
             transformed into a kind of nourishment that gives us life.”{" "}
-            <span className="block mt-4 text-nc-purple">
+            <span className="block mt-4 text-lg text-nc-purple">
               - Anu Khandelwal, Co-Founder & CEO at Newcycl
             </span>
           </p>
