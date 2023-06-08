@@ -11,6 +11,8 @@ import foodWaste from "../public/foodWaste.jpg";
 import soilDegradation from "../public/soilDegradation.jpg";
 import costOfLivingCrisis from "../public/costOfLivingCrisis.jpg";
 
+import linearVsCicularGraph from "../public/linear-vs-circular-graph.png";
+
 const Index = ({ user }) => {
   return (
     <>
@@ -58,7 +60,7 @@ const Index = ({ user }) => {
             contributing to global warming and taking away life. It is crucial
             that we preserve this energy in its positive form so that it can be
             transformed into a kind of nourishment that gives us life.”{" "}
-            <span className="block mt-4 text-nc-purple">
+            <span className="block mt-4 text-lg text-nc-purple">
               - Anu Khandelwal, Co-Founder & CEO at Newcycl
             </span>
           </p>
@@ -103,7 +105,8 @@ const Index = ({ user }) => {
           Across the world, we’re experiencing the consequences of
           interconnected crises. The cost of living, food waste crisis, and soil
           pollution top the list. The problems are huge and complex, but what if
-          a simple solution could make a big difference? At Newcycl, we believe
+          a simple solution could make a big difference? At{" "}
+          <span className="mt-4 text-nc-purple">Newcycl</span>, we believe
           everyone deserves to eat healthy and affordable food. Food waste
           stands in the way of both. It affects food quality and quantity. When
           we waste food, it degrades soil that diminishes the quality of the
@@ -111,7 +114,8 @@ const Index = ({ user }) => {
           harvesting capacity which further leads to high food prices. What we
           need to realize is that a circular food system without waste benefits
           everyone in the ecosystem - farmers, suppliers, retailers, consumers,
-          and nature. Newcycl is getting the world closer to that reality.
+          and nature. <span className="mt-4 text-nc-purple">Newcycl</span> is
+          getting the world closer to that reality.
         </div>
         <h3 className="px-12 mt-12 text-2xl">Some numbers</h3>
         <div className="px-12 mt-2 text-lg text-justify leading-relaxed">
@@ -120,7 +124,7 @@ const Index = ({ user }) => {
           the consumer level i.e households.
         </div>
         <div className="px-12 mt-6">
-          <div className="relative overflow-x-auto mb-48">
+          <div className="relative overflow-x-auto">
             <table className="border border-collapse w-full text-sm text-left text-gray-500">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 border-b">
                 <tr>
@@ -153,8 +157,30 @@ const Index = ({ user }) => {
             </table>
           </div>
         </div>
+        <h3 className="px-12 mt-12 text-2xl">
+          Enrouting your food waste from plate to soil
+        </h3>
+        <div className="px-12 mt-2 text-lg text-justify leading-relaxed">
+          Today, our waste disposing system is primarily a linear economy based
+          on take-make-waste model, which assumes our planet has infinite
+          resources. In the circular economy however, products are sourced from
+          reused, recycled, or renewable non-toxic materials to minimize the
+          need for extraction and the use of virgin natural resources, and{" "}
+          <span className="mt-4 text-nc-purple">Newcycl</span> is
+          institutionalizing such circular system for your kitchen waste to
+          enable and strengthen micro circular economies in every household.
+        </div>
+        <div className="text-center">
+          <Image
+            src={linearVsCicularGraph}
+            alt="Linear vs Circular Graph"
+            className="w-full"
+          />
+          <div className="text-sm -mt-2 text-gray-500">
+            Linear Economy vs Circular Economy
+          </div>
+        </div>
       </div>
-
       <Curve />
       <Footer />
     </>
