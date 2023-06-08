@@ -4,7 +4,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 
 import Navbar from "../components/Navbar";
-import Recognisedby from "../components/Recognisedby";
+import Recognisedby from "../components/RecognisedBy";
 import WasteStories from "../components/WasteStories";
 import WeHearYou from "../components/WeHearYou";
 import AboutTheProduct from "../components/AboutTheProductV2";
