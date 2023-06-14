@@ -50,8 +50,8 @@ const Index = ({ user }) => {
       </Head>
       <Navbar />
       <div className="relative lg:px-48 pt-24 mx-auto">
-        <blockquote className="p-4 my-4 border-l-4 border-gray-300 bg-gray-50">
-          <p className="text-xl italic leading-relaxed text-gray-900">
+        <blockquote className="p-4 my-4 mx-6 border-l-4 border-gray-300 bg-gray-50">
+          <p className="text-xl text-justify italic leading-relaxed text-gray-900">
             “Nutrition is fundamentally a form of energy that can only be
             converted from one form to another. Food, in essence, represents a
             physical manifestation of this energy. However, when we waste food,
@@ -59,10 +59,11 @@ const Index = ({ user }) => {
             presents itself in the form of methane emissions, ultimately
             contributing to global warming and taking away life. It is crucial
             that we preserve this energy in its positive form so that it can be
-            transformed into a kind of nourishment that gives us life.”{" "}
-            <span className="block mt-4 text-lg text-nc-purple">
-              - Anu Khandelwal, Co-Founder & CEO at Newcycl
-            </span>
+            transformed into a kind of nourishment that gives us life.”
+            <div className="mt-4 text-nc-purple text-lg">Anu Khandelwal</div>
+            <div className="text-nc-purple text-lg">
+              Co-Founder & CEO at Newcycl
+            </div>
           </p>
         </blockquote>
         <h1 className="px-12 mt-12 text-5xl leading-none sm:mr-12">
@@ -158,7 +159,7 @@ const Index = ({ user }) => {
           </div>
         </div>
         <h3 className="px-12 mt-12 text-2xl">
-          Enrouting your food waste from plate to soil
+          Enrouting your food waste from plate to soil.
         </h3>
         <div className="px-12 mt-2 text-lg text-justify leading-relaxed">
           Today, our waste disposing system is primarily a linear economy based
