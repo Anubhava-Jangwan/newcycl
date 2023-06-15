@@ -1,7 +1,7 @@
 const PostBody = ({ content }) => {
   return (
     <div className="mx-auto">
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 };

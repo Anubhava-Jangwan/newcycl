@@ -309,7 +309,7 @@ div.fs-3dglobe-arrow_box {
   font-size: 1.125rem;
   padding-left: 3rem;
   padding-right: 3rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   text-align: justify;
 }
 
@@ -323,7 +323,7 @@ div.fs-3dglobe-arrow_box {
   padding-right: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   background-color: rgb(249, 250, 251);
 }
 
@@ -336,11 +336,11 @@ div.fs-3dglobe-arrow_box {
   text-decoration: underline;
 }
 
-.blog-post ul li:first-child {
+.blog-post .blog-post-content ul li:first-child {
   margin-top: 2rem;
 }
 
-.blog-post ul li {
+.blog-post .blog-post-content ul li {
  list-style-type: disc;
  font-size: 1.125rem;
  line-height: 1.625;
