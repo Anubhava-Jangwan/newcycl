@@ -3,6 +3,7 @@ title: "Why NOT fertilizers?"
 excerpt: "If fertilizers add nitrogen to the soil which gets used by the plants for their growth, then where are they going wrong and turning our planet dead? 🤔"
 date: "14 June 2023"
 coverImage: "/assets/blog/why-not-fertilizers/cover.jpg"
+ogImage: "/assets/blog/why-not-fertilizers/ogImage.jpg"
 authorName: "Anu Khandelwal"
 imageCaption: 'Photo by <a href="https://unsplash.com/@synkevych?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roman Synkevych</a> on <a href="https://unsplash.com/photos/fjj7lVpCxRE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 ---

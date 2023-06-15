@@ -3,6 +3,7 @@ title: "Nature is conscious of its being"
 excerpt: "Water, soil, plants, air, mountains, sun, and moon contain conscious energies is a fascinating concept that challenges our traditional understanding of the natural world 🌏."
 date: "12 June 2023"
 coverImage: "/assets/blog/nature-is-conscious/cover.jpg"
+ogImage: "/assets/blog/nature-is-conscious/ogImage.jpg"
 authorName: "Anu Khandelwal"
 imageCaption: 'Photo by <a href="https://unsplash.com/@ideasboom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Qingbao Meng</a> on <a href="https://unsplash.com/images/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 ---
