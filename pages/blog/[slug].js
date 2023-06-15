@@ -33,7 +33,8 @@ export default function Post({ post, preview }) {
             <article className="relative lg:px-48 pt-24 mx-auto">
               <Head>
                 <title>{title}</title>
-                <meta property="og:image" content={post.ogImage} />
+                <meta property="og:description" content={post.excerpt} />
+                <meta property="og:image" content={`https://www.newcycl.com/${post.ogImage}`} />
               </Head>
               <PostHeader
                 title={post.title}
