@@ -159,7 +159,7 @@ const Index = ({ user }) => {
           </div>
         </div>
         <h3 className="px-12 mt-12 text-2xl">
-          Enrouting your food waste from plate to soil.
+          Enrouting your food waste from plate to soil
         </h3>
         <div className="px-12 mt-2 text-lg text-justify leading-relaxed">
           Today, our waste disposing system is primarily a linear economy based
