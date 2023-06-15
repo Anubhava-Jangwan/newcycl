@@ -34,7 +34,7 @@ export default function Post({ post, preview }) {
               <Head>
                 <title>{title}</title>
                 <meta property="og:description" content={post.excerpt} />
-                <meta property="og:image" content={`https://www.newcycl.com/${post.ogImage}`} />
+                <meta property="og:image" content={`https://www.newcycl.com${post.ogImage}`} />
               </Head>
               <PostHeader
                 title={post.title}
@@ -60,6 +60,7 @@ export async function getStaticProps({ params }) {
     "title",
     "date",
     "slug",
+    "excerpt",
     "authorName",
     "content",
     "ogImage",
