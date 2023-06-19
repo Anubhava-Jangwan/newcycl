@@ -10,24 +10,24 @@ const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
-  const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // Validation
-    if (name === "" || email === "" || contact === "" || message === "") {
+    if (name === "" || email === "" || contact === "") {
       alert("Please fill in all fields");
       return;
     }
 
+    const formData = new FormData();
+    formData.append("nc-name", name);
+    formData.append("nc-email", email);
+
     // Send form data to the server (replace with your API endpoint)
-    fetch("https://nc-backend-sd1q.onrender.com/api/v1/form", {
+    fetch("https://nc-backend-sd1q.onrender.com/api/v1/form/submit", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, contact, message }),
+      body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -35,7 +35,6 @@ const ContactForm = () => {
         setName("");
         setEmail("");
         setContact("");
-        setMessage("");
       })
       .catch((error) => {
         alert("Form submission failed: " + error);
@@ -89,7 +88,8 @@ const ContactForm = () => {
               <input
                 type="text"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="name"
+                id="nc-name"
+                name="nc-name"
                 value={name}
                 placeholder="Enter your name"
                 onChange={(event) => setName(event.target.value)}
@@ -102,7 +102,8 @@ const ContactForm = () => {
                 type="email"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Enter your email"
-                id="email"
+                id="nc-email"
+                name="nc-email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 required
@@ -110,6 +111,19 @@ const ContactForm = () => {
             </div>
 
             <div className="mb-6">
+              <input
+                type="number"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Phone number"
+                id="nc-contact"
+                name="nc-contact"
+                value={contact}
+                onChange={(event) => setContact(event.target.value)}
+                required
+              />
+            </div>
+
+            {/* <div className="mb-6">
               <textarea
                 id="message"
                 placeholder="Enter your message"
@@ -118,7 +132,7 @@ const ContactForm = () => {
                 onChange={(event) => setMessage(event.target.value)}
                 required
               ></textarea>
-            </div>
+            </div> */}
 
             <input
               className="cursor-pointer w-full bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
