@@ -7,45 +7,45 @@ import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [contact, setContact] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // Validation
-    if (name === '' || email === '' || contact === '' || message === '') {
-      alert('Please fill in all fields');
+    if (name === "" || email === "" || contact === "" || message === "") {
+      alert("Please fill in all fields");
       return;
     }
 
     // Send form data to the server (replace with your API endpoint)
-    fetch('https://nc-backend-sd1q.onrender.com/api/v1/form', {
-      method: 'POST',
+    fetch("https://nc-backend-sd1q.onrender.com/api/v1/form", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ name, email, contact, message }),
     })
       .then((response) => response.json())
       .then((data) => {
-        alert('Form submitted successfully');
-        setName('');
-        setEmail('');
-        setContact('');
-        setMessage('');
+        alert("Form submitted successfully");
+        setName("");
+        setEmail("");
+        setContact("");
+        setMessage("");
       })
       .catch((error) => {
-        alert('Form submission failed: ' + error);
+        alert("Form submission failed: " + error);
       });
   };
 
   return (
     <>
       <Head>
-        <title>Impact</title>
+        <title>Contact | Newcycl</title>
         <meta
           name="description"
           content="Newcycl is making household waste management easy, exciting, and rewarding."
@@ -76,47 +76,58 @@ const ContactForm = () => {
       </Head>
       <Navbar />
       <div className="relative lg:px-48 pt-24 mx-auto">
-        <h1  className="px-12 text-5xl leading-none sm:mr-12">
+        <h1 className="px-12 text-5xl leading-none text-center">
           We've been waiting for you.
         </h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            required
-          />
+        <div className="px-12 text-md font-normal text-center mt-4">
+          We want to hear from you. Let us know how we can help.
+        </div>
 
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            required
-          />
+        <div className="mt-12 w-full px-12 sm:px-0 max-w-md m-auto">
+          <form onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <input
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="name"
+                value={name}
+                placeholder="Enter your name"
+                onChange={(event) => setName(event.target.value)}
+                required
+              />
+            </div>
 
-          <label htmlFor="contact">Contact:</label>
-          <input
-            type="number"
-            id="contact"
-            value={contact}
-            onChange={(event) => setContact(event.target.value)}
-            required
-          />
+            <div className="mb-6">
+              <input
+                type="email"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your email"
+                id="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
+            </div>
 
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-            required
-          ></textarea>
+            <div className="mb-6">
+              <input
+                type="number"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Phone number"
+                id="contact"
+                value={contact}
+                onChange={(event) => setContact(event.target.value)}
+                required
+              />
+            </div>
 
-          <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Submit" />
-        </form>
+            <input
+              className="cursor-pointer w-full bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
       </div>
 
       <Curve />
