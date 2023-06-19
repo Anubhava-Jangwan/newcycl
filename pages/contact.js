@@ -83,8 +83,8 @@ const ContactForm = () => {
           We want to hear from you. Let us know how we can help.
         </div>
 
-        <div className="mt-12 w-full px-12 sm:px-0 max-w-md m-auto">
-          <form onSubmit={handleSubmit}>
+        <div className="mt-12 w-full max-w-md px-12 sm:px-0 m-auto">
+          <form className="" onSubmit={handleSubmit}>
             <div className="mb-6">
               <input
                 type="text"
@@ -110,15 +110,14 @@ const ContactForm = () => {
             </div>
 
             <div className="mb-6">
-              <input
-                type="number"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="Phone number"
-                id="contact"
-                value={contact}
-                onChange={(event) => setContact(event.target.value)}
+              <textarea
+                id="message"
+                placeholder="Enter your message"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
                 required
-              />
+              ></textarea>
             </div>
 
             <input
