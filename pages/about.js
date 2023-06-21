@@ -48,6 +48,8 @@ const Index = ({ user }) => {
           property="twitter:image"
           content="https://www.newcycl.com/newcycl-banner.png"
         />
+
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <Navbar />
       <div className="relative lg:px-48 pt-24 mx-auto">

@@ -1,26 +1,25 @@
 "use client";
 
 import Head from "next/head";
-import dynamic from "next/dynamic";
 
 import Navbar from "../components/Navbar";
-import Recognisedby from "../components/RecognisedBy";
-import WasteStories from "../components/WasteStories";
-import WeHearYou from "../components/WeHearYou";
-import AboutTheProduct from "../components/AboutTheProductV2";
-import Empowering from "../components/Empowering";
-const Earth = dynamic(() => import("../components/Earth"), { ssr: false });
+
 import Curve from "../components/Curve";
 import Footer from "../components/Footer";
-import Hero from "../components/Hero";
 
-const Cookie = dynamic(() => import("../components/Cookie"), { ssr: false });
+import HeroPost from "../components/post-hero";
 
-const Index = ({ user }) => {
+import { getAllPosts } from "../lib/api";
+import BlogPosts from "../components/blog-posts";
+
+const Blog = ({ user, allPosts }) => {
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
+
   return (
     <>
       <Head>
-        <title>Newcycl | Transform the way you throw waste</title>
+        <title>Blog | Newcycl</title>
 
         <meta
           name="description"
@@ -59,20 +58,40 @@ const Index = ({ user }) => {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <Navbar />
-      <section className="">
-        <Hero />
-        <Recognisedby />
-        <AboutTheProduct />
-        <WasteStories />
-        <WeHearYou />
-        <Empowering />
-        <Earth />
-      </section>
+      <div className="relative lg:px-48 pt-24 mx-auto">
+        <h1 className="px-12 text-5xl leading-none sm:mr-12">Blog</h1>
+        {heroPost && (
+          <HeroPost
+            title={heroPost.title}
+            coverImage={heroPost.coverImage}
+            imageCaption={heroPost.imageCaption}
+            date={heroPost.date}
+            authorName={heroPost.authorName}
+            slug={heroPost.slug}
+            excerpt={heroPost.excerpt}
+          />
+        )}
+        {morePosts.length > 0 && <BlogPosts blogs={morePosts} />}
+      </div>
       <Curve />
-      <Cookie />
       <Footer />
     </>
   );
 };
 
-export default Index;
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "authorName",
+    "coverImage",
+    "excerpt",
+  ]);
+
+  return {
+    props: { allPosts },
+  };
+};
+
+export default Blog;
