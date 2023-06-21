@@ -7,7 +7,7 @@ const Empowering = () => {
   return (
     <section className={`mx-auto container px-12 pt-36 relative`}>
       <h1 className="w-full my-2 text-5xl font-bold text-center waste-nothing relative">
-        World&rsquo;s first company empowering self waste management.
+        World&rsquo;s first company empowering self waste management
       </h1>
       <div className="my-4 text-center">
         Enabling individuals to take control of their own waste. Whether

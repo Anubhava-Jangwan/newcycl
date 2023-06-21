@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
+import { X } from "react-feather";
 
 import Navbar from "../components/Navbar";
 import Curve from "../components/Curve";
@@ -10,6 +10,8 @@ const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [showNotification, setShowNotification] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,6 +37,8 @@ const ContactForm = () => {
         setName("");
         setEmail("");
         setMessage("");
+        setShowNotification(true);
+        setDisabled(true);
       })
       .catch((error) => {
         alert("Form submission failed: " + error);
@@ -74,7 +78,19 @@ const ContactForm = () => {
         />
       </Head>
       <Navbar />
+
       <div className="relative lg:px-48 pt-24 mx-auto">
+        {showNotification && (
+          <div className="flex items-center justify-center mb-6">
+            <div
+              class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-2 rounded w-auto relative"
+              role="alert"
+            >
+              <div class="">Yayy 🎉 Thanks we will get back to you soon.</div>
+            </div>
+          </div>
+        )}
+
         <h1 className="px-12 text-5xl leading-none text-center">
           We've been waiting for you.
         </h1>
@@ -94,6 +110,7 @@ const ContactForm = () => {
                 placeholder="Enter your name"
                 onChange={(event) => setName(event.target.value)}
                 required
+                disabled={disabled}
               />
             </div>
 
@@ -107,6 +124,7 @@ const ContactForm = () => {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 required
+                disabled={disabled}
               />
             </div>
 
@@ -118,13 +136,17 @@ const ContactForm = () => {
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
                 required
+                disabled={disabled}
               ></textarea>
             </div>
 
             <input
-              className="cursor-pointer w-full bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
+              className={`cursor-pointer w-full bg-nc-purple-900 text-white font-medium py-2 px-4 rounded ${
+                disabled ? "opacity-30" : ""
+              }`}
               type="submit"
               value="Submit"
+              disabled={disabled}
             />
           </form>
         </div>
