@@ -1,6 +1,6 @@
 ---
 title: "If you want to waste, waste consciously"
-excerpt: "We have control over things that we manage ourselves, and one such example is time."
+excerpt: "Waste management requires a shift from a culture of thoughtless consumption to one of conscious disposal."
 date: "05 July 2023"
 coverImage: "/assets/blog/waste-consciously/cover.jpg"
 ogImage: "/assets/blog/waste-consciously/ogImage.jpg"
@@ -16,4 +16,4 @@ Waste generation is a universal issue. However, **expecting everyone to achieve 
 
 In conclusion, taking control of our lives starts with managing our time and extends to various aspects such as waste management. By being conscious of our actions, we become aware of our shortcomings and pave the way for improvement. **Waste management requires a shift from a culture of thoughtless consumption to one of conscious disposal.** By recognizing the impact of our choices, we can foster a selfless nature that benefits not only ourselves but also society and the environment. So, let us **embrace conscious waste disposal and be mindful of the waste we generate**, for the Earth and future generations.
 
-_— written by human, not AI_
+_— written by human, not AI 🤖_
