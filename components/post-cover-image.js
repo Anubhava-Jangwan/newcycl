@@ -6,7 +6,7 @@ const CoverImage = ({ title, src, slug, imageCaption }) => {
       <Image
         src={src}
         alt={`Cover Image for ${title}`}
-        className="shadow-sm w-full hover:shadow-lg transition-shadow duration-200"
+        className="shadow-sm w-full hover:shadow-lg transition-shadow duration-200 aspect-video"
         width={1300}
         height={630}
       />
