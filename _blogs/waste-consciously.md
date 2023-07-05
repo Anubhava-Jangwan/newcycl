@@ -1,6 +1,6 @@
 ---
 title: "If you want to waste, waste consciously"
-excerpt: "Waste management requires a shift from a culture of thoughtless consumption to one of conscious disposal."
+excerpt: "Waste management requires a shift from a culture of thoughtless consumption to one of conscious disposal. So, let us embrace conscious waste disposal and be mindful of the waste we generate, for the Earth and future generations."
 date: "05 July 2023"
 coverImage: "/assets/blog/waste-consciously/cover.jpg"
 ogImage: "/assets/blog/waste-consciously/ogImage.jpg"
