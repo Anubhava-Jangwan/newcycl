@@ -145,7 +145,7 @@ export default function Index({ user }) {
                         </defs>
                       </svg>
                     </Link>
-                    <div class="absolute -bottom-3 font-normal px-2 py-1 right-0 rounded-full text-xs border-2 border-nc-purple-900">
+                    <div className="absolute -bottom-3 font-normal px-2 py-1 right-0 rounded-full text-xs border-2 border-nc-purple-900">
                       Coming Soon
                     </div>
                   </div>
