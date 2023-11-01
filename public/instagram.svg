@@ -9,9 +9,9 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear_260_10" x1="-4.80005" y1="-3.53996" x2="41.8596" y2="8.09675" gradientUnits="userSpaceOnUse">
-<stop stop-color="#A5FECB"/>
-<stop offset="0.495695" stop-color="#20BDFF"/>
-<stop offset="1" stop-color="#5433FF"/>
+<stop stopColor="#A5FECB"/>
+<stop offset="0.495695" stopColor="#20BDFF"/>
+<stop offset="1" stopColor="#5433FF"/>
 </linearGradient>
 </defs>
 </svg>

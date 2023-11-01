@@ -72,14 +72,14 @@ export default function Index({ user }) {
                           >
                             <stop
                               offset="0.152251"
-                              stop-color="#5433FF"
-                              stop-opacity="0.81"
+                              stopColor="#5433FF"
+                              stopOpacity="0.81"
                             />
-                            <stop offset="0.555615" stop-color="#20BDFF" />
+                            <stop offset="0.555615" stopColor="#20BDFF" />
                             <stop
                               offset="1"
-                              stop-color="#A5FECB"
-                              stop-opacity="0.8"
+                              stopColor="#A5FECB"
+                              stopOpacity="0.8"
                             />
                           </linearGradient>
                           <linearGradient
@@ -92,14 +92,14 @@ export default function Index({ user }) {
                           >
                             <stop
                               offset="0.152251"
-                              stop-color="#5433FF"
-                              stop-opacity="0.81"
+                              stopColor="#5433FF"
+                              stopOpacity="0.81"
                             />
-                            <stop offset="0.555615" stop-color="#20BDFF" />
+                            <stop offset="0.555615" stopColor="#20BDFF" />
                             <stop
                               offset="1"
-                              stop-color="#A5FECB"
-                              stop-opacity="0.8"
+                              stopColor="#A5FECB"
+                              stopOpacity="0.8"
                             />
                           </linearGradient>
                           <linearGradient
@@ -112,14 +112,14 @@ export default function Index({ user }) {
                           >
                             <stop
                               offset="0.152251"
-                              stop-color="#5433FF"
-                              stop-opacity="0.81"
+                              stopColor="#5433FF"
+                              stopOpacity="0.81"
                             />
-                            <stop offset="0.555615" stop-color="#20BDFF" />
+                            <stop offset="0.555615" stopColor="#20BDFF" />
                             <stop
                               offset="1"
-                              stop-color="#A5FECB"
-                              stop-opacity="0.8"
+                              stopColor="#A5FECB"
+                              stopOpacity="0.8"
                             />
                           </linearGradient>
                           <linearGradient
@@ -132,14 +132,14 @@ export default function Index({ user }) {
                           >
                             <stop
                               offset="0.152251"
-                              stop-color="#5433FF"
-                              stop-opacity="0.81"
+                              stopColor="#5433FF"
+                              stopOpacity="0.81"
                             />
-                            <stop offset="0.555615" stop-color="#20BDFF" />
+                            <stop offset="0.555615" stopColor="#20BDFF" />
                             <stop
                               offset="1"
-                              stop-color="#A5FECB"
-                              stop-opacity="0.8"
+                              stopColor="#A5FECB"
+                              stopOpacity="0.8"
                             />
                           </linearGradient>
                         </defs>
