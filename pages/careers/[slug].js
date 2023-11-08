@@ -31,7 +31,7 @@ export default function Post({ post, preview }) {
         ) : (
           <>
             <article className="relative lg:px-48 pt-24 mx-auto">
-              <Head>
+              {/* <Head>
                 <title>{title}</title>
                 <meta property="og:description" content={post.excerpt} />
                 <meta property="og:image" content={`https://www.newcycl.com${post.ogImage}`} />
@@ -43,7 +43,7 @@ export default function Post({ post, preview }) {
                 date={post.date}
                 authorName={post.authorName}
               />
-              <PostBody content={post.content} />
+              <PostBody content={post.content} /> */}
             </article>
           </>
         )}
