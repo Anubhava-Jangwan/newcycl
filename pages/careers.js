@@ -7,8 +7,6 @@ import Navbar from "../components/Navbar";
 import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 
-import HeroPost from "../components/post-hero";
-
 import { getAllPosts } from "../lib/capi";
 import JobCard from "../components/job-card";
 
@@ -59,25 +57,13 @@ const Careers = ({ user, allJobs }) => {
         <h1 className="px-12 text-5xl leading-none">
           Come join us, Let’s make every throw count.
         </h1>
-        <div className="px-12 mt-6 mb-4 font-light">
+        <div className="px-12 mt-3 mb-4 font-light italic">
           We are looking for 2 interns to join us on our journey.
         </div>
 
         {allJobs.length > 0 && allJobs.map((job) => <JobCard job={job} />)}
 
-        <div className="my-12">
-          <div className="px-12 text-2xl leading-none">
-            Perks of joining the team Newcycl
-          </div>
-        </div>
-
-        <div className="my-12">
-          <div className="px-12 text-2xl leading-none">
-            Where we are located?
-          </div>
-        </div>
-
-        <div className="mt-24 px-12 text-center">
+        <div className="mt-36 px-12 text-center">
           <div className="text-2xl font-bold leading-none">
             Not finding your area of Expertise?
           </div>
@@ -98,7 +84,7 @@ const Careers = ({ user, allJobs }) => {
 };
 
 export const getStaticProps = async () => {
-  const allJobs = getAllPosts(["title", "elgible"]);
+  const allJobs = getAllPosts(["title", "eligible", "slug", "excerpt"]);
 
   return {
     props: { allJobs },

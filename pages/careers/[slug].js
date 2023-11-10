@@ -17,6 +17,8 @@ import { getPostBySlug, getAllPosts } from "../../lib/capi";
 import markdownToHtml from "../../lib/markdownToHtml";
 
 export default function Post({ post, preview }) {
+  console.log({ post });
+
   const router = useRouter();
   const title = `${post.title} | Newcycl`;
   if (!router.isFallback && !post?.slug) {
@@ -31,10 +33,15 @@ export default function Post({ post, preview }) {
         ) : (
           <>
             <article className="relative lg:px-48 pt-24 mx-auto">
-              {/* <Head>
+              <Head>
                 <title>{title}</title>
                 <meta property="og:description" content={post.excerpt} />
-                <meta property="og:image" content={`https://www.newcycl.com${post.ogImage}`} />
+                {post.ogImage && (
+                  <meta
+                    property="og:image"
+                    content={`https://www.newcycl.com${post.ogImage}`}
+                  />
+                )}
               </Head>
               <PostHeader
                 title={post.title}
@@ -42,8 +49,17 @@ export default function Post({ post, preview }) {
                 imageCaption={post.imageCaption}
                 date={post.date}
                 authorName={post.authorName}
+                eligible={post.eligible}
               />
-              <PostBody content={post.content} /> */}
+              <PostBody content={post.content} />
+              <div className="w-full text-center mt-12">
+                <a
+                  href="javascript:;"
+                  className="cursor-pointer bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
+                >
+                  Apply here
+                </a>
+              </div>
             </article>
           </>
         )}
@@ -58,14 +74,10 @@ export default function Post({ post, preview }) {
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
     "title",
-    "date",
+    "eligible",
     "slug",
     "excerpt",
-    "authorName",
     "content",
-    "ogImage",
-    "coverImage",
-    "imageCaption",
   ]);
   const content = await markdownToHtml(post.content || "");
 

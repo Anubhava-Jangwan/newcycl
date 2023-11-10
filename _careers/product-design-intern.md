@@ -1,9 +1,9 @@
 ---
 title: "Product design intern"
-elgible: "New grads | Full time | Bengaluru"
+eligible: "New grads | Full time | Bengaluru"
 ---
 
-We are looking for an IoT Ninja intern, \*\*\*\*someone who finds passion and peace in her/his mini arduino projects.
+We are looking for an IoT Ninja intern, someone who finds passion and peace in her/his mini arduino projects.
 
 Someone who spends time on the internet while scratching new IoT ideas on hackaday or electronicsforu.
 

@@ -1,12 +1,17 @@
 import React from "react";
+import Link from "next/link";
 
 const JobCard = ({ job }) => {
   return (
     <div className="px-12 mt-6">
-      <a href="javascript:;" className="text-xl">
+      <Link
+        as={`/careers/${job.slug}`}
+        href="/careers/[slug]"
+        className="hover:underline text-xl"
+      >
         {job.title}
-      </a>
-      <div className="text-gray-500">{job.elgible}</div>
+      </Link>
+      <div className="text-gray-500">{job.eligible}</div>
     </div>
   );
 };
