@@ -35,13 +35,24 @@ export default function Post({ post, preview }) {
             <article className="relative lg:px-48 pt-24 mx-auto">
               <Head>
                 <title>{title}</title>
-                <meta property="og:description" content={post.excerpt} />
-                {post.ogImage && (
-                  <meta
-                    property="og:image"
-                    content={`https://www.newcycl.com${post.ogImage}`}
-                  />
-                )}
+                <meta property="og:description" content={post.description} />
+                <meta
+                  property="og:image"
+                  content="https://www.newcycl.com/newcycl-banner.png"
+                />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://newcycl.com/" />
+                <meta property="twitter:title" content={title} />
+                <meta
+                  property="twitter:description"
+                  content={post.description}
+                />
+                <meta
+                  property="twitter:image"
+                  content="https://www.newcycl.com/newcycl-banner.png"
+                />
+
+                <link rel="icon" href="/favicon.ico" sizes="any" />
               </Head>
               <PostHeader
                 title={post.title}
