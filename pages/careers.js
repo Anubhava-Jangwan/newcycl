@@ -57,13 +57,39 @@ const Careers = ({ user, allJobs }) => {
       <Navbar />
       <div className="relative lg:px-48 pt-24 mx-auto">
         <h1 className="px-12 text-5xl leading-none">
-          Let’s make every throw count.
+          Come join us, Let’s make every throw count.
         </h1>
         <div className="px-12 mt-6 mb-4 font-light">
           We are looking for 2 interns to join us on our journey.
         </div>
 
         {allJobs.length > 0 && allJobs.map((job) => <JobCard job={job} />)}
+
+        <div className="my-12">
+          <div className="px-12 text-2xl leading-none">
+            Perks of joining the team Newcycl
+          </div>
+        </div>
+
+        <div className="my-12">
+          <div className="px-12 text-2xl leading-none">
+            Where we are located?
+          </div>
+        </div>
+
+        <div className="mt-24 px-12 text-center">
+          <div className="text-2xl font-bold leading-none">
+            Not finding your area of Expertise?
+          </div>
+          <div className="leading-none my-6">Please write to us!</div>
+
+          <a
+            href="mailto:hello@newcycl.com"
+            className="cursor-pointer w-full bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
+          >
+            hello@newcycl.com
+          </a>
+        </div>
       </div>
       <Curve />
       <Footer />
