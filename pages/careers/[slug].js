@@ -17,8 +17,6 @@ import { getPostBySlug, getAllPosts } from "../../lib/capi";
 import markdownToHtml from "../../lib/markdownToHtml";
 
 export default function Post({ post, preview }) {
-  console.log({ post });
-
   const router = useRouter();
   const title = `${post.title} | Newcycl`;
   if (!router.isFallback && !post?.slug) {

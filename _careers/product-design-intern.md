@@ -3,11 +3,11 @@ title: "Product design intern"
 eligible: "New grads | Full time | Bengaluru"
 ---
 
-We are looking for an IoT Ninja intern, someone who finds passion and peace in her/his mini arduino projects.
+We are looking for a product design intern, someone who loves to design a product inside and out. Someone with a sight to see at things differently. Someone has a great sense of blending colors with features.
 
-Someone who spends time on the internet while scratching new IoT ideas on hackaday or electronicsforu.
+Someone whose true passion is breathing life into caricatures through illustrations or unique mascots. Someone who is well versed with tools like Blender and knows the art of product animation, turning concepts into captivating visuals.
 
-Someone who does reverse engineering in the mind when s/he sees a new electronic gadget. Someone who not only understands circuits but like to build them from scratch. Someone who not only gets fascinated with new sensors but also understands the core physics behind their functionality and tries to design a new application around it from a totally new perspective.
+Bonus points if the individual is well-versed in meme culture and actively engages in creating memes that highlight human wasteful behavior. This includes raising awareness among the Gen Z population, making them conscious of ongoing depletion, and motivating them to take charge and be the change for tomorrow.
 
 Someone who is comfortable working in an unconventional lab that bridges R&D, operations, and sales. Someone who wants to do more than just earning a monthly salary.
 
