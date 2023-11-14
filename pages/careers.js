@@ -54,8 +54,8 @@ const Careers = ({ user, allJobs }) => {
       </Head>
       <Navbar />
       <div className="relative lg:px-48 pt-24 mx-auto">
-        <h1 className="px-12 text-5xl leading-none">
-          Come join us, Let’s make every throw count.
+        <h1 className="px-12 text-3xl leading-none">
+          Come join us, let’s make every throw count.
         </h1>
         <div className="px-12 mt-3 mb-4 font-light italic">
           We are looking for 2 interns to join us on our journey.
