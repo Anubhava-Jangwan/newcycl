@@ -57,7 +57,7 @@ const Careers = ({ user, allJobs }) => {
       </Head>
       <Navbar />
       <div className="relative lg:px-48 pt-24 mx-auto">
-        <h1 className="px-12 text-3xl leading-none">
+        <h1 className="px-12 text-5xl leading-none">
           Come join us, let’s make every throw count.
         </h1>
         <div className="px-12 mt-3 mb-4 font-light italic">
@@ -76,11 +76,18 @@ const Careers = ({ user, allJobs }) => {
           <div className="text-2xl font-bold leading-none">
             Why <span className="text-nc-purple">Newcycl</span>?
           </div>
-          <div className="leading-none my-6">...!</div>
+          <div className="my-6 leading-6">
+            To give a purpose to your living, To unleash your immense potential,
+            To widen your horizon or deepen your vertical & To Play, learn, and
+            Create
+          </div>
         </div>
 
         <div className="mt-36 px-12 text-center">
           <div className="text-2xl font-bold leading-none">Where we are</div>
+          <div className="my-6 leading-6">
+            We are located at the heart of startup hub of Bengaluru
+          </div>
           <div className="mt-12 mb-6 px-6 max-w-md m-auto">
             <Image
               src={IndiaMap}
