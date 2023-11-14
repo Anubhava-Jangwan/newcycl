@@ -1,0 +1,94 @@
+"use client";
+
+import Head from "next/head";
+
+import Navbar from "../components/Navbar";
+
+import Curve from "../components/Curve";
+import Footer from "../components/Footer";
+
+import { getAllPosts } from "../lib/capi";
+import JobCard from "../components/job-card";
+
+const Careers = ({ user, allJobs }) => {
+  return (
+    <>
+      <Head>
+        <title>Careers | Newcycl</title>
+
+        <meta
+          name="description"
+          content="Newcycl is making household waste management easy, exciting, and rewarding."
+        ></meta>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newcycl.com/" />
+        <meta
+          property="og:title"
+          content="Newcycl | Transform the way you throw waste"
+        />
+        <meta
+          property="og:description"
+          content="Newcycl is making household waste management easy, exciting, and rewarding."
+        />
+        <meta
+          property="og:image"
+          content="https://www.newcycl.com/newcycl-banner.png"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://newcycl.com/" />
+        <meta
+          property="twitter:title"
+          content="Newcycl | Transform the way you throw waste"
+        />
+        <meta
+          property="twitter:description"
+          content="Newcycl is making household waste management easy, exciting, and rewarding."
+        />
+        <meta
+          property="twitter:image"
+          content="https://www.newcycl.com/newcycl-banner.png"
+        />
+
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </Head>
+      <Navbar />
+      <div className="relative lg:px-48 pt-24 mx-auto">
+        <h1 className="px-12 text-3xl leading-none">
+          Come join us, let’s make every throw count.
+        </h1>
+        <div className="px-12 mt-3 mb-4 font-light italic">
+          We are looking for 2 interns to join us on our journey.
+        </div>
+
+        {allJobs.length > 0 && allJobs.map((job) => <JobCard job={job} />)}
+
+        <div className="mt-36 px-12 text-center">
+          <div className="text-2xl font-bold leading-none">
+            Not finding your area of Expertise?
+          </div>
+          <div className="leading-none my-6">Please write to us!</div>
+
+          <a
+            href="mailto:hello@newcycl.com"
+            className="cursor-pointer w-full bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
+          >
+            hello@newcycl.com
+          </a>
+        </div>
+      </div>
+      <Curve />
+      <Footer />
+    </>
+  );
+};
+
+export const getStaticProps = async () => {
+  const allJobs = getAllPosts(["title", "eligible", "slug", "excerpt"]);
+
+  return {
+    props: { allJobs },
+  };
+};
+
+export default Careers;
