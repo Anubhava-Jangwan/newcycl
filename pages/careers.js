@@ -1,6 +1,7 @@
 "use client";
 
 import Head from "next/head";
+import Image from "next/image";
 
 import Navbar from "../components/Navbar";
 
@@ -9,6 +10,8 @@ import Footer from "../components/Footer";
 
 import { getAllPosts } from "../lib/capi";
 import JobCard from "../components/job-card";
+
+import IndiaMap from "../public/India_map.jpg";
 
 const Careers = ({ user, allJobs }) => {
   return (
@@ -61,7 +64,33 @@ const Careers = ({ user, allJobs }) => {
           We are looking for 2 interns to join us on our journey.
         </div>
 
+        <div className="mt-12 px-12 text-left">
+          <div className="text-2xl font-bold leading-none">
+            Current open roles
+          </div>
+        </div>
+
         {allJobs.length > 0 && allJobs.map((job) => <JobCard job={job} />)}
+
+        <div className="mt-36 px-12 text-center">
+          <div className="text-2xl font-bold leading-none">
+            Why <span className="text-nc-purple">Newcycl</span>?
+          </div>
+          <div className="leading-none my-6">...!</div>
+        </div>
+
+        <div className="mt-36 px-12 text-center">
+          <div className="text-2xl font-bold leading-none">Where we are</div>
+          <div className="mt-12 mb-6 px-6 max-w-md m-auto">
+            <Image
+              src={IndiaMap}
+              width={"100%"}
+              alt="Curve"
+              className="w-full"
+            />
+          </div>
+          <div className=""></div>
+        </div>
 
         <div className="mt-36 px-12 text-center">
           <div className="text-2xl font-bold leading-none">
