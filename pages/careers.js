@@ -72,19 +72,23 @@ const Careers = ({ user, allJobs }) => {
 
         {allJobs.length > 0 && allJobs.map((job) => <JobCard job={job} />)}
 
-        <div className="mt-36 px-12 text-center">
+        <div className="mt-24 px-12 text-center">
           <div className="text-2xl font-bold leading-none">
             Why <span className="text-nc-purple">Newcycl</span>?
           </div>
           <div className="my-6 leading-6">
-            To give a purpose to your living, To unleash your immense potential,
-            To widen your horizon or deepen your vertical & To Play, learn, and
-            Create
+            We provide a purpose to your living by aligning you with a
+            meaningful cause. We promise to offer a canvas to unleash your
+            untapped potential, allowing you to explore boundless possibilities.
+            Whether your aim is to broaden your perspectives or delve deeper
+            into a specialized field, Newcycl provides the platform. Here, you
+            can play, learn, and create in an environment that nurtures
+            innovation and growth.
           </div>
         </div>
 
-        <div className="mt-36 px-12 text-center">
-          <div className="text-2xl font-bold leading-none">Where we are</div>
+        <div className="mt-24 px-12 text-center">
+          <div className="text-2xl font-bold leading-none">Where we are?</div>
           <div className="my-6 leading-6">
             We are located at the heart of startup hub of Bengaluru
           </div>
