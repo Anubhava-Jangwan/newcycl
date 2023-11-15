@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 import { getAllPosts } from "../lib/capi";
 import JobCard from "../components/job-card";
 
-import IndiaMap from "../public/India_map.jpg";
+import NewcyclMap from "../public/newcycl-map.png";
 
 const Careers = ({ user, allJobs }) => {
   return (
@@ -36,7 +36,7 @@ const Careers = ({ user, allJobs }) => {
         />
         <meta
           property="og:image"
-          content="https://www.newcycl.com/newcycl-banner.png"
+          content="https://www.newcycl.com/newcycl-careers-banner.png"
         />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://newcycl.com/" />
@@ -50,7 +50,7 @@ const Careers = ({ user, allJobs }) => {
         />
         <meta
           property="twitter:image"
-          content="https://www.newcycl.com/newcycl-banner.png"
+          content="https://www.newcycl.com/newcycl-careers-banner.png"
         />
 
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -92,9 +92,9 @@ const Careers = ({ user, allJobs }) => {
           <div className="my-6 leading-6">
             We are located at the heart of startup hub of Bengaluru
           </div>
-          <div className="mt-12 mb-6 px-6 max-w-md m-auto">
+          <div className="mt-12 mb-6 px-6 max-w-lg m-auto">
             <Image
-              src={IndiaMap}
+              src={NewcyclMap}
               width={"100%"}
               alt="Curve"
               className="w-full"
@@ -105,7 +105,7 @@ const Careers = ({ user, allJobs }) => {
 
         <div className="mt-36 px-12 text-center">
           <div className="text-2xl font-bold leading-none">
-            Not finding your area of Expertise?
+            Still not finding your area of expertise?
           </div>
           <div className="leading-none my-6">Please write to us!</div>
 

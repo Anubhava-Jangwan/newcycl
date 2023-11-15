@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Disclosure } from "@headlessui/react";
 import { Menu as MenuButton, X } from "react-feather";
-import { PopupButton } from "@typeform/embed-react";
 
 import Banner from "./Banner";
 
@@ -13,6 +12,7 @@ const navigation = [
   { name: "Who we are", href: "/about" },
   { name: "Impact", href: "/impact" },
   { name: "Blog", href: "/blog" },
+  { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];
 

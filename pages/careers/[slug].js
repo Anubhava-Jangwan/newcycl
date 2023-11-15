@@ -36,7 +36,7 @@ export default function Post({ post, preview }) {
                 <meta property="og:description" content={post.description} />
                 <meta
                   property="og:image"
-                  content="https://www.newcycl.com/newcycl-banner.png"
+                  content="https://www.newcycl.com/newcycl-careers-banner.png"
                 />
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://newcycl.com/" />
@@ -47,7 +47,7 @@ export default function Post({ post, preview }) {
                 />
                 <meta
                   property="twitter:image"
-                  content="https://www.newcycl.com/newcycl-banner.png"
+                  content="https://www.newcycl.com/newcycl-careers-banner.png"
                 />
 
                 <link rel="icon" href="/favicon.ico" sizes="any" />
