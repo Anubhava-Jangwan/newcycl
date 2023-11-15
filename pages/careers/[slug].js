@@ -63,7 +63,8 @@ export default function Post({ post, preview }) {
               <PostBody content={post.content} />
               <div className="w-full text-center mt-12">
                 <a
-                  href="javascript:;"
+                  href="https://forms.gle/GhiMRTSh7yEwp6JZ9"
+                  target="_blank"
                   className="cursor-pointer bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
                 >
                   Apply here

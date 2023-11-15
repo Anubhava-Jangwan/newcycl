@@ -1,5 +1,5 @@
 ---
-title: "IoT Ninja"
+title: "IoT Ninja intern"
 eligible: "New grads | Full time | Bengaluru"
 ---
 

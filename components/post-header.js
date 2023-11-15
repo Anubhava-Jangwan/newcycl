@@ -38,16 +38,16 @@ const PostHeader = ({
                 <div className="text-gray-500 flex">
                   <div className="flex items-center justify-center">
                     <User size="18" color="#5433ffcf" />
-                    <div className="ml-1">New grads | </div>
+                    <div className="ml-1 text-sm">New grads | </div>
                   </div>
                   <div className="flex items-center justify-center">
                     <Clock size="18" color="#5433ffcf" />
-                    <div className="ml-1">Full time |</div>
+                    <div className="ml-1 text-sm">Full time |</div>
                   </div>
 
                   <div className="flex items-center justify-center">
                     <MapPin size="18" color="#5433ffcf" />
-                    <div className="ml-1">Bengaluru</div>
+                    <div className="ml-1 text-sm">Bengaluru</div>
                   </div>
                 </div>
               </div>
