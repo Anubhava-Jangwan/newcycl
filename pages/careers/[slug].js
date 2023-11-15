@@ -36,7 +36,7 @@ export default function Post({ post, preview }) {
                 <meta property="og:description" content={post.description} />
                 <meta
                   property="og:image"
-                  content="https://www.newcycl.com/newcycl-banner.png"
+                  content="https://www.newcycl.com/newcycl-careers-banner.png"
                 />
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://newcycl.com/" />
@@ -47,7 +47,7 @@ export default function Post({ post, preview }) {
                 />
                 <meta
                   property="twitter:image"
-                  content="https://www.newcycl.com/newcycl-banner.png"
+                  content="https://www.newcycl.com/newcycl-careers-banner.png"
                 />
 
                 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -63,7 +63,8 @@ export default function Post({ post, preview }) {
               <PostBody content={post.content} />
               <div className="w-full text-center mt-12">
                 <a
-                  href="javascript:;"
+                  href="https://forms.gle/GhiMRTSh7yEwp6JZ9"
+                  target="_blank"
                   className="cursor-pointer bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
                 >
                   Apply here

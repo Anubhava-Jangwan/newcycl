@@ -3,7 +3,7 @@ title: "Product design intern"
 eligible: "New grads | Full time | Bengaluru"
 ---
 
-We are looking for a product design intern, someone who loves to design a product inside and out. Someone with a sight to see at things differently. Someone has a great sense of blending colors with features.
+We are looking for a product design intern, someone who loves to design a product inside and out. Someone with a sight to see at things differently. Someone who has a great sense of blending colours with features.
 
 Someone whose true passion is breathing life into caricatures through illustrations or unique mascots. Someone who is well versed with tools like Blender and knows the art of product animation, turning concepts into captivating visuals.
 

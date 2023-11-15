@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Clock, MapPin, ArrowRight, User } from "react-feather";
+import { Clock, MapPin, User } from "react-feather";
 
 const JobCard = ({ job }) => {
   return (
@@ -11,9 +11,6 @@ const JobCard = ({ job }) => {
         className="hover:underline text-xl flex items-center"
       >
         <div>{job.title}</div>
-        <div className="ml-1">
-          <ArrowRight size="16" color="#5433ffcf" />
-        </div>
       </Link>
 
       <div className="text-gray-500 flex">
