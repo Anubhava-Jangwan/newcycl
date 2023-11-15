@@ -8,7 +8,7 @@ const JobCard = ({ job }) => {
       <Link
         as={`/careers/${job.slug}`}
         href="/careers/[slug]"
-        className="hover:underline text-xl flex items-center"
+        className="hover:underline text-xl flex items-center decoration-nc-purple-900 underline"
       >
         <div>{job.title}</div>
       </Link>
