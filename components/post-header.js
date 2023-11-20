@@ -3,6 +3,14 @@ import { Clock, MapPin, User } from "react-feather";
 import CoverImage from "./post-cover-image";
 import PostTitle from "./post-title";
 
+const ShowSkills = (skillsStr) => {
+  const skills = skillsStr.split(",");
+  return skills.map((skill) => (
+    <div className="mx-1 p-1 text-sm bg-nc-purple-400 rounded flex">
+      {skill}
+    </div>
+  ));
+};
 const PostHeader = ({
   title,
   coverImage,
@@ -10,6 +18,7 @@ const PostHeader = ({
   date,
   authorName,
   eligible,
+  skills,
 }) => {
   return (
     <>
@@ -26,7 +35,7 @@ const PostHeader = ({
         )}
         <div className="px-12 sm:px-0 flex items-center mb-6">
           {authorName && (
-            <div className="relative inline-flex items-center justify-center w-10 h-10 bg-gray-100 bg-red-600 rounded-full mr-3">
+            <div className="relative inline-flex items-center justify-center w-10 h-10 bg-red-600 rounded-full mr-3">
               <span className="font-medium text-white">
                 {authorName.charAt(0)}
               </span>
@@ -58,6 +67,11 @@ const PostHeader = ({
             )}
           </div>
         </div>
+        {skills && (
+          <div className="px-12 sm:px-0 mb-6 flex flex-wrap items-center">
+            <span className="font-bold">Skills:</span> {ShowSkills(skills)}
+          </div>
+        )}
       </div>
     </>
   );

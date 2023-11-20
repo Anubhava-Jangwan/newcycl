@@ -124,7 +124,13 @@ const Careers = ({ user, allJobs }) => {
 };
 
 export const getStaticProps = async () => {
-  const allJobs = getAllPosts(["title", "eligible", "slug", "excerpt"]);
+  const allJobs = getAllPosts([
+    "title",
+    "eligible",
+    "slug",
+    "excerpt",
+    "skills",
+  ]);
 
   return {
     props: { allJobs },
