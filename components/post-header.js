@@ -69,7 +69,7 @@ const PostHeader = ({
         </div>
         {skills && (
           <div className="px-12 sm:px-0 mb-6 flex flex-wrap items-center">
-            <span className="font-bold">Skills:</span> {ShowSkills(skills)}
+            <span className="font-bold mb-2">Skills:</span> {ShowSkills(skills)}
           </div>
         )}
       </div>
