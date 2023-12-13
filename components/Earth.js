@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Script from "next/script";
 
 import { BatteryCharging, Droplet, Edit, Monitor, Truck } from "react-feather";
 
 import { Homemade_Apple } from "next/font/google";
 const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: ["400"] });
+
+import EarthImage from "../public/earth_image.png";
 
 const CarIcon = () => {
   return (
@@ -162,16 +163,10 @@ const Earth = () => {
 
   return (
     <>
-      <Script src="https://cdn.jsdelivr.net/npm/@finsweet/3dglobes@1/OrbitControls.min.js"></Script>
-      <Script src="https://cdn.jsdelivr.net/npm/@finsweet/3dglobes@1/FsGlobe.min.js"></Script>
       <div className={`mx-auto text-center px-12`}>
         <div className="flex items-center justify-center mx-auto pb-16">
-          <div className="globe-container-main">
-            <div
-              fs-3dglobe-element="container"
-              fs-3dglobe-img="https://assets-global.website-files.com/6357008bb1dd16395e9e2e70/6364f9b51295f31d12be7bd1_Patch%20homepage%20globe%20skin%2001.jpg"
-              className="fs-3dglobe-container"
-            ></div>
+          <div className="globe-container-main sm:mb-24">
+            <Image className="" src={EarthImage}></Image>
           </div>
         </div>
         <h4
