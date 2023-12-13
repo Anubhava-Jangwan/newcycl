@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import facebook from "../public/facebook.svg";
-import instagram from "../public/instagram.svg";
-import twitter from "../public/twitter.svg";
+import facebook from "../public/facebook.png";
+import instagram from "../public/instagram.png";
+import x from "../public/x.png";
 
 const Footer = () => {
   return (
@@ -127,19 +127,6 @@ const Footer = () => {
             <li>
               <a
                 rel="noopener noreferrer"
-                href="https://twitter.com/NewcyclOfficial"
-              >
-                <Image
-                  src={twitter}
-                  alt="Follow us on Twitter"
-                  width="24"
-                  height="24"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                rel="noopener noreferrer"
                 href="https://www.instagram.com/newcycl/"
               >
                 <Image
@@ -148,6 +135,11 @@ const Footer = () => {
                   width="24"
                   height="24"
                 />
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" href="https://x.com/NewcyclOfficial">
+                <Image src={x} alt="Follow us on X" width="24" height="24" />
               </a>
             </li>
           </ul>
