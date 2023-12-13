@@ -14,8 +14,7 @@ const Banner = () => {
       >
         <div className="flex items-center mx-auto">
           <div className="text-md">
-            The estimated economic cost of global food waste per year is{" "}
-            <span className="italic">$1 trillion.</span>
+            In 2021, 931 million tonnes of food waste was generated, with 61% coming from households.
           </div>
         </div>
         <div className="flex items-center">
