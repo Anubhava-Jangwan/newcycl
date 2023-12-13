@@ -14,7 +14,8 @@ const Banner = () => {
       >
         <div className="flex items-center mx-auto">
           <div className="text-md">
-          The United Nations estimates that, globally, in 2021, 931 million tonnes of food waste was generated, with 61 per cent coming from households.
+            In 2021, 931 million tonnes of food waste was generated, with{" "}
+            <span className="font-bold">61% coming from households</span>.
           </div>
         </div>
         <div className="flex items-center">
