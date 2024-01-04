@@ -22,6 +22,8 @@ const ContactForm = () => {
       return;
     }
 
+    setDisabled(true);
+
     const formData = new FormData();
     formData.append("nc-name", name);
     formData.append("nc-email", email);
@@ -38,10 +40,10 @@ const ContactForm = () => {
         setEmail("");
         setMessage("");
         setShowNotification(true);
-        setDisabled(true);
       })
       .catch((error) => {
         alert("Form submission failed: " + error);
+        setDisabled(false);
       });
   };
 
@@ -86,7 +88,9 @@ const ContactForm = () => {
               className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-2 rounded w-auto relative"
               role="alert"
             >
-              <div className="">Yayy 🎉 Thanks we will get back to you soon.</div>
+              <div className="">
+                Yayy 🎉 Thanks we will get back to you soon.
+              </div>
             </div>
           </div>
         )}
