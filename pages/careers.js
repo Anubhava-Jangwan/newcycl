@@ -61,7 +61,7 @@ const Careers = ({ user, allJobs }) => {
           Come join us, let’s make every throw count.
         </h1>
         <div className="px-12 mt-3 mb-4 font-light italic">
-          We are looking for 2 interns to join us on our journey.
+          We are looking for passionate individuals to join us on our journey.
         </div>
 
         <div className="mt-12 px-12 text-left">
