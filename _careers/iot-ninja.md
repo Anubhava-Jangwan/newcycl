@@ -1,6 +1,6 @@
 ---
 title: "IoT Ninja intern"
-eligible: "New grads | Full time | Bengaluru"
+eligible: "New grads | Full time | Remote"
 skills: "PCB design,Circuit design,Microcontroller programming,C,C++,Python"
 ---
 
@@ -22,4 +22,4 @@ Someone willing to take risks. Someone willing to try and fail. Someone willing 
 - Implement Hardware and Firmware interactions
 - Embed temp, moisture, humidity sensors, and gas sensors. Calibrate their readings.
 - Assist in creating prototypes and conducting feasibility studies for IoT integration into the product.
-- Contribute to the design and implementation of Rawbin's IoT architecture and communication protocols.
+- Contribute to the design and implementation of product's IoT architecture and communication protocols.

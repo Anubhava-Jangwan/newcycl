@@ -1,6 +1,6 @@
 ---
 title: "Industrial designer"
-eligible: "New grads | Full time | Bengaluru"
+eligible: "New grads | Full time | Remote"
 skills: "Solidworks,Autodesk Inventor,Blender,Engineering drawing,Kinematics"
 experience: "0 - 2 years"
 ---

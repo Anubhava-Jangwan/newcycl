@@ -27,7 +27,7 @@ const JobCard = ({ job }) => {
 
         <div className="ml-1 flex items-center justify-center">
           <MapPin size="18" />
-          <div className="ml-1 text-sm">Bengaluru</div>
+          <div className="ml-1 text-sm">Remote</div>
         </div>
       </div>
     </div>
