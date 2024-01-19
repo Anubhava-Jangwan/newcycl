@@ -60,6 +60,7 @@ export default function Post({ post, preview }) {
                 authorName={post.authorName}
                 eligible={post.eligible}
                 skills={post.skills}
+                experience={post.experience}
               />
               <PostBody content={post.content} />
               <div className="w-full text-center mt-12">
@@ -90,6 +91,7 @@ export async function getStaticProps({ params }) {
     "excerpt",
     "content",
     "skills",
+    "experience"
   ]);
   const content = await markdownToHtml(post.content || "");
 

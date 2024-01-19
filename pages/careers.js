@@ -130,6 +130,7 @@ export const getStaticProps = async () => {
     "slug",
     "excerpt",
     "skills",
+    "experience"
   ]);
 
   return {
