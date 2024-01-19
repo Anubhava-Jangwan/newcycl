@@ -8,7 +8,7 @@ const JobCard = ({ job }) => {
       <Link
         as={`/careers/${job.slug}`}
         href="/careers/[slug]"
-        className="hover:underline text-xl flex items-center decoration-nc-purple-900 underline"
+        className="hover:underline text-xl flex items-center decoration-nc-purple-900 underline underline-offset-2"
       >
         <div>{job.title}</div>
       </Link>
@@ -16,16 +16,18 @@ const JobCard = ({ job }) => {
       <div className="text-gray-500 flex">
         <div className="flex items-center justify-center">
           <User size="18" />
-          <div className="ml-1 text-sm">New grads | </div>
+          <div className="ml-1 text-sm">
+            {job.experience ? `${job.experience} |` : "New grads |"}
+          </div>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="ml-1 flex items-center justify-center">
           <Clock size="18" />
           <div className="ml-1 text-sm">Full time |</div>
         </div>
 
-        <div className="flex items-center justify-center">
+        <div className="ml-1 flex items-center justify-center">
           <MapPin size="18" />
-          <div className="ml-1 text-sm">Bengaluru</div>
+          <div className="ml-1 text-sm">Remote</div>
         </div>
       </div>
     </div>

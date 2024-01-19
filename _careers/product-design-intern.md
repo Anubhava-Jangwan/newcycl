@@ -1,6 +1,6 @@
 ---
 title: "Product design intern"
-eligible: "New grads | Full time | Bengaluru"
+eligible: "New grads | Full time | Remote"
 skills: "Blender,Illustrator,Photoshop,Graphic design,UI/UX"
 ---
 

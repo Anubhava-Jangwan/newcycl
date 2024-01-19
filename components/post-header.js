@@ -17,6 +17,7 @@ const PostHeader = ({
   imageCaption,
   date,
   authorName,
+  experience,
   eligible,
   skills,
 }) => {
@@ -47,7 +48,9 @@ const PostHeader = ({
                 <div className="text-gray-500 flex">
                   <div className="flex items-center justify-center">
                     <User size="18" color="#5433ffcf" />
-                    <div className="ml-1 text-sm">New grads | </div>
+                    <div className="ml-1 text-sm">
+                      {experience ? `${experience} |` : "New grads |"}
+                    </div>
                   </div>
                   <div className="flex items-center justify-center">
                     <Clock size="18" color="#5433ffcf" />
@@ -56,7 +59,7 @@ const PostHeader = ({
 
                   <div className="flex items-center justify-center">
                     <MapPin size="18" color="#5433ffcf" />
-                    <div className="ml-1 text-sm">Bengaluru</div>
+                    <div className="ml-1 text-sm">Remote</div>
                   </div>
                 </div>
               </div>
