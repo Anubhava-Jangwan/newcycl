@@ -9,6 +9,7 @@ import Banner from "./Banner";
 
 const navigation = [
   { name: "Home", href: "/" },
+  { name: "Rawbin - Our Product", href: "https://rawbin.in" },
   { name: "Who we are", href: "/about" },
   { name: "Impact", href: "/impact" },
   { name: "Blog", href: "/blog" },
@@ -146,7 +147,7 @@ export default function Index({ user }) {
                       </svg>
                     </Link>
                     <div className="absolute -bottom-3 font-normal px-2 py-1 right-0 rounded-full text-xs border-2 border-nc-purple-900">
-                      Coming Soon
+                      Pilot Launch
                     </div>
                   </div>
                 </div>

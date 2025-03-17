@@ -14,7 +14,14 @@ const Banner = () => {
       >
         <div className="flex items-center mx-auto">
           <div className="text-md">
-            In 2021, 931 million tonnes of food waste was generated, with 61% coming from households.
+            Rawbin, our flagship product, is finally here! 🚀{" "}
+            <a
+              className="underline-offset-2 underline"
+              href="https://rawbin.in"
+            >
+              Click here
+            </a>{" "}
+            and be a part of the movement! ♻️
           </div>
         </div>
         <div className="flex items-center">
