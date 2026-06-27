@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Banner from "./Banner";
 
@@ -26,7 +26,7 @@ function isExternal(href) {
   return href.startsWith("http");
 }
 
-function BrandMark() {
+function BrandMark({ isScrolled }) {
   return (
     <Link
       href="/"
@@ -34,91 +34,53 @@ function BrandMark() {
       className="flex items-center justify-center gap-3"
     >
       <span className="relative flex flex-shrink-0 items-center">
-          <svg
-            width="68"
-            height="44"
-            viewBox="0 0 68 44"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-auto w-12 sm:w-16"
-          >
-            <path
-              d="M36.3402 36.0837L47.1891 25.644L51.6802 34.4835C52.857 36.7992 51.1038 39.8367 48.617 39.9581C45.0063 40.1353 40.4396 39.8287 36.2343 37.5626L35.7261 36.9637L36.3402 36.0837Z"
-              fill="url(#paint0_linear_2_2)"
-            />
-            <path
-              d="M31.9338 36.0837L21.085 25.644L16.5939 34.4835C15.417 36.7992 17.1702 39.8367 19.657 39.9581C23.2678 40.1353 27.8345 39.8287 32.0397 37.5626L32.548 36.9637L31.9338 36.0837Z"
-              fill="url(#paint1_linear_2_2)"
-            />
-            <path
-              d="M32.3429 37.6986C32.4825 37.6227 32.6026 37.5122 32.6929 37.3765C32.7831 37.2409 32.8409 37.0843 32.8612 36.9199C32.8816 36.7556 32.864 36.5885 32.8098 36.433C32.7556 36.2775 32.6665 36.1381 32.5501 36.0268L1.02007 5.65034C-1.46381 3.25749 0.982261 -1.00178 4.14191 0.213786L29.0276 8.8791C31.324 9.76286 33.5342 12.0345 33.5342 14.8644V36.5931C33.5359 36.7585 33.4756 36.9179 33.3664 37.0366C33.1351 37.2902 32.544 37.5886 32.352 37.6938L32.3429 37.6986Z"
-              fill="url(#paint2_linear_2_2)"
-            />
-            <path
-              d="M35.8215 37.6986C35.6819 37.6227 35.5618 37.5122 35.4716 37.3765C35.3813 37.2409 35.3235 37.0843 35.3032 36.9199C35.2828 36.7556 35.3005 36.5885 35.3547 36.433C35.4089 36.2775 35.498 36.1381 35.6144 36.0268L67.1444 5.65034C69.6282 3.25749 67.1822 -1.00178 64.0225 0.213786L39.1368 8.8791C36.8404 9.76286 34.6302 12.0345 34.6302 14.8644V36.5931C34.6285 36.7585 34.6888 36.9179 34.798 37.0366C35.0293 37.2902 35.6204 37.5886 35.8124 37.6938L35.8215 37.6986Z"
-              fill="url(#paint3_linear_2_2)"
-            />
-            <path
-              d="M78.272 11.224L84.8 27.448L86.016 31.032L88.256 13.144L85.6 12.792L85.76 11.224H93.248L93.12 12.792L91.04 13.176L87.808 35H83.264L76.544 18.456L75.328 14.648L73.28 33.08L76.16 33.528L76.032 35H67.968L68.064 33.528L70.336 33.112L73.184 13.176L70.656 12.792L70.88 11.224H78.272ZM106.847 31.8C106.292 32.6747 105.385 33.496 104.127 34.264C102.889 35.032 101.449 35.416 99.8065 35.416C98.2705 35.416 97.0012 35.0853 95.9985 34.424C95.0172 33.7627 94.3025 32.8987 93.8545 31.832C93.4065 30.7653 93.1825 29.6027 93.1825 28.344C93.1825 26.2107 93.6092 24.2693 94.4625 22.52C95.3372 20.7493 96.5212 19.352 98.0145 18.328C99.5078 17.304 101.172 16.792 103.007 16.792C104.649 16.792 105.865 17.176 106.655 17.944C107.465 18.6907 107.871 19.672 107.871 20.888C107.871 22.424 107.316 23.704 106.207 24.728C105.097 25.752 103.764 26.52 102.207 27.032C100.649 27.5227 99.1772 27.7893 97.7905 27.832C97.7478 29.368 97.9932 30.6053 98.5265 31.544C99.0812 32.4827 99.9132 32.952 101.023 32.952C102.857 32.952 104.521 32.0987 106.015 30.392L106.847 31.8ZM102.047 18.776C100.788 18.776 99.7958 19.5333 99.0705 21.048C98.3452 22.5627 97.9185 24.248 97.7905 26.104C98.6225 26.0613 99.4972 25.8373 100.415 25.432C101.353 25.0267 102.132 24.4613 102.751 23.736C103.391 22.9893 103.711 22.136 103.711 21.176C103.711 20.408 103.561 19.8213 103.263 19.416C102.985 18.9893 102.58 18.776 102.047 18.776ZM110.989 20.248C110.904 19.9067 110.808 19.672 110.701 19.544C110.595 19.3947 110.456 19.32 110.285 19.32C110.072 19.32 109.88 19.3733 109.709 19.48C109.56 19.5653 109.453 19.6293 109.389 19.672L108.941 18.584C109.176 18.264 109.645 17.8907 110.349 17.464C111.053 17.0373 111.811 16.824 112.621 16.824C113.475 16.824 114.093 17.0053 114.477 17.368C114.883 17.7093 115.149 18.2427 115.277 18.968L116.525 28.792L116.877 31.992L118.189 28.12L122.061 16.952H125.901L127.373 29.176L127.629 31.896L128.813 30.104C129.688 28.7813 130.403 27.416 130.957 26.008C131.512 24.5787 131.8 23.192 131.821 21.848C131.821 21.464 131.736 20.9307 131.565 20.248C131.395 19.608 131.309 19.1387 131.309 18.84C131.309 18.2427 131.501 17.7627 131.885 17.4C132.269 17.016 132.781 16.824 133.421 16.824C134.253 16.824 134.861 17.1333 135.245 17.752C135.629 18.3493 135.821 19.1387 135.821 20.12C135.843 21.5067 135.181 23.3947 133.837 25.784C132.515 28.152 131.139 30.2213 129.709 31.992L127.373 35.128L124.301 35.288L123.469 29.624L122.925 24.344L122.733 22.072L122.093 24.376L120.013 29.176L117.549 35.096L114.029 35.32L112.877 29.624L110.989 20.248ZM148.64 21.592C148.043 20.8453 147.509 20.248 147.04 19.8C146.592 19.3307 146.197 19.096 145.856 19.096C145.067 19.096 144.331 19.4587 143.648 20.184C142.987 20.9093 142.443 21.9227 142.016 23.224C141.611 24.5253 141.408 25.9867 141.408 27.608C141.408 29.3787 141.664 30.68 142.176 31.512C142.688 32.3227 143.467 32.728 144.512 32.728C145.408 32.728 146.165 32.5573 146.784 32.216C147.424 31.8747 148.043 31.3947 148.64 30.776L149.472 32.184C148.939 32.9733 148.096 33.6987 146.944 34.36C145.813 35 144.469 35.32 142.912 35.32C141.077 35.32 139.637 34.68 138.592 33.4C137.547 32.0987 137.024 30.264 137.024 27.896C137.024 26.104 137.397 24.3653 138.144 22.68C138.891 20.9733 140 19.576 141.472 18.488C142.944 17.3787 144.715 16.824 146.784 16.824C147.445 16.824 148.128 16.888 148.832 17.016C149.557 17.1227 150.144 17.2827 150.592 17.496L149.504 21.656L148.64 21.592ZM152.928 20.28C152.843 19.9173 152.747 19.672 152.64 19.544C152.534 19.3947 152.395 19.32 152.224 19.32C151.947 19.32 151.627 19.4693 151.264 19.768L150.816 18.68C151.072 18.3387 151.552 17.9547 152.256 17.528C152.982 17.08 153.75 16.856 154.56 16.856C155.392 16.856 156.011 17.0373 156.416 17.4C156.822 17.7413 157.078 18.2747 157.184 19L159.04 31.16L159.488 34.68L160.992 31.64C161.91 29.72 162.603 28.0347 163.072 26.584C163.563 25.1333 163.808 23.7467 163.808 22.424C163.808 22.0187 163.776 21.6773 163.712 21.4C163.648 21.1227 163.552 20.8027 163.424 20.44C163.19 19.8427 163.072 19.2773 163.072 18.744C163.072 18.168 163.243 17.7093 163.584 17.368C163.947 17.0267 164.459 16.856 165.12 16.856C165.888 16.856 166.486 17.1547 166.912 17.752C167.36 18.3493 167.584 19.0747 167.584 19.928C167.584 21.4427 167.339 22.8827 166.848 24.248C166.358 25.592 165.611 27.2667 164.608 29.272C163.904 30.808 162.987 32.5147 161.856 34.392C160.747 36.248 159.766 37.816 158.912 39.096C158.038 40.4827 157.099 41.4853 156.096 42.104C155.115 42.7227 153.942 43.032 152.576 43.032C152.022 43.032 151.414 42.9573 150.752 42.808C150.112 42.68 149.675 42.5413 149.44 42.392L150.432 39.608C150.667 39.8213 151.062 40.0133 151.616 40.184C152.171 40.3547 152.715 40.44 153.248 40.44C154.208 40.44 155.126 40.0987 156 39.416C156.896 38.7547 157.782 37.6667 158.656 36.152H156.352L152.928 20.28ZM180.39 21.592C179.793 20.8453 179.259 20.248 178.79 19.8C178.342 19.3307 177.947 19.096 177.606 19.096C176.817 19.096 176.081 19.4587 175.398 20.184C174.737 20.9093 174.193 21.9227 173.766 23.224C173.361 24.5253 173.158 25.9867 173.158 27.608C173.158 29.3787 173.414 30.68 173.926 31.512C174.438 32.3227 175.217 32.728 176.262 32.728C177.158 32.728 177.915 32.5573 178.534 32.216C179.174 31.8747 179.793 31.3947 180.39 30.776L181.222 32.184C180.689 32.9733 179.846 33.6987 178.694 34.36C177.563 35 176.219 35.32 174.662 35.32C172.827 35.32 171.387 34.68 170.342 33.4C169.297 32.0987 168.774 30.264 168.774 27.896C168.774 26.104 169.147 24.3653 169.894 22.68C170.641 20.9733 171.75 19.576 173.222 18.488C174.694 17.3787 176.465 16.824 178.534 16.824C179.195 16.824 179.878 16.888 180.582 17.016C181.307 17.1227 181.894 17.2827 182.342 17.496L181.254 21.656L180.39 21.592ZM188.422 31.8C188.401 31.8853 188.39 32.0027 188.39 32.152C188.39 32.6853 188.582 32.952 188.966 32.952C189.158 32.952 189.361 32.8987 189.574 32.792C189.809 32.6853 190.118 32.4613 190.502 32.12L190.918 33.112C190.577 33.6027 190.076 34.0933 189.414 34.584C188.753 35.0747 187.9 35.32 186.854 35.32C186.044 35.32 185.382 35.16 184.87 34.84C184.358 34.4987 184.092 33.976 184.07 33.272C184.07 33.1867 184.113 32.8027 184.198 32.12L186.982 11.672L184.966 11.032L185.254 9.848L190.694 9.208L191.43 9.624L188.422 31.8Z"
-              fill="#273266"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_2_2"
-                x1="36.0517"
-                y1="40.0002"
-                x2="54.1719"
-                y2="36.0653"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
-                <stop offset="0.555615" stopColor="#20BDFF" />
-                <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_2_2"
-                x1="32.2224"
-                y1="40.0002"
-                x2="14.1021"
-                y2="36.0653"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
-                <stop offset="0.555615" stopColor="#20BDFF" />
-                <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_2_2"
-                x1="40.9863"
-                y1="42.5753"
-                x2="34.3213"
-                y2="-6.83518"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
-                <stop offset="0.555615" stopColor="#20BDFF" />
-                <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_2_2"
-                x1="27.1781"
-                y1="42.5753"
-                x2="33.8431"
-                y2="-6.83518"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
-                <stop offset="0.555615" stopColor="#20BDFF" />
-                <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
-              </linearGradient>
-            </defs>
-          </svg>
+        <svg
+          width="68"
+          height="44"
+          viewBox="0 0 68 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-auto w-12 sm:w-16"
+        >
+          <path d="M36.3402 36.0837L47.1891 25.644L51.6802 34.4835C52.857 36.7992 51.1038 39.8367 48.617 39.9581C45.0063 40.1353 40.4396 39.8287 36.2343 37.5626L35.7261 36.9637L36.3402 36.0837Z" fill="url(#paint0_linear_2_2)" />
+          <path d="M31.9338 36.0837L21.085 25.644L16.5939 34.4835C15.417 36.7992 17.1702 39.8367 19.657 39.9581C23.2678 40.1353 27.8345 39.8287 32.0397 37.5626L32.548 36.9637L31.9338 36.0837Z" fill="url(#paint1_linear_2_2)" />
+          <path d="M32.3429 37.6986C32.4825 37.6227 32.6026 37.5122 32.6929 37.3765C32.7831 37.2409 32.8409 37.0843 32.8612 36.9199C32.8816 36.7556 32.864 36.5885 32.8098 36.433C32.7556 36.2775 32.6665 36.1381 32.5501 36.0268L1.02007 5.65034C-1.46381 3.25749 0.982261 -1.00178 4.14191 0.213786L29.0276 8.8791C31.324 9.76286 33.5342 12.0345 33.5342 14.8644V36.5931C33.5359 36.7585 33.4756 36.9179 33.3664 37.0366C33.1351 37.2902 32.544 37.5886 32.352 37.6938L32.3429 37.6986Z" fill="url(#paint2_linear_2_2)" />
+          <path d="M35.8215 37.6986C35.6819 37.6227 35.5618 37.5122 35.4716 37.3765C35.3813 37.2409 35.3235 37.0843 35.3032 36.9199C35.2828 36.7556 35.3005 36.5885 35.3547 36.433C35.4089 36.2775 35.498 36.1381 35.6144 36.0268L67.1444 5.65034C69.6282 3.25749 67.1822 -1.00178 64.0225 0.213786L39.1368 8.8791C36.8404 9.76286 34.6302 12.0345 34.6302 14.8644V36.5931C34.6285 36.7585 34.6888 36.9179 34.798 37.0366C35.0293 37.2902 35.6204 37.5886 35.8124 37.6938L35.8215 37.6986Z" fill="url(#paint3_linear_2_2)" />
+          <defs>
+            <linearGradient id="paint0_linear_2_2" x1="36.0517" y1="40.0002" x2="54.1719" y2="36.0653" gradientUnits="userSpaceOnUse">
+              <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
+              <stop offset="0.555615" stopColor="#20BDFF" />
+              <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
+            </linearGradient>
+            <linearGradient id="paint1_linear_2_2" x1="32.2224" y1="40.0002" x2="14.1021" y2="36.0653" gradientUnits="userSpaceOnUse">
+              <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
+              <stop offset="0.555615" stopColor="#20BDFF" />
+              <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
+            </linearGradient>
+            <linearGradient id="paint2_linear_2_2" x1="40.9863" y1="42.5753" x2="34.3213" y2="-6.83518" gradientUnits="userSpaceOnUse">
+              <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
+              <stop offset="0.555615" stopColor="#20BDFF" />
+              <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
+            </linearGradient>
+            <linearGradient id="paint3_linear_2_2" x1="27.1781" y1="42.5753" x2="33.8431" y2="-6.83518" gradientUnits="userSpaceOnUse">
+              <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
+              <stop offset="0.555615" stopColor="#20BDFF" />
+              <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
+            </linearGradient>
+          </defs>
+        </svg>
       </span>
       <span className="flex flex-col leading-none">
-        <span className="text-3xl font-black tracking-normal text-[#1f1f1f] md:text-4xl">
+        <span className={classNames(
+          "text-3xl font-black tracking-normal md:text-4xl transition-colors duration-300",
+          isScrolled ? "text-[#1f1f1f]" : "text-white"
+        )}>
           NewCycl
         </span>
-        <span className="mt-0.5 text-[10px] font-bold uppercase tracking-normal text-[#3a3a3a] md:text-xs">
+        <span className={classNames(
+          "mt-0.5 text-[10px] font-bold uppercase tracking-normal md:text-xs transition-colors duration-300",
+          isScrolled ? "text-[#3a3a3a]" : "text-white/60"
+        )}>
           Clean Technologies
         </span>
       </span>
@@ -126,32 +88,26 @@ function BrandMark() {
   );
 }
 
-function NavLink({ item, pathname, mobile = false }) {
+function NavLink({ item, pathname, mobile = false, isScrolled = false }) {
   const active = pathname === item.href;
   const className = classNames(
-    active ? "text-[#111111]" : "text-[#2f2f2f]",
+    active
+      ? isScrolled ? "text-[#111111] font-semibold" : "text-white font-semibold"
+      : isScrolled ? "text-[#2f2f2f]" : "text-white/80",
     item.featured && !mobile
       ? "rawbin-nav-highlight relative isolate rounded-full px-5 py-3"
       : "",
     mobile
       ? "block rounded-xl px-4 py-3 text-lg font-semibold hover:bg-white/10"
-      : "underline-animation relative whitespace-nowrap text-lg font-normal transition hover:text-white"
+      : "underline-animation relative whitespace-nowrap text-lg font-normal transition-colors duration-300 hover:text-opacity-100"
   );
 
   if (isExternal(item.href)) {
-    return (
-      <a href={item.href} className={className}>
-        {item.name}
-      </a>
-    );
+    return <a href={item.href} className={className}>{item.name}</a>;
   }
 
   return (
-    <Link
-      href={item.href}
-      className={className}
-      aria-current={active ? "page" : undefined}
-    >
+    <Link href={item.href} className={className} aria-current={active ? "page" : undefined}>
       {item.name}
     </Link>
   );
@@ -160,28 +116,43 @@ function NavLink({ item, pathname, mobile = false }) {
 export default function Navbar() {
   const { pathname } = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Triggers once user scrolls past the hero video
+      setIsScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <Banner />
       <header className="sticky top-0 z-50 px-4 py-3 font-source-sans">
-        <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-10 rounded-[2rem] bg-black/55 px-6 py-2.5 text-white shadow-2xl shadow-black/20 backdrop-blur-2xl transition-all md:rounded-full md:px-10">
+        <div className={classNames(
+          "mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-10 rounded-[2rem] px-6 py-2.5 shadow-2xl shadow-black/20 backdrop-blur-2xl transition-all duration-300 md:rounded-full md:px-10",
+          // Dark glass over video → light glass over white content
+          isScrolled ? "bg-white/80" : "bg-black/55"
+        )}>
           <menu className="hidden list-none items-center gap-12 lg:flex">
             {leftNavigation.map((item) => (
               <li key={item.name}>
-                <NavLink item={item} pathname={pathname} />
+                <NavLink item={item} pathname={pathname} isScrolled={isScrolled} />
               </li>
             ))}
           </menu>
 
           <div className="col-start-2 justify-self-center">
-            <BrandMark />
+            <BrandMark isScrolled={isScrolled} />
           </div>
 
           <menu className="hidden list-none items-center justify-end gap-12 lg:flex">
             {rightNavigation.map((item) => (
               <li key={item.name}>
-                <NavLink item={item} pathname={pathname} />
+                <NavLink item={item} pathname={pathname} isScrolled={isScrolled} />
               </li>
             ))}
           </menu>
@@ -194,42 +165,37 @@ export default function Navbar() {
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((current) => !current)}
             >
-              <span
-                className={classNames(
-                  menuOpen ? "translate-y-0.5 rotate-45" : "",
-                  "block h-0.5 w-full origin-top-left rounded-full bg-white transition"
-                )}
-              />
-              <span
-                className={classNames(
-                  menuOpen ? "opacity-0" : "",
-                  "block h-0.5 w-full rounded-full bg-white transition"
-                )}
-              />
-              <span
-                className={classNames(
-                  menuOpen ? "-translate-y-0.5 -rotate-45" : "",
-                  "block h-0.5 w-full origin-bottom-left rounded-full bg-white transition"
-                )}
-              />
+              <span className={classNames(
+                menuOpen ? "translate-y-0.5 rotate-45" : "",
+                "block h-0.5 w-full origin-top-left rounded-full transition",
+                isScrolled ? "bg-black" : "bg-white"
+              )} />
+              <span className={classNames(
+                menuOpen ? "opacity-0" : "",
+                "block h-0.5 w-full rounded-full transition",
+                isScrolled ? "bg-black" : "bg-white"
+              )} />
+              <span className={classNames(
+                menuOpen ? "-translate-y-0.5 -rotate-45" : "",
+                "block h-0.5 w-full origin-bottom-left rounded-full transition",
+                isScrolled ? "bg-black" : "bg-white"
+              )} />
             </button>
           </div>
         </div>
 
-        {menuOpen ? (
-          <div className="mt-3 rounded-[2rem] bg-black/65 px-4 pb-5 font-source-sans text-white shadow-2xl shadow-black/20 backdrop-blur-2xl lg:hidden">
+        {menuOpen && (
+          <div className={classNames(
+            "mt-3 rounded-[2rem] px-4 pb-5 font-source-sans shadow-2xl shadow-black/20 backdrop-blur-2xl lg:hidden",
+            isScrolled ? "bg-white/90 text-gray-900" : "bg-black/65 text-white"
+          )}>
             <div className="grid gap-1 pt-3">
               {mobileNavigation.map((item) => (
-                <NavLink
-                  key={item.name}
-                  item={item}
-                  pathname={pathname}
-                  mobile
-                />
+                <NavLink key={item.name} item={item} pathname={pathname} mobile isScrolled={isScrolled} />
               ))}
             </div>
           </div>
-        ) : null}
+        )}
       </header>
     </>
   );

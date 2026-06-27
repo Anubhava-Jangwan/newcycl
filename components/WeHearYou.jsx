@@ -11,8 +11,7 @@ const WeHearYou = () => {
         We hear you
       </h2>
       <div className="my-4 text-slate-50">
-        What if we told you that we are working on a solution that eliminates
-        the need to throw your stinky garbage altogether?
+     
       </div>
       <div className="absolute -top-24 sm:-left-96 -left-112 -rotate-180">
         <Wave />
