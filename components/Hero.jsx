@@ -14,7 +14,7 @@ const Hero = () => {
       {/* 🎬 Replace src with your actual video path */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover object-top"
-        style={{ minHeight: "800px", objectFit: "cover" }}
+        style={{ maxHeight: "600px", objectFit: "cover" }}
         src="\dist\assets\hero_page_foodcrushingvideo.mp4"
         autoPlay
         loop

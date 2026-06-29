@@ -3,34 +3,30 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const TODAY = new Date().toLocaleDateString("en-US", {
-  month: "short",
-  day: "2-digit",
-  year: "numeric",
-}).toUpperCase();
+
 
 const metrics = [
   {
     value: 7,
     label: "Households empowered",
     unit: null,
-    icon: "🏠",
+    icon: null,
   },
   {
     value: 1341,
-    label: "Tonnes of food waste diverted from landfill",
+    label: "Food waste diverted from landfill",
     unit: "tonnes",
     icon: null,
   },
   {
     value: 5325,
-    label: "Tonnes of compost produced",
-    unit: "tonnes",
+    label: "Compost produced",
+    unit: "Tonnes",
     icon: null,
   },
   {
     value: 2355,
-    label: "Tonnes of CO₂eq. avoided",
+    label: "CO₂eq. avoided",
     unit: "tonnes CO₂e",
     icon: null,
   },
@@ -65,9 +61,6 @@ function MetricCard({ metric, started, isLast }) {
       className={`flex flex-col items-center justify-center text-center px-6 py-10 flex-1 min-w-0
         ${!isLast ? "border-b md:border-b-0 md:border-r border-gray-100" : ""}`}
     >
-      <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-4 whitespace-nowrap">
-        Data for {TODAY}
-      </p>
 
       <p className="text-5xl xl:text-6xl font-light tracking-tight text-[#1a1f4e] leading-none">
         {count.toLocaleString()}
@@ -106,7 +99,7 @@ export default function ImpactMetrics() {
 
   return (
     // Negative margin pulls the card up to overlap the section above — adjust -mt value to taste
-    <div className="relative z-10 px-4 sm:px-6 -mt-20 mb-20">
+    <div className="relative z-10 px-0 sm:px-2 -mt-2 mb-20">
       <Link
         href="/impact"
         ref={ref}
@@ -133,8 +126,7 @@ export default function ImpactMetrics() {
           View Newcycl's full impact report →
         </p>
 
-        {/* Subtle gradient footer strip */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#5433FF] via-[#20BDFF] to-[#A5FECB]" />
+       
       </Link>
     </div>
   );
