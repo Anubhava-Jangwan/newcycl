@@ -13,6 +13,7 @@ const Earth = dynamic(() => import("../components/Earth"), { ssr: false });
 import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+import Impact from "../components/Impact";
 
 const Cookie = dynamic(() => import("../components/Cookie"), { ssr: false });
 
@@ -61,6 +62,7 @@ const Index = ({ user }) => {
       <Navbar />
       <section className="">
         <Hero />
+        <Impact />
         <Recognisedby />
         <AboutTheProduct />
         <WasteStories />

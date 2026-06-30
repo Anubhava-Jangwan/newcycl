@@ -20,7 +20,7 @@
 
 body {
   color: #273266;
-  background: #fff;
+  background: #e7e1e1;
   font-family: "Source Sans 3", "Open Sans", sans-serif;
 }
 
@@ -73,7 +73,7 @@ h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+ 
 }
 
 .underline-animation::after {
