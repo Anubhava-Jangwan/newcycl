@@ -5,16 +5,19 @@ import dynamic from "next/dynamic";
 
 import Navbar from "../components/Navbar";
 import Recognisedby from "../components/RecognisedBy";
-import WasteStories from "../components/WasteStories";
-import WeHearYou from "../components/WeHearYou";
-import AboutTheProduct from "../components/AboutTheProductV2";
-import Empowering from "../components/Empowering";
-const Earth = dynamic(() => import("../components/Earth"), { ssr: false });
-import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Impact from "../components/Impact";
+import LazySection from "../components/LazySection";
+import MissionVisionCarousel from "../components/mission-vission";
 
+
+const AboutTheProduct = dynamic(() => import("../components/AboutTheProductV2"));
+const WasteStories = dynamic(() => import("../components/WasteStories"));
+const WeHearYou = dynamic(() => import("../components/WeHearYou"));
+const Empowering = dynamic(() => import("../components/Empowering"));
+const Earth = dynamic(() => import("../components/Earth"));
+const Curve = dynamic(() => import("../components/Curve"));
 const Cookie = dynamic(() => import("../components/Cookie"), { ssr: false });
 
 const Index = ({ user }) => {
@@ -64,13 +67,26 @@ const Index = ({ user }) => {
         <Hero />
         <Impact />
         <Recognisedby />
-        <AboutTheProduct />
-        <WasteStories />
-        <WeHearYou />
-        <Empowering />
-        <Earth />
+        <MissionVisionCarousel />
+        <LazySection minHeight={360}>
+          <AboutTheProduct />
+        </LazySection>
+        <LazySection minHeight={520}>
+          <WasteStories />
+        </LazySection>
+        <LazySection minHeight={360}>
+          <WeHearYou />
+        </LazySection>
+        <LazySection minHeight={260}>
+          <Empowering />
+        </LazySection>
+        <LazySection minHeight={900}>
+          <Earth />
+        </LazySection>
       </section>
-      <Curve />
+      <LazySection minHeight={360}>
+        <Curve />
+      </LazySection>
       <Cookie />
       <Footer />
     </>

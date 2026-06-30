@@ -1,28 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const NAVBAR_HEIGHT = "116px"; // Banner (~44px) + Header (~72px)
+const NAVBAR_HEIGHT = "116px";
 
 const Hero = () => {
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+    if (prefersReducedMotion || !isDesktop) {
+      return;
+    }
+
+    const idleCallback =
+      window.requestIdleCallback ||
+      ((callback) => window.setTimeout(callback, 1200));
+    const cancelIdleCallback =
+      window.cancelIdleCallback || ((id) => window.clearTimeout(id));
+    const idleId = idleCallback(() => setShouldLoadVideo(true));
+
+    return () => cancelIdleCallback(idleId);
+  }, []);
+
   return (
     <div
-      className={{ transform: "scale(0.5)", transformOrigin: "top center" }}
+      className="relative overflow-hidden bg-cover bg-center"
       style={{
         marginTop: `-${NAVBAR_HEIGHT}`,
         height: `calc(400px + ${NAVBAR_HEIGHT})`,
+        backgroundImage: "url('/newcycl-banner.png')",
       }}
     >
-      {/* 🎬 Replace src with your actual video path */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover object-top"
-        style={{ maxHeight: "600px", objectFit: "cover" }}
-        src="\dist\assets\hero_page_foodcrushingvideo.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      {shouldLoadVideo && (
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover object-top"
+          style={{ maxHeight: "600px", objectFit: "cover" }}
+          src="/hero_page_foodcrushingvideo.mp4"
+          poster="/newcycl-banner.png"
+          preload="metadata"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      )}
 
-      {/* Dark at top → transparent at bottom */}
       <div
         className="absolute top-0 left-0 w-full h-full"
         style={{
@@ -31,7 +56,6 @@ const Hero = () => {
         }}
       />
 
-      {/* Text — pushed down past the navbar with paddingTop */}
       <div
         className="relative z-10 mx-auto text-center"
         style={{ paddingTop: `calc(${NAVBAR_HEIGHT} + 5rem)` }}
@@ -41,7 +65,9 @@ const Hero = () => {
         </h1>
 
         <div className="px-12 mt-12 mb-4 font-light text-2xl text-white/80">
-          Newcycl is building breakthrough technologies that transform food waste into valuable products for households, communities, and industries.
+          Newcycl is building breakthrough technologies that transform food
+          waste into valuable products for households, communities, and
+          industries.
         </div>
       </div>
     </div>

@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import Script from "next/script";
 
 import "../styles/globals.css";
 
-import Home from "../pages/index";
-import About from "../pages/about";
-import Blog from "../pages/blog";
-import BlogPost from "../pages/blog/[slug]";
-import Careers from "../pages/careers";
-import CareerPost from "../pages/careers/[slug]";
-import Contact from "../pages/contact";
-import Faq from "../pages/faq";
-import Impact from "../pages/impact";
 import ErrorPage from "./next/ErrorPage";
 
-import { getAllPosts as getAllBlogs, getPostBySlug as getBlogBySlug } from "../lib/api";
-import { getAllPosts as getAllJobs, getPostBySlug as getJobBySlug } from "../lib/capi";
-import markdownToHtml from "../lib/markdownToHtml";
+const Home = lazy(() => import("../pages/index"));
+const About = lazy(() => import("../pages/about"));
+const Blog = lazy(() => import("../pages/blog"));
+const BlogPost = lazy(() => import("../pages/blog/[slug]"));
+const Careers = lazy(() => import("../pages/careers"));
+const CareerPost = lazy(() => import("../pages/careers/[slug]"));
+const Contact = lazy(() => import("../pages/contact"));
+const Faq = lazy(() => import("../pages/faq"));
+const Impact = lazy(() => import("../pages/impact"));
 
 function usePathname() {
   const [pathname, setPathname] = useState(window.location.pathname);
@@ -48,41 +45,109 @@ function Analytics() {
   );
 }
 
-function AppRouter() {
-  const pathname = usePathname();
+function BlogRoute() {
+  const [allPosts, setAllPosts] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+
+    import("../lib/api").then(({ getAllPosts }) => {
+      if (!active) {
+        return;
+      }
+
+      setAllPosts(
+        getAllPosts([
+          "title",
+          "date",
+          "slug",
+          "authorName",
+          "coverImage",
+          "excerpt",
+        ])
+      );
+    });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  return allPosts ? <Blog allPosts={allPosts} /> : null;
+}
+
+function CareersRoute() {
+  const [allJobs, setAllJobs] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+
+    import("../lib/capi").then(({ getAllPosts }) => {
+      if (!active) {
+        return;
+      }
+
+      setAllJobs(
+        getAllPosts([
+          "title",
+          "eligible",
+          "slug",
+          "excerpt",
+          "skills",
+          "experience",
+        ])
+      );
+    });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  return allJobs ? <Careers allJobs={allJobs} /> : null;
+}
+
+function PostRoute({ type, slug }) {
   const [resolvedPost, setResolvedPost] = useState(null);
 
   useEffect(() => {
     let active = true;
 
     async function resolvePost() {
-      const blogMatch = pathname.match(/^\/blog\/([^/]+)$/);
-      const careerMatch = pathname.match(/^\/careers\/([^/]+)$/);
-
-      if (!blogMatch && !careerMatch) {
-        setResolvedPost(null);
-        return;
-      }
-
-      const getter = blogMatch ? getBlogBySlug : getJobBySlug;
-      const slug = blogMatch?.[1] || careerMatch?.[1];
-      const fields = blogMatch
-        ? [
-            "title",
-            "date",
-            "slug",
-            "excerpt",
-            "authorName",
-            "content",
-            "ogImage",
-            "coverImage",
-            "imageCaption",
-          ]
-        : ["title", "eligible", "slug", "excerpt", "content", "skills", "experience"];
-      const post = getter(slug, fields);
+      const postModulePromise =
+        type === "blog" ? import("../lib/api") : import("../lib/capi");
+      const [{ getPostBySlug }, { default: markdownToHtml }] = await Promise.all([
+        postModulePromise,
+        import("../lib/markdownToHtml"),
+      ]);
+      const fields =
+        type === "blog"
+          ? [
+              "title",
+              "date",
+              "slug",
+              "excerpt",
+              "authorName",
+              "content",
+              "ogImage",
+              "coverImage",
+              "imageCaption",
+            ]
+          : [
+              "title",
+              "eligible",
+              "slug",
+              "excerpt",
+              "content",
+              "skills",
+              "experience",
+            ];
+      const post = getPostBySlug(slug, fields);
 
       if (!post?.slug) {
-        setResolvedPost({});
+        if (active) {
+          setResolvedPost({});
+        }
         return;
       }
 
@@ -98,7 +163,23 @@ function AppRouter() {
     return () => {
       active = false;
     };
-  }, [pathname]);
+  }, [slug, type]);
+
+  if (!resolvedPost) {
+    return null;
+  }
+
+  return type === "blog" ? (
+    <BlogPost post={resolvedPost} />
+  ) : (
+    <CareerPost post={resolvedPost} />
+  );
+}
+
+function AppRouter() {
+  const pathname = usePathname();
+  const blogMatch = pathname.match(/^\/blog\/([^/]+)$/);
+  const careerMatch = pathname.match(/^\/careers\/([^/]+)$/);
 
   if (pathname === "/") {
     return <Home />;
@@ -109,41 +190,19 @@ function AppRouter() {
   }
 
   if (pathname === "/blog") {
-    return (
-      <Blog
-        allPosts={getAllBlogs([
-          "title",
-          "date",
-          "slug",
-          "authorName",
-          "coverImage",
-          "excerpt",
-        ])}
-      />
-    );
+    return <BlogRoute />;
   }
 
-  if (pathname.startsWith("/blog/")) {
-    return resolvedPost ? <BlogPost post={resolvedPost} /> : null;
+  if (blogMatch) {
+    return <PostRoute type="blog" slug={blogMatch[1]} />;
   }
 
   if (pathname === "/careers") {
-    return (
-      <Careers
-        allJobs={getAllJobs([
-          "title",
-          "eligible",
-          "slug",
-          "excerpt",
-          "skills",
-          "experience",
-        ])}
-      />
-    );
+    return <CareersRoute />;
   }
 
-  if (pathname.startsWith("/careers/")) {
-    return resolvedPost ? <CareerPost post={resolvedPost} /> : null;
+  if (careerMatch) {
+    return <PostRoute type="career" slug={careerMatch[1]} />;
   }
 
   if (pathname === "/contact") {
@@ -164,6 +223,8 @@ function AppRouter() {
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Analytics />
-    <AppRouter />
+    <Suspense fallback={null}>
+      <AppRouter />
+    </Suspense>
   </React.StrictMode>
 );
