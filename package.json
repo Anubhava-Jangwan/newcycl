@@ -14,6 +14,7 @@
     "@typeform/embed-react": "^2.21.0",
     "autoprefixer": "10.4.14",
     "gray-matter": "^4.0.3",
+    "lucide-react": "^1.22.0",
     "postcss": "8.4.21",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

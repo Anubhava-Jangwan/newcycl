@@ -2,7 +2,7 @@
 
 import Head from "next/head";
 import dynamic from "next/dynamic";
-
+import IntroducingRawbin from "../components/IntroducingRawbin";
 import Navbar from "../components/Navbar";
 import Recognisedby from "../components/RecognisedBy";
 import Footer from "../components/Footer";
@@ -67,6 +67,10 @@ const Index = ({ user }) => {
         <Hero />
         <Impact />
         <Recognisedby />
+        <IntroducingRawbin />
+        <LazySection minHeight={360}>
+          <AboutTheProduct />
+        </LazySection>
         <MissionVisionCarousel />
         <LazySection minHeight={360}>
           <AboutTheProduct />

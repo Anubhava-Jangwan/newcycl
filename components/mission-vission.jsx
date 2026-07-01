@@ -78,10 +78,12 @@ export default function FocusAreasCarousel() {
   return (
     <div className="w-full bg-gradient-to-b from-neutral-950 to-black py-20 px-4 flex flex-col items-center overflow-hidden">
       <h2 className="text-white text-xl md:text-2xl font-bold tracking-wide mb-2 text-center">
-        Key Challenges We Address
+        Mission & Vision
       </h2>
       <p className="text-neutral-400 text-sm mb-12 text-center max-w-md">
-        Three issues shaping the way we think about sustainability and impact.
+        Our mission is to make household waste management easy, exciting, and rewarding. Our vision is to create a world where waste is no longer a problem, but a resource.
+      </p>
+      <p className="text-neutral-400 text-sm mb-12 text-center max-w-md">
       </p>
 
       <div className="relative w-full max-w-5xl h-[480px] flex items-center justify-center">
