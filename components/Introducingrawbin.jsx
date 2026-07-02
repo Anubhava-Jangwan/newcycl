@@ -89,13 +89,17 @@ export default function IntroducingRawbin() {
     setSlideIdx((i) => (i + 1) % activeColor.images.length);
 
   return (
-    <section className="intro bg-[#45b90026] mx-6 px-6 py-12 relative max-w-full m-auto rounded-3xl text-center">
+    <section className="intro bg-[#45b90026] mx-2 px-2 py-6 relative m-auto rounded-3xl text-center">
       <div className="container m-auto">
         <h2 className="text-4xl leading-normal">INTRODUCING RAWBIN</h2>
         <p className="mt-2 font-semibold text-nc-bgreen">
           INDIA&rsquo;S FIRST SMART HOME COMPOSTER
         </p>
-
+        <p className="mt-4 text-sm max-w-sm sm:max-w-xl m-auto mb-6">
+          Rawbin is an IoT powered smart home composter that converts your
+          food waste into organic fertilizer in just 7 days, completely
+          automatically.
+        </p>
         <button className="bg-nc-bgreen text-nc-button font-semibold text-white px-6 py-2 rounded-full">
           Join the waitlist
         </button>
