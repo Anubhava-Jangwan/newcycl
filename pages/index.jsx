@@ -2,7 +2,6 @@
 
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import IntroducingRawbin from "../components/IntroducingRawbin";
 import Navbar from "../components/Navbar";
 import Recognisedby from "../components/RecognisedBy";
 import Footer from "../components/Footer";
@@ -15,7 +14,7 @@ import MissionVisionCarousel from "../components/mission-vission";
 const AboutTheProduct = dynamic(() => import("../components/AboutTheProductV2"));
 const WasteStories = dynamic(() => import("../components/WasteStories"));
 const WeHearYou = dynamic(() => import("../components/WeHearYou"));
-const Empowering = dynamic(() => import("../components/Empowering"));
+const OurStory = dynamic(() => import("../components/OurStory"));
 const Earth = dynamic(() => import("../components/Earth"));
 const Curve = dynamic(() => import("../components/Curve"));
 const Cookie = dynamic(() => import("../components/Cookie"), { ssr: false });
@@ -67,7 +66,6 @@ const Index = ({ user }) => {
         <Hero />
         <Impact />
         <Recognisedby />
-        <IntroducingRawbin />
         <LazySection minHeight={360}>
           <AboutTheProduct />
         </LazySection>
@@ -82,7 +80,7 @@ const Index = ({ user }) => {
           <WeHearYou />
         </LazySection>
         <LazySection minHeight={260}>
-          <Empowering />
+          <OurStory />
         </LazySection>
         <LazySection minHeight={900}>
           <Earth />

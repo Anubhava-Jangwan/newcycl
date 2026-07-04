@@ -1,1 +1,0 @@
-var e=()=>({className:``,style:{}}),t=e,n=e,r=e;export{n,r,t};

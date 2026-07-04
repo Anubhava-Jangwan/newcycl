@@ -2,10 +2,11 @@ import React from "react";
 import Image from "next/image";
 
 const logos = [
-  { src: "/aic.png", alt: "AIC Banasthali", width: 120 },
-  { src: "/ClimateLaunchpad.png", alt: "ClimateLaunchpad", width: 160 },
-  { src: "/nidhi_prayas.png", alt: "Nidhi Prayas", width: 140 },
-  { src: "/villgro-logo.png", alt: "Villgro", width: 110 },
+  { src: "/recognisedby_svg/banasthali .svg", alt: "AIC Banasthali", width: 120 },
+  { src: "/recognisedby_svg/climatelaunchpad.svg", alt: "ClimateLaunchpad", width: 160 },
+  { src: "/recognisedby_svg/nidhi_prayas.png", alt: "Nidhi Prayas", width: 140 },
+  { src: "/recognisedby_svg/villgro.svg", alt: "Villgro", width: 110 },
+  { src: "/recognisedby_svg/qwein.svg", alt: "Qualcome", width: 120 ,height: 48 },
 ];
 
 const RecognisedBy = () => {
