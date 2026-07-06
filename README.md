@@ -1,38 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Newcycl Website (Clean Technologies)
 
-## Getting Started
+This repository contains the front-end application for **Newcycl**, showcasing clean waste-management technologies and **Rawbin**—India's first smart IoT home composter.
 
-First, run the development server:
+---
 
+## 🌟 Site Functionality & Architecture
+
+The application is structured as a client-side React app built with **Vite** for optimized assets and swift bundling, utilizing a file-based page layout model mirrored in the `pages` directory.
+
+### Core Pages & Sections
+- **Home Page** (`pages/index.jsx`): Contains a dynamic Hero video showing the composter in action, supported brand carousels, active composting impact stats, the **Rawbin Showcase Gallery** (featuring Front, Side, Back, and Top-Down product images with detailed feature descriptions), and the Founders section.
+- **Impact Report** (`pages/impact.jsx`): Displays detailed analysis of food waste issues, greenhouse gas emissions comparison tables, and interactive circular vs. linear economy flowcharts.
+- **Our Story / About** (`pages/about.jsx`): Features an interactive dot-grid landing panel and a side-scrolling timeline explaining the inception, garage experiments, and scaling of Newcycl.
+- **Blog & Posts** (`pages/blog.jsx` & `pages/blog/[slug].jsx`): Contains news updates, educational write-ups on sustainability, and dynamic markdown post rendering.
+- **Careers** (`pages/careers.jsx` & `pages/careers/[slug].jsx`): Lists active roles, daily responsibilities, and qualifications.
+- **Contact & FAQ** (`pages/contact.jsx` & `pages/faq.jsx`): Forms for customer queries and comprehensive question lists.
+
+---
+
+## 🛠️ Technical Stack & Routing
+
+- **Bundler**: [Vite](https://vitejs.dev/)
+- **Core Library**: [React 19](https://react.dev/)
+- **Styles**: [Tailwind CSS 3](https://tailwindcss.com/) + custom CSS variables in `styles/globals.css`
+- **Routing**: Client-side lazy router located in `src/main.jsx`. It listens to location updates (`popstate`) and maps paths directly to components inside the `pages/` directory.
+- **Backend Integrations**: Ready for Firebase Hosting, Realtime Database, Cloud Functions, Firestore, and Storage.
+
+---
+
+## 🚀 Getting Started (How to Run)
+
+Follow these instructions to run the application locally:
+
+### 1. Installation
+Ensure you have [Node.js](https://nodejs.org/) installed, then install project dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Development Server
+Start the local development server:
+```bash
+npm run dev
+```
+The server will run locally, usually at [http://localhost:5173](http://localhost:5173).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### 3. Production Build
+Compile and minify the project assets into static files:
+```bash
+npm run build
+```
+The production bundle is generated inside the `dist/` directory.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### 4. Local Preview
+Preview the production build locally to verify all routing and assets load correctly before deploying:
+```bash
+npm run preview
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🔄 Development Workflow
 
-## Learn More
+### Branching Strategy
+We use Git branches for structured development:
+- **`main`**: The stable branch tracking production-ready milestones.
+- **Feature Branches** (e.g., `progress-update`): Used for developing new features, layout fixes, or loading assets.
 
-To learn more about Next.js, take a look at the following resources:
+### Firebase Deployment
+The site is pre-configured for **Firebase Hosting**. Deploy static assets using the Firebase CLI:
+```bash
+# Set up/login Firebase
+firebase login
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Deploy build to production
+firebase deploy --only hosting
+```
+Local testing of hosting, firestore, and functions can be done using the Firebase emulator:
+```bash
+firebase emulators:start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
