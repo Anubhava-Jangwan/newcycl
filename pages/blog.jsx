@@ -59,8 +59,8 @@ const Blog = ({ user, allPosts }) => {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <Navbar />
-      <div className="relative lg:px-48 pt-24 mx-auto">
-        <h1 className="px-12 text-5xl leading-none sm:mr-12">Blog</h1>
+      <div className="relative max-w-4xl mx-auto px-6 sm:px-8 pt-28 pb-16 font-source-sans">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink-dark tracking-tight leading-none mb-10">Blog</h1>
         {heroPost && (
           <HeroPost
             title={heroPost.title}

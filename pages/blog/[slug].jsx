@@ -30,7 +30,7 @@ export default function Post({ post, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="relative lg:px-48 pt-24 mx-auto">
+            <article className="relative max-w-3xl mx-auto px-6 sm:px-8 pt-28 pb-16 font-source-sans">
               <Head>
                 <title>{title}</title>
                 <meta property="og:description" content={post.excerpt} />

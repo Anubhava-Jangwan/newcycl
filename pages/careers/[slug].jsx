@@ -30,7 +30,7 @@ export default function Post({ post, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="relative lg:px-48 pt-24 mx-auto">
+            <article className="relative max-w-3xl mx-auto px-6 sm:px-8 pt-28 pb-16 font-source-sans">
               <Head>
                 <title>{title}</title>
                 <meta property="og:description" content={post.description} />
@@ -67,7 +67,7 @@ export default function Post({ post, preview }) {
                 <a
                   href="https://forms.gle/GhiMRTSh7yEwp6JZ9"
                   target="_blank"
-                  className="cursor-pointer bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
+                  className="inline-block bg-accent-green hover:bg-accent-green-hover text-white font-bold tracking-wider uppercase py-3.5 px-8 rounded-2xl shadow-premium transition-all duration-300 active:scale-95"
                 >
                   Apply here
                 </a>

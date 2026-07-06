@@ -99,8 +99,8 @@ function DotField({ onEnter }) {
       const rows = Math.ceil(h / DOT_SPACING) + 1;
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
-          const ox = i * DOT_SPACING;
-          const oy = j * DOT_SPACING;
+          const ox = i * DOT_SPACING + DOT_SPACING / 2;
+          const oy = j * DOT_SPACING + DOT_SPACING / 2;
           dots.push({ ox, oy, x: ox, y: oy });
         }
       }
@@ -177,7 +177,7 @@ function DotField({ onEnter }) {
   return (
     <div
       ref={wrapperRef}
-      className="absolute inset-0 cursor-pointer select-none"
+      className="absolute inset-0 cursor-pointer select-none font-source-sans transition-colors duration-500"
       style={{ background: BG }}
       onClick={onEnter}
       role="button"
@@ -186,22 +186,25 @@ function DotField({ onEnter }) {
       aria-label="Enter our story"
     >
       <canvas ref={canvasRef} className="absolute inset-0" />
-      <div className="relative h-full w-full flex flex-col items-center justify-center px-6 pointer-events-none ">
+      <div className="relative h-full w-full flex flex-col items-center justify-center px-6 pointer-events-none z-10">
         <h1
-          className="text-5xl md:text-6xl text-center font-medium"
+          className="text-5xl md:text-7xl text-center font-black tracking-tight leading-none mb-4"
           style={{ color: INK }}
         >
           OUR STORY
         </h1>
         <p
-          className="mt-4 text-base md:text-lg text-center"
+          className="text-base md:text-xl text-center font-light max-w-lg leading-relaxed mb-10"
           style={{ color: "#4A4640" }}
         >
           the way we throw waste is broken. we’re here to fix it.
         </p>
+        <div className="w-10 h-10 rounded-full border border-ink/10 flex items-center justify-center animate-bounce bg-white/50 backdrop-blur-sm">
+          <ChevronRight size={18} className="rotate-90" style={{ color: INK }} />
+        </div>
         <p
-          className="mt-10 text-xs uppercase tracking-widest"
-          style={{ color: DOT_COLOR, letterSpacing: "0.25em" }}
+          className="mt-4 text-[10px] uppercase tracking-[0.25em] font-bold"
+          style={{ color: DOT_COLOR }}
         >
           Click to begin
         </p>
@@ -212,25 +215,25 @@ function DotField({ onEnter }) {
 
 function StorySlide({ label, heading, text }) {
   return (
-    // w-full (not min-w-full) is the fix: with flex-shrink-0 and no width,
-    // this item's size was being driven by its content's max-content width —
-    // which for a long paragraph means "as one unbroken line" — so it blew
-    // out to thousands of px wide instead of wrapping. w-full pins it to
-    // 100% of the scroller, forcing the text to wrap inside that instead.
     <div
-      className="w-full h-full flex-shrink-0 grid md:grid-cols-2"
+      className="w-full h-full flex-shrink-0 grid md:grid-cols-2 font-source-sans"
       style={{ scrollSnapAlign: "start" }}
     >
       {/* Image slot, left */}
-      <div className="min-w-0 flex items-center justify-center p-10 md:p-16" style={{ background: BG }}>
+      <div className="min-w-0 flex items-center justify-center p-8 md:p-16" style={{ background: BG }}>
         <div
-          className="w-full h-full rounded-2xl flex flex-col items-center justify-center gap-3"
-          style={{ border: `1.5px dashed ${DOT_COLOR}55` }}
+          className="w-full h-full rounded-3xl flex flex-col items-center justify-center gap-4 border border-emerald-500/10 shadow-glass"
+          style={{ 
+            background: "linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.4) 100%)",
+            backdropFilter: "blur(10px)"
+          }}
         >
-          <ImagePlus size={32} color={DOT_COLOR} strokeWidth={1.5} />
+          <div className="w-14 h-14 rounded-2xl bg-white shadow-premium flex items-center justify-center text-accent-green">
+            <ImagePlus size={24} strokeWidth={1.5} />
+          </div>
           <span
-            className="text-xs uppercase tracking-widest"
-            style={{ color: "#8A8378", letterSpacing: "0.2em" }}
+            className="text-[10px] uppercase tracking-[0.2em] font-bold"
+            style={{ color: "#8A8378" }}
           >
             Import image
           </span>
@@ -238,28 +241,26 @@ function StorySlide({ label, heading, text }) {
       </div>
 
       {/* Text slot, right — label / heading / text all come from SLIDES up top */}
-      <div className="min-w-0 flex flex-col justify-center p-10 md:p-16 overflow-y-auto" style={{ background: "#FFFFFF" }}>
+      <div className="min-w-0 flex flex-col justify-center p-10 md:p-20 overflow-y-auto border-l border-emerald-500/5" style={{ background: "#FFFFFF" }}>
         <span
-          className="text-xs uppercase tracking-widest mb-3"
-          style={{ color: DOT_COLOR, letterSpacing: "0.2em" }}
+          className="text-[10px] uppercase tracking-[0.2em] font-bold mb-4"
+          style={{ color: "#4CAF2E" }}
         >
           {label}
         </span>
 
         {heading && (
           <h3
-            className="text-2xl md:text-3xl mb-4 font-medium"
+            className="text-3xl md:text-4xl mb-6 font-black tracking-tight leading-tight"
             style={{ color: INK }}
           >
             {heading}
           </h3>
         )}
 
-        {/* whitespace-pre-line keeps the blank lines between paragraphs in
-            `text` as real breaks, instead of collapsing them into one line. */}
         <p
-          className="text-base md:text-lg leading-relaxed whitespace-pre-line"
-          style={{ color: "#3A352F" }}
+          className="text-base md:text-lg leading-relaxed whitespace-pre-line font-light"
+          style={{ color: "#3E4A38" }}
         >
           {text}
         </p>
@@ -280,9 +281,9 @@ function PageDots({ count, activeIndex, onSelect }) {
             aria-label={`Go to page ${i + 1}`}
             className="rounded-full transition-all duration-300"
             style={{
-              width: isActive ? 22 : 9,
-              height: 9,
-              background: isActive ? DOT_COLOR : `${DOT_COLOR}44`,
+              width: isActive ? 24 : 8,
+              height: 8,
+              background: isActive ? "#4CAF2E" : "rgba(31, 46, 27, 0.2)",
             }}
           />
         );
@@ -346,16 +347,13 @@ export default function OurStory() {
           <button
             onClick={scrollNext}
             aria-label="Next"
-            className="absolute bottom-10 right-8 md:right-16 flex items-center justify-center rounded-full transition-transform hover:scale-110"
+            className="absolute bottom-10 right-8 md:right-16 flex items-center justify-center rounded-full bg-white text-ink border border-emerald-500/10 shadow-premium transition-all duration-300 hover:scale-110 active:scale-95"
             style={{
-              width: 56,
-              height: 56,
-              background: DOT_COLOR,
-              color: BG,
-              boxShadow: "0 8px 20px rgba(33,22,83,0.3)",
+              width: 52,
+              height: 52,
             }}
           >
-            <ChevronRight size={24} strokeWidth={2} />
+            <ChevronRight size={22} className="text-ink" />
           </button>
         </>
       )}

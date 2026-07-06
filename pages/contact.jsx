@@ -3,7 +3,6 @@ import Head from "next/head";
 import { X } from "react-feather";
 
 import Navbar from "../components/Navbar";
-import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 
 const ContactForm = () => {
@@ -81,33 +80,33 @@ const ContactForm = () => {
       </Head>
       <Navbar />
 
-      <div className="relative lg:px-48 pt-24 mx-auto">
+      <div className="relative max-w-4xl mx-auto px-6 sm:px-8 pt-28 pb-16 font-source-sans">
         {showNotification && (
-          <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center justify-center mb-10">
             <div
-              className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-2 rounded w-auto relative"
+              className="bg-emerald-50 border border-emerald-500/20 text-ink-dark px-6 py-4 rounded-2xl w-full max-w-md text-center shadow-premium"
               role="alert"
             >
-              <div className="">
-                Yayy 🎉 Thanks we will get back to you soon.
+              <div className="text-sm font-semibold">
+                Yayy 🎉 Thanks! We will get back to you soon.
               </div>
             </div>
           </div>
         )}
 
-        <h1 className="px-12 text-5xl leading-none text-center">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink-dark tracking-tight leading-none text-center mb-4">
           We've been waiting for you.
         </h1>
-        <div className="px-12 text-md font-normal text-center mt-4">
+        <div className="text-sm sm:text-base text-body/80 text-center font-light max-w-md mx-auto mb-14">
           We want to hear from you. Let us know how we can help.
         </div>
 
-        <div className="mt-12 w-full max-w-md px-12 sm:px-0 m-auto">
-          <form className="" onSubmit={handleSubmit}>
-            <div className="mb-6">
+        <div className="w-full max-w-md mx-auto">
+          <form className="space-y-5" onSubmit={handleSubmit}>
+            <div>
               <input
                 type="text"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="w-full bg-white border border-emerald-500/10 rounded-2xl py-3.5 px-4 text-ink-dark placeholder-muted/65 focus:outline-none focus:ring-2 focus:ring-accent-green/30 focus:border-accent-green transition duration-200 shadow-sm"
                 id="nc-name"
                 name="nc-name"
                 value={name}
@@ -118,10 +117,10 @@ const ContactForm = () => {
               />
             </div>
 
-            <div className="mb-6">
+            <div>
               <input
                 type="email"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="w-full bg-white border border-emerald-500/10 rounded-2xl py-3.5 px-4 text-ink-dark placeholder-muted/65 focus:outline-none focus:ring-2 focus:ring-accent-green/30 focus:border-accent-green transition duration-200 shadow-sm"
                 placeholder="Enter your email"
                 id="nc-email"
                 name="nc-email"
@@ -132,11 +131,12 @@ const ContactForm = () => {
               />
             </div>
 
-            <div className="mb-6">
+            <div>
               <textarea
                 id="message"
                 placeholder="Enter your message"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                rows={4}
+                className="w-full bg-white border border-emerald-500/10 rounded-2xl py-3.5 px-4 text-ink-dark placeholder-muted/65 focus:outline-none focus:ring-2 focus:ring-accent-green/30 focus:border-accent-green transition duration-200 shadow-sm resize-none"
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
                 required
@@ -145,8 +145,8 @@ const ContactForm = () => {
             </div>
 
             <input
-              className={`cursor-pointer w-full bg-nc-purple-900 text-white font-medium py-2 px-4 rounded ${
-                disabled ? "opacity-30" : ""
+              className={`w-full bg-accent-green hover:bg-accent-green-hover text-white font-bold tracking-wider uppercase py-3.5 px-6 rounded-2xl shadow-premium cursor-pointer transition-all duration-300 active:scale-98 ${
+                disabled ? "opacity-30 cursor-not-allowed" : ""
               }`}
               type="submit"
               value="Submit"
@@ -156,7 +156,6 @@ const ContactForm = () => {
         </div>
       </div>
 
-      <Curve />
       <Footer />
     </>
   );

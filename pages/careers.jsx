@@ -56,27 +56,32 @@ const Careers = ({ user, allJobs }) => {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <Navbar />
-      <div className="relative lg:px-48 pt-24 mx-auto">
-        <h1 className="px-12 text-5xl leading-none">
+      <div className="relative max-w-4xl mx-auto px-6 sm:px-8 pt-28 pb-16 font-source-sans">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink-dark tracking-tight leading-none mb-4">
           Come join us, let’s make every throw count.
         </h1>
-        <div className="px-12 mt-3 mb-4 font-light italic">
-          We are looking for passionate individuals to join us on our journey.
+        <div className="text-sm sm:text-base text-body/70 font-light leading-relaxed max-w-2xl mb-14">
+          We are looking for passionate individuals to join us on our journey.
         </div>
 
-        <div className="mt-12 px-12 text-left">
-          <div className="text-2xl font-bold leading-none">
+        <div className="mt-16 border-t border-emerald-500/10 pt-12">
+          <h2 className="text-2xl sm:text-3xl font-black text-ink-dark tracking-tight mb-8">
             Current open roles
+          </h2>
+          <div className="space-y-6">
+            {allJobs.length > 0 ? (
+              allJobs.map((job) => <JobCard key={job.slug} job={job} />)
+            ) : (
+              <p className="text-sm text-body/60 font-light">No positions currently open. Write to us below!</p>
+            )}
           </div>
         </div>
 
-        {allJobs.length > 0 && allJobs.map((job) => <JobCard job={job} />)}
-
-        <div className="mt-24 px-12 text-center">
-          <div className="text-2xl font-bold leading-none">
-            Why <span className="text-nc-purple">Newcycl</span>?
-          </div>
-          <div className="my-6 leading-6">
+        <div className="mt-24 border-t border-emerald-500/10 pt-12 text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-black text-ink-dark tracking-tight mb-6">
+            Why <span className="text-accent-green">Newcycl</span>?
+          </h2>
+          <p className="text-base text-body/90 font-light leading-relaxed">
             We provide a purpose to your living by aligning you with a
             meaningful cause. We promise to offer a canvas to unleash your
             untapped potential, allowing you to explore boundless possibilities.
@@ -84,34 +89,32 @@ const Careers = ({ user, allJobs }) => {
             into a specialized field, Newcycl provides the platform. Here, you
             can play, learn, and create in an environment that nurtures
             innovation and growth.
-          </div>
+          </p>
         </div>
 
-        <div className="mt-24 px-12 text-center">
-          <div className="text-2xl font-bold leading-none">Where we are?</div>
-          <div className="my-6 leading-6">
-            We are located at the heart of startup hub of Bengaluru
-          </div>
-          <div className="mt-12 mb-6 px-6 max-w-lg m-auto">
+        <div className="mt-24 border-t border-emerald-500/10 pt-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-black text-ink-dark tracking-tight mb-4">Where we are?</h2>
+          <p className="text-sm text-body/70 font-light mb-8">
+            We are located at the heart of the startup hub of Bengaluru
+          </p>
+          <div className="max-w-lg mx-auto rounded-[2rem] overflow-hidden border border-emerald-500/10 bg-white p-4 shadow-premium">
             <Image
               src={NewcyclMap}
-              width={"100%"}
-              alt="Curve"
-              className="w-full"
+              alt="Newcycl Location Map"
+              className="w-full h-auto rounded-2xl object-cover"
             />
           </div>
-          <div className=""></div>
         </div>
 
-        <div className="mt-36 px-12 text-center">
-          <div className="text-2xl font-bold leading-none">
+        <div className="mt-28 border-t border-emerald-500/10 pt-16 text-center max-w-lg mx-auto">
+          <h2 className="text-2xl font-black text-ink-dark tracking-tight mb-2">
             Still not finding your area of expertise?
-          </div>
-          <div className="leading-none my-6">Please write to us!</div>
+          </h2>
+          <p className="text-sm text-body/70 font-light mb-8">Please write to us!</p>
 
           <a
             href="mailto:hello@newcycl.com"
-            className="cursor-pointer w-full bg-nc-purple-900 text-white font-medium py-2 px-4 rounded"
+            className="inline-block bg-accent-green hover:bg-accent-green-hover text-white font-bold tracking-wider uppercase py-3.5 px-8 rounded-2xl shadow-premium transition duration-200 active:scale-95"
           >
             hello@newcycl.com
           </a>

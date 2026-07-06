@@ -118,24 +118,23 @@ export default function FocusAreasCarousel() {
   const position = ((((activeIndex - HOME) % N) + N) % N) + 1;
 
   return (
-    <div className="w-full max-w-5xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
+    <div className="w-full max-w-5xl mx-auto py-24 px-6 sm:px-8 font-source-sans border-t border-emerald-500/5">
       <style>{`
         .facarousel-serif { font-family: 'Fraunces', serif; }
         .facarousel-sans { font-family: 'Inter', sans-serif; }
-
       `}</style>
 
       {/* Section heading */}
-      <div className="text-center mb-14">
-        <span className="facarousel-sans text-[11px] tracking-[0.3em] uppercase text-color-black font-large">
+      <div className="text-center mb-16">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-accent-green font-bold block mb-2">
           Why it matters
         </span>
-        <h2 className="facarousel-serif text-[42px] sm:text-[48px] leading-tight text-neutral-900 mt-3">
+        <h2 className="text-3xl sm:text-5xl font-black text-ink-dark tracking-tight leading-none">
           Mission &amp; Vision
         </h2>
       </div>
 
-      {/* Ambient glow behind the stage, tuned to whichever focus area is centered */}
+      {/* Ambient glow behind the stage, tuned to focus area */}
       <div className="relative">
         <div
           aria-hidden
@@ -143,9 +142,9 @@ export default function FocusAreasCarousel() {
           style={{
             width: 520,
             height: 520,
-            background: activeSlide.glow,
-            opacity: 0.22,
-            filter: "blur(110px)",
+            background: activeSlide.glow || "rgba(76, 175, 46, 0.15)",
+            opacity: 0.15,
+            filter: "blur(120px)",
           }}
         />
 
@@ -162,8 +161,8 @@ export default function FocusAreasCarousel() {
               <div
                 key={i}
                 onClick={dist === 1 ? () => go(offset) : undefined}
-                className={`absolute top-1/2 left-1/2 rounded-[28px] overflow-hidden ring-1 ${
-                  dist === 0 ? "ring-white/15" : "ring-white/5"
+                className={`absolute top-1/2 left-1/2 rounded-[2.5rem] overflow-hidden border ${
+                  dist === 0 ? "border-white/20" : "border-white/5"
                 } ${dist === 1 ? "cursor-pointer" : ""}`}
                 style={{
                   width: CARD_W,
@@ -172,7 +171,9 @@ export default function FocusAreasCarousel() {
                   opacity,
                   zIndex,
                   pointerEvents: dist <= 1 ? "auto" : "none",
-                  boxShadow: dist === 0 ? `0 40px 80px -30px ${slide.glow}66, 0 10px 30px -10px rgba(0,0,0,0.5)` : "0 20px 40px -20px rgba(0,0,0,0.4)",
+                  boxShadow: dist === 0 
+                    ? "0 40px 80px -25px rgba(31, 46, 27, 0.25), 0 10px 30px -10px rgba(31, 46, 27, 0.15)" 
+                    : "0 20px 40px -20px rgba(0,0,0,0.2)",
                   transition: instant
                     ? "none"
                     : `transform ${DURATION}ms cubic-bezier(0.22, 1, 0.36, 1), opacity ${DURATION}ms ease, box-shadow ${DURATION}ms ease`,
@@ -193,26 +194,25 @@ export default function FocusAreasCarousel() {
                   </>
                 )}
 
-                {/* Readability scrim: keeps the eyebrow/title/caption legible
-                    over any photo without needing to darken the photo itself. */}
+                {/* Scrim */}
                 <div
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 32%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0.92) 100%)",
+                      "linear-gradient(to bottom, rgba(17,32,14,0.4) 0%, rgba(17,32,14,0.05) 32%, rgba(17,32,14,0.12) 55%, rgba(17,32,14,0.85) 100%)",
                   }}
                 />
 
                 <div className="relative z-10 flex flex-col h-full p-9">
-                  <span className="inline-block self-start facarousel-sans text-[11px] tracking-[0.28em] uppercase text-white/80 font-medium px-3 py-1 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
+                  <span className="inline-block self-start text-[10px] tracking-[0.25em] uppercase text-white font-bold px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
                     {slide.eyebrow}
                   </span>
 
                   <div className="mt-auto">
-                    <h3 className="facarousel-serif text-[34px] leading-[1.1] text-white mb-4">
+                    <h3 className="text-3xl font-black text-white mb-3 leading-tight tracking-tight">
                       {slide.title}
                     </h3>
-                    <p className="facarousel-sans text-[15.5px] leading-relaxed text-white/70 max-w-[85%]">
+                    <p className="text-sm leading-relaxed text-white/80 max-w-[90%] font-light">
                       {slide.caption}
                     </p>
                   </div>
@@ -223,25 +223,26 @@ export default function FocusAreasCarousel() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-8 mt-10">
+      {/* Navigation */}
+      <div className="flex items-center justify-center gap-8 mt-6">
         <button
           onClick={prev}
           disabled={isAnimating}
           aria-label="Previous slide"
-          className="w-12 h-12 rounded-full bg-neutral-900 text-white flex items-center justify-center hover:bg-neutral-700 disabled:opacity-30 transition-all hover:scale-105"
+          className="w-12 h-12 rounded-full border border-ink/10 bg-white text-ink flex items-center justify-center hover:bg-neutral-50 shadow-premium hover:scale-105 disabled:opacity-30 transition-all duration-300 active:scale-95"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
 
-        <span className="facarousel-sans text-sm tabular-nums text-neutral-500 tracking-widest">
-          {String(position).padStart(2, "0")} <span className="text-neutral-300">/</span> {String(N).padStart(2, "0")}
+        <span className="text-xs font-bold tabular-nums text-muted tracking-widest uppercase">
+          {String(position).padStart(2, "0")} <span className="text-neutral-300 px-1">/</span> {String(N).padStart(2, "0")}
         </span>
 
         <button
           onClick={next}
           disabled={isAnimating}
           aria-label="Next slide"
-          className="w-12 h-12 rounded-full bg-neutral-900 text-white flex items-center justify-center hover:bg-neutral-700 disabled:opacity-30 transition-all hover:scale-105"
+          className="w-12 h-12 rounded-full border border-ink/10 bg-white text-ink flex items-center justify-center hover:bg-neutral-50 shadow-premium hover:scale-105 disabled:opacity-30 transition-all duration-300 active:scale-95"
         >
           <ChevronRight className="w-5 h-5" />
         </button>

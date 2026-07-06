@@ -1,6 +1,6 @@
-export default function Link({ href, children, ...props }) {
+export default function Link({ href, as, children, ...props }) {
   return (
-    <a href={href} {...props}>
+    <a href={as || href} {...props}>
       {children}
     </a>
   );

@@ -26,21 +26,21 @@ function isExternal(href) {
   return href.startsWith("http");
 }
 
-function BrandMark({ isScrolled }) {
+function BrandMark({ isScrolled, isLightPage }) {
   return (
     <Link
       href="/"
       aria-label="Newcycl homepage"
-      className="flex items-center justify-center gap-3"
+      className="flex items-center justify-center gap-3 group"
     >
-      <span className="relative flex flex-shrink-0 items-center">
+      <span className="relative flex flex-shrink-0 items-center transition-transform duration-300 group-hover:scale-105">
         <svg
           width="68"
           height="44"
           viewBox="0 0 68 44"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-auto w-12 sm:w-16"
+          className="h-auto w-10 sm:w-12"
         >
           <path d="M36.3402 36.0837L47.1891 25.644L51.6802 34.4835C52.857 36.7992 51.1038 39.8367 48.617 39.9581C45.0063 40.1353 40.4396 39.8287 36.2343 37.5626L35.7261 36.9637L36.3402 36.0837Z" fill="url(#paint0_linear_2_2)" />
           <path d="M31.9338 36.0837L21.085 25.644L16.5939 34.4835C15.417 36.7992 17.1702 39.8367 19.657 39.9581C23.2678 40.1353 27.8345 39.8287 32.0397 37.5626L32.548 36.9637L31.9338 36.0837Z" fill="url(#paint1_linear_2_2)" />
@@ -48,38 +48,34 @@ function BrandMark({ isScrolled }) {
           <path d="M35.8215 37.6986C35.6819 37.6227 35.5618 37.5122 35.4716 37.3765C35.3813 37.2409 35.3235 37.0843 35.3032 36.9199C35.2828 36.7556 35.3005 36.5885 35.3547 36.433C35.4089 36.2775 35.498 36.1381 35.6144 36.0268L67.1444 5.65034C69.6282 3.25749 67.1822 -1.00178 64.0225 0.213786L39.1368 8.8791C36.8404 9.76286 34.6302 12.0345 34.6302 14.8644V36.5931C34.6285 36.7585 34.6888 36.9179 34.798 37.0366C35.0293 37.2902 35.6204 37.5886 35.8124 37.6938L35.8215 37.6986Z" fill="url(#paint3_linear_2_2)" />
           <defs>
             <linearGradient id="paint0_linear_2_2" x1="36.0517" y1="40.0002" x2="54.1719" y2="36.0653" gradientUnits="userSpaceOnUse">
-              <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
-              <stop offset="0.555615" stopColor="#20BDFF" />
-              <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
+              <stop offset="0.152251" stopColor="#4CAF2E" />
+              <stop offset="1" stopColor="#A5FECB" />
             </linearGradient>
             <linearGradient id="paint1_linear_2_2" x1="32.2224" y1="40.0002" x2="14.1021" y2="36.0653" gradientUnits="userSpaceOnUse">
-              <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
-              <stop offset="0.555615" stopColor="#20BDFF" />
-              <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
+              <stop offset="0.152251" stopColor="#4CAF2E" />
+              <stop offset="1" stopColor="#A5FECB" />
             </linearGradient>
             <linearGradient id="paint2_linear_2_2" x1="40.9863" y1="42.5753" x2="34.3213" y2="-6.83518" gradientUnits="userSpaceOnUse">
-              <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
-              <stop offset="0.555615" stopColor="#20BDFF" />
-              <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
+              <stop offset="0.152251" stopColor="#4CAF2E" />
+              <stop offset="1" stopColor="#A5FECB" />
             </linearGradient>
             <linearGradient id="paint3_linear_2_2" x1="27.1781" y1="42.5753" x2="33.8431" y2="-6.83518" gradientUnits="userSpaceOnUse">
-              <stop offset="0.152251" stopColor="#5433FF" stopOpacity="0.81" />
-              <stop offset="0.555615" stopColor="#20BDFF" />
-              <stop offset="1" stopColor="#A5FECB" stopOpacity="0.8" />
+              <stop offset="0.152251" stopColor="#4CAF2E" />
+              <stop offset="1" stopColor="#A5FECB" />
             </linearGradient>
           </defs>
         </svg>
       </span>
       <span className="flex flex-col leading-none">
         <span className={classNames(
-          "text-3xl font-black tracking-normal md:text-4xl transition-colors duration-300",
-          isScrolled ? "text-ink" : "text-white"
+          "text-2xl font-extrabold tracking-tight md:text-3xl transition-colors duration-300 font-source-sans",
+          (isScrolled || isLightPage) ? "text-ink-dark" : "text-white"
         )}>
           NewCycl
         </span>
         <span className={classNames(
-          "mt-0.5 text-[10px] font-bold uppercase tracking-normal md:text-xs transition-colors duration-300",
-          isScrolled ? "text-ink/80" : "text-white/60"
+          "mt-0.5 text-[8px] font-bold uppercase tracking-widest md:text-[9px] transition-colors duration-300",
+          (isScrolled || isLightPage) ? "text-ink-light/70" : "text-white/60"
         )}>
           Clean Technologies
         </span>
@@ -88,18 +84,18 @@ function BrandMark({ isScrolled }) {
   );
 }
 
-function NavLink({ item, pathname, mobile = false, isScrolled = false }) {
+function NavLink({ item, pathname, mobile = false, isScrolled = false, isLightPage = false }) {
   const active = pathname === item.href;
   const className = classNames(
     active
-      ? isScrolled ? "text-ink font-semibold" : "text-white font-semibold"
-      : isScrolled ? "text-ink/80" : "text-white/80",
+      ? (isScrolled || isLightPage) ? "text-ink-dark font-medium" : "text-white font-medium"
+      : (isScrolled || isLightPage) ? "text-ink-light/80 hover:text-ink-dark" : "text-white/80 hover:text-white",
     item.featured && !mobile
-      ? "rawbin-nav-highlight relative isolate rounded-full px-5 py-3"
+      ? "rawbin-nav-highlight relative isolate rounded-full px-5 py-2.5 shadow-sm"
       : "",
     mobile
-      ? "block rounded-xl px-4 py-3 text-lg font-semibold hover:bg-white/10"
-      : "underline-animation relative whitespace-nowrap text-lg font-normal transition-colors duration-300 hover:text-opacity-100"
+      ? "block rounded-xl px-4 py-3 text-lg font-medium hover:bg-black/5"
+      : "underline-animation relative whitespace-nowrap text-base font-normal tracking-wide transition-colors duration-200"
   );
 
   if (isExternal(item.href)) {
@@ -115,15 +111,15 @@ function NavLink({ item, pathname, mobile = false, isScrolled = false }) {
 
 function HamburgerButton({ isOpen, onClick, isScrolled }) {
   const isFloating = isScrolled;
-  
+
   return (
     <button
       type="button"
       className={classNames(
-        "group relative flex h-14 w-14 flex-col items-center justify-center gap-1.5 rounded-full transition-colors duration-300 shadow-lg backdrop-blur-xl",
+        "group relative flex h-12 w-12 flex-col items-center justify-center gap-1.5 rounded-full transition-all duration-300 hover:scale-105 border",
         isFloating
-          ? "bg-backdrop/90 hover:bg-backdrop" 
-          : "bg-ink/60 hover:bg-ink/80"
+          ? "bg-white/80 border-ink/10 shadow-premium hover:bg-white text-ink"
+          : "bg-ink/80 border-white/10 shadow-lg hover:bg-ink text-white"
       )}
       aria-label={isOpen ? "Close menu" : "Open menu"}
       aria-expanded={isOpen}
@@ -131,17 +127,17 @@ function HamburgerButton({ isOpen, onClick, isScrolled }) {
     >
       <span className={classNames(
         isOpen ? "translate-y-1.5 rotate-45" : "",
-        "block h-0.5 w-5 origin-center rounded-full transition duration-300",
+        "block h-0.5 w-4 origin-center rounded-full transition duration-300",
         isFloating ? "bg-ink" : "bg-white"
       )} />
       <span className={classNames(
         isOpen ? "opacity-0" : "",
-        "block h-0.5 w-5 rounded-full transition duration-300",
+        "block h-0.5 w-4 rounded-full transition duration-300",
         isFloating ? "bg-ink" : "bg-white"
       )} />
       <span className={classNames(
         isOpen ? "-translate-y-1.5 -rotate-45" : "",
-        "block h-0.5 w-5 origin-center rounded-full transition duration-300",
+        "block h-0.5 w-4 origin-center rounded-full transition duration-300",
         isFloating ? "bg-ink" : "bg-white"
       )} />
     </button>
@@ -152,10 +148,10 @@ export default function Navbar() {
   const { pathname } = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isLightPage = pathname !== "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      // Triggers once user scrolls past the hero video
       setIsScrolled(window.scrollY > 80);
     };
 
@@ -166,41 +162,41 @@ export default function Navbar() {
   return (
     <>
       <Banner />
-      <header className="sticky top-0 z-50 font-source-sans">
+      <header className="sticky top-0 z-50 font-source-sans transition-all duration-300">
         {/* Full Navbar */}
         <nav className={classNames(
-          "px-4 py-3 transition-transform duration-500 ease-out will-change-transform",
+          "px-4 py-4 transition-transform duration-500 ease-out will-change-transform",
           isScrolled ? "-translate-y-full" : "translate-y-0"
         )}>
           <div className={classNames(
-            "mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-10 rounded-[2rem] px-6 py-2.5 shadow-2xl shadow-black/20 backdrop-blur-2xl md:rounded-full md:px-10",
-            "bg-ink/60 transition-colors duration-300"
+            "mx-auto grid max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-10 rounded-[2rem] px-6 py-2 border shadow-premium backdrop-blur-xl md:rounded-full md:px-8",
+            isLightPage ? "bg-white/80 border-ink/10" : "bg-ink-dark/85 border-white/5"
           )}>
-            <menu className="hidden list-none items-center gap-12 lg:flex">
+            <menu className="hidden list-none items-center gap-10 lg:flex">
               {leftNavigation.map((item) => (
                 <li key={item.name}>
-                  <NavLink item={item} pathname={pathname} isScrolled={false} />
+                  <NavLink item={item} pathname={pathname} isScrolled={false} isLightPage={isLightPage} />
                 </li>
               ))}
             </menu>
 
             <div className="col-start-2 justify-self-center">
-              <BrandMark isScrolled={false} />
+              <BrandMark isScrolled={false} isLightPage={isLightPage} />
             </div>
 
-            <menu className="hidden list-none items-center justify-end gap-12 lg:flex">
+            <menu className="hidden list-none items-center justify-end gap-10 lg:flex">
               {rightNavigation.map((item) => (
                 <li key={item.name}>
-                  <NavLink item={item} pathname={pathname} isScrolled={false} />
+                  <NavLink item={item} pathname={pathname} isScrolled={false} isLightPage={isLightPage} />
                 </li>
               ))}
             </menu>
 
             <div className="col-start-3 flex justify-end lg:hidden">
-              <HamburgerButton 
-                isOpen={menuOpen} 
+              <HamburgerButton
+                isOpen={menuOpen}
                 onClick={() => setMenuOpen((current) => !current)}
-                isScrolled={false}
+                isScrolled={isLightPage}
               />
             </div>
           </div>
@@ -209,8 +205,8 @@ export default function Navbar() {
         {/* Floating Menu Ball - Only appears when scrolled */}
         {isScrolled && (
           <div className="fixed top-6 right-6 z-50 will-change-transform">
-            <HamburgerButton 
-              isOpen={menuOpen} 
+            <HamburgerButton
+              isOpen={menuOpen}
               onClick={() => setMenuOpen((current) => !current)}
               isScrolled={true}
             />
@@ -220,8 +216,10 @@ export default function Navbar() {
         {/* Mobile Menu - Only renders when open */}
         {menuOpen && (
           <div className={classNames(
-            "mx-4 rounded-[2rem] px-4 pb-5 font-source-sans shadow-2xl shadow-black/20 backdrop-blur-2xl",
-            isScrolled ? "bg-backdrop/95 text-ink mt-0" : "bg-ink/75 text-white mt-3"
+            "mx-4 rounded-[2rem] px-4 pb-5 font-source-sans shadow-premium border",
+            isScrolled
+              ? "bg-white/95 border-ink/5 text-ink mt-0 backdrop-blur-xl"
+              : "bg-ink-dark/95 border-white/10 text-white mt-3 backdrop-blur-xl"
           )}>
             <div className="grid gap-1 pt-3">
               {mobileNavigation.map((item) => (

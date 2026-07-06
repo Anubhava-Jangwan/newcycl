@@ -1,3 +1,12 @@
+if (typeof window !== "undefined" && !window.Buffer) {
+  window.Buffer = {
+    isBuffer: () => false,
+    from: (val) => ({
+      toString: () => (typeof val === "string" ? val : val ? val.toString() : ""),
+    }),
+  };
+}
+
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import Script from "next/script";

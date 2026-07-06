@@ -78,11 +78,6 @@ const FEATURES = [
     title: "Keep it indoor and flaunt it",
     text: "No need for a sprawling backyard to do home composting. Do it at the comfort of your apartment's kitchen or even balcony.",
   },
-  {
-    icon: WashingMachine,
-    title: "Self-cleaning",
-    text: "Just spray water, stir, rinse off the water from the bottom and you are ready to go.",
-  },
 ];
 
 
@@ -94,9 +89,10 @@ function ProductGallery() {
   const goTo = (i) => setSlideIndex((i + images.length) % images.length);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full max-w-md mx-auto">
       {/* Colorway picker */}
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-3 mb-8">
+        <span className="text-xs uppercase tracking-widest text-ink/60 font-semibold mr-1">Color:</span>
         {SWATCHES.map((s, i) => (
           <button
             key={s.name}
@@ -105,56 +101,69 @@ function ProductGallery() {
               setSlideIndex(0);
             }}
             aria-label={s.name}
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-all"
-            style={{ border: i === swatchIndex ? `2px solid ${INK}` : "2px solid #B9C7AE" }}
+            className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
+            style={{ 
+              border: i === swatchIndex ? `3px solid #4CAF2E` : "2px solid rgba(31, 46, 27, 0.15)",
+              backgroundColor: "#FFF"
+            }}
           >
-            <span className="w-6 h-6 rounded-full" style={{ background: s.swatch }} />
+            <span className="w-6 h-6 rounded-full shadow-inner" style={{ background: s.swatch }} />
           </button>
         ))}
       </div>
 
-      {/* Image slot + arrows — replace the placeholder with a real <img> once you have assets */}
-      <div className="relative w-full max-w-sm">
+      {/* Image slot + arrows — polished as a premium display container */}
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/12]">
         <div
-          className="w-full h-56 md:h-72 rounded-2xl flex flex-col items-center justify-center gap-2"
-          style={{ border: `1.5px dashed ${INK}44`, background: "#FFFFFF59" }}
+          className="w-full h-full rounded-[2rem] flex flex-col items-center justify-center gap-4 p-8 transition-all duration-500 border border-emerald-500/10 shadow-glass"
+          style={{ 
+            background: "linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%)",
+            backdropFilter: "blur(10px)"
+          }}
         >
-          <ImagePlus size={30} color={INK} strokeWidth={1.5} />
-          <span
-            className="text-[11px] uppercase tracking-widest text-center px-4"
-            style={{ color: MUTED, letterSpacing: "0.15em" }}
-          >
-            {images[slideIndex]}
-          </span>
+          <div className="w-16 h-16 rounded-3xl bg-white shadow-premium flex items-center justify-center text-ink-light">
+            <ImagePlus size={28} strokeWidth={1.5} className="text-accent-green" />
+          </div>
+          <div className="text-center">
+            <h4 className="text-ink font-bold text-lg tracking-tight mb-1">{SWATCHES[swatchIndex].name}</h4>
+            <span
+              className="text-[10px] uppercase tracking-[0.2em] font-semibold block"
+              style={{ color: MUTED }}
+            >
+              {images[slideIndex]}
+            </span>
+          </div>
         </div>
 
         <button
           onClick={() => goTo(slideIndex - 1)}
           aria-label="Previous image"
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center transition-transform hover:scale-110"
-          style={{ background: "#FFFFFFB3" }}
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-premium border border-emerald-500/5 transition-all duration-300 hover:scale-110 hover:bg-neutral-50 active:scale-95"
         >
-          <ChevronLeft size={16} color={INK} />
+          <ChevronLeft size={18} className="text-ink" />
         </button>
         <button
           onClick={() => goTo(slideIndex + 1)}
           aria-label="Next image"
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center transition-transform hover:scale-110"
-          style={{ background: "#FFFFFFB3" }}
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-premium border border-emerald-500/5 transition-all duration-300 hover:scale-110 hover:bg-neutral-50 active:scale-95"
         >
-          <ChevronRight size={16} color={INK} />
+          <ChevronRight size={18} className="text-ink" />
         </button>
       </div>
 
       {/* Dots */}
-      <div className="flex items-center gap-2 mt-4">
+      <div className="flex items-center gap-2 mt-6">
         {images.map((_, i) => (
           <button
             key={i}
             onClick={() => setSlideIndex(i)}
             aria-label={`Go to image ${i + 1}`}
-            className="rounded-full transition-all"
-            style={{ width: i === slideIndex ? 16 : 6, height: 6, background: i === slideIndex ? INK : `${INK}33` }}
+            className="rounded-full transition-all duration-300"
+            style={{ 
+              width: i === slideIndex ? 24 : 8, 
+              height: 8, 
+              background: i === slideIndex ? "#4CAF2E" : "rgba(31, 46, 27, 0.15)" 
+            }}
           />
         ))}
       </div>
@@ -164,13 +173,15 @@ function ProductGallery() {
 
 function FeatureRow({ icon: Icon, title, text }) {
   return (
-    <div className="flex items-start gap-5 mb-8 last:mb-0">
-      <Icon size={40} strokeWidth={1} className="flex-shrink-0 text-ink" />
+    <div className="flex items-start gap-6 mb-8 last:mb-0 group">
+      <div className="w-12 h-12 rounded-2xl bg-white border border-emerald-500/5 shadow-premium flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-105 group-hover:bg-emerald-50 text-ink">
+        <Icon size={22} strokeWidth={1.5} className="text-accent-green" />
+      </div>
       <div>
-        <div className="font-semibold uppercase text-sm tracking-wide text-ink">
+        <div className="font-bold uppercase text-xs tracking-wider text-ink-dark">
           {title}
         </div>
-        <div className="mt-1.5 text-sm leading-relaxed text-body">
+        <div className="mt-2 text-sm leading-relaxed text-body/95">
           {text}
         </div>
       </div>
@@ -181,37 +192,30 @@ function FeatureRow({ icon: Icon, title, text }) {
 export default function OurStory() {
   return (
     <section
-      className="w-full flex items-center justify-center px-4 py-14 md:py-20 bg-backdrop"
+      className="w-full flex items-center justify-center px-4 py-20 md:py-28 bg-backdrop-dark/20 font-source-sans border-t border-emerald-500/5"
     >
       <style>{`
         .rawbin-card-scroll::-webkit-scrollbar { display: none; }
         .rawbin-card-scroll { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
-      {/* The card — wider and a little taller than the story version */}
+      {/* Flagship Card Showcase */}
       <div
-        className="relative mx-auto w-[95vw] h-[88vh] sm:w-[92vw] sm:h-[84vh] md:w-[85vw] md:h-[78vh] max-w-[1400px] max-h-[820px] min-h-[480px] rounded-[28px] overflow-hidden shadow-2xl bg-card-bg"
+        className="relative mx-auto w-11/12 max-w-[1400px] rounded-[2.5rem] overflow-hidden shadow-premium border border-emerald-500/10 bg-gradient-to-br from-[#E4F1CB] to-[#D4E8B5]"
       >
-        <div className="rawbin-card-scroll w-full h-full overflow-y-auto">
+        <div className="w-full h-full">
           {/* Hero block */}
-          <div className="text-center px-6 md:px-16 pt-10 md:pt-14 pb-4">
-            <h2 className="text-3xl md:text-5xl font-semibold text-ink">
+          <div className="text-center px-6 md:px-16 pt-12 md:pt-16 pb-6">
+            <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-ink/60">
+              INDIA'S FIRST SMART HOME COMPOSTER
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-ink-dark mt-3 tracking-tight leading-none">
               INTRODUCING RAWBIN
             </h2>
-            <p className="mt-3 font-semibold text-sm md:text-base tracking-wide text-accent-green">
-              INDIA'S FIRST SMART HOME COMPOSTER
-            </p>
-  
-            <button
-              className="mt-6 px-7 py-2.5 rounded-full font-semibold text-sm text-white transition-transform hover:scale-105 bg-accent-green"
-              // wire this up to your waitlist flow / signup modal
-            >
-              Join the waitlist
-            </button>
           </div>
 
           {/* Product body: gallery left, features right */}
-          <div className="grid md:grid-cols-2 gap-10 md:gap-14 px-6 md:px-16 pb-12 md:pb-16 mt-6 md:mt-10">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 px-6 md:px-16 pb-16 md:pb-20 mt-6 md:mt-10 items-center">
             <ProductGallery />
             <div className="flex flex-col justify-center">
               {FEATURES.map((f) => (

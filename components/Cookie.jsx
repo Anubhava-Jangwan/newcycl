@@ -17,11 +17,11 @@ const Cookie = () => {
 
   return (
     <section
-      className={`fixed flex items-center justify-between max-w-screen-lg mx-auto bg-ink text-white inset-x-5 p-4 bottom-10 md:w-2/3 rounded-2xl shadow-2xl z-50 ${
-        hideCookie ? "hidden" : ""
+      className={`fixed flex items-center justify-between max-w-xl mx-auto bg-ink-dark/95 border border-white/10 text-white inset-x-5 p-4 bottom-10 rounded-2xl shadow-premium backdrop-blur-lg z-50 transition-all duration-300 ${
+        hideCookie ? "hidden translate-y-4 opacity-0" : "translate-y-0 opacity-100"
       }`}
     >
-      <p className="ml-4 text-sm text-gray-60">
+      <p className="ml-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light">
         By continuing to use this site you consent to the use of cookies in
         accordance with our cookie policy.
       </p>
@@ -31,9 +31,9 @@ const Cookie = () => {
           setHideCookie(!hideCookie);
           updateCookie(new Date().getTime(), 365);
         }}
-        className="flex-shrink-0 inline-flex justify-center items-center hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5"
+        className="flex-shrink-0 inline-flex justify-center items-center text-white/70 hover:text-white hover:bg-white/10 rounded-xl text-sm p-2 transition duration-200"
       >
-        <X />
+        <X size={18} />
       </button>
     </section>
   );

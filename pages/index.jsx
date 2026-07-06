@@ -11,6 +11,7 @@ import LazySection from "../components/LazySection";
 import MissionVisionCarousel from "../components/mission-vission";
 import { useEffect, useState } from "react";
 import OurProduct from "../components/our_product";
+import Founders from "../components/Founders";
 
 
 const AboutTheProduct = dynamic(() => import("../components/AboutTheProductV2"));
@@ -75,6 +76,8 @@ const Index = ({ user }) => {
         <LazySection minHeight={260}>
           <OurStory />
         </LazySection>
+
+        <Founders />
 
       </section>
  

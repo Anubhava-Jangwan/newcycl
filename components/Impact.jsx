@@ -51,23 +51,23 @@ function MetricCard({ metric, started, isLast }) {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center text-center px-6 py-10 flex-1 
-        ${!isLast ? "border-b md:border-b-0 md:border-r border-gray-100" : ""}`}
+      className={`flex flex-col items-center justify-center text-center px-6 py-10 flex-1 transition-all duration-300 hover:bg-emerald-50/30 group/card
+        ${!isLast ? "border-b md:border-b-0 md:border-r border-emerald-500/5" : ""}`}
     >
       {/* Number with monospace font for consistent width */}
-      <p className="font-mono text-5xl lg:text-6xl font-light tracking-tight text-ink leading-none tabular-nums">
+      <p className="font-mono text-5xl lg:text-6xl font-light tracking-tight text-ink-dark leading-none tabular-nums transition-transform duration-300 group-hover/card:scale-105">
         {count.toLocaleString()}
       </p>
 
       {/* Unit label */}
       {metric.unit && (
-        <p className="mt-2.5 text-xs font-light text-gray-400 uppercase letter-spacing">
+        <p className="mt-3 text-[10px] font-bold text-accent-green uppercase tracking-widest">
           {metric.unit}
         </p>
       )}
 
       {/* Description */}
-      <p className="mt-5 text-sm text-gray-600 leading-relaxed max-w-xs font-light">
+      <p className="mt-4 text-sm text-body/90 leading-relaxed max-w-xs font-normal">
         {metric.label}
       </p>
     </div>
@@ -93,16 +93,15 @@ export default function ImpactMetrics() {
   }, []);
 
   return (
-    <div className="relative z-10 px-0 sm:px-2 -mt-16 sm:-mt-24 md:-mt-28 mb-20">
+    <div className="relative z-10 px-4 sm:px-8 -mt-16 sm:-mt-24 md:-mt-28 mb-24">
       <Link
         href="/impact"
         ref={ref}
-        className="group relative mx-auto block max-w-6xl overflow-hidden rounded-3xl bg-white
-          shadow-lg hover:shadow-2xl
-          border border-gray-100 transition-shadow duration-500"
+        className="group relative mx-auto block max-w-5xl overflow-hidden rounded-[2rem] bg-white
+          shadow-premium hover:shadow-premium-hover border border-emerald-500/10 transition-all duration-500"
       >
         {/* 4-column metric grid */}
-        <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-100">
+        <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-emerald-500/10">
           {metrics.map((metric, i) => (
             <MetricCard
               key={metric.label}
@@ -114,8 +113,8 @@ export default function ImpactMetrics() {
         </div>
 
         {/* Hover CTA */}
-        <p className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-center
-          text-xs font-medium text-ink opacity-0 transition-all duration-500
+        <p className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-center
+          text-xs font-semibold tracking-wider uppercase text-accent-green opacity-0 transition-all duration-300
           group-hover:bottom-3 group-hover:opacity-100 max-md:hidden">
           View full impact report →
         </p>

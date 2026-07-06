@@ -53,17 +53,17 @@ const FAQ = ({}) => {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <Navbar />
-      <div className="relative lg:px-48 pt-24 mx-auto">
-        <h1 className="px-12 mt-12 text-5xl leading-none sm:mr-12">
+      <div className="relative max-w-3xl mx-auto px-6 sm:px-8 pt-28 pb-16 font-source-sans">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink-dark tracking-tight leading-none mb-12">
           Frequently Asked Questions
         </h1>
 
-        <div className="px-12 mt-6 q-and-a">
-          {faqJSON.map((faq) => {
+        <div className="space-y-6">
+          {faqJSON.map((faq, index) => {
             return (
-              <div className="faq my-6">
-                <div className="text-xl">{faq.question}</div>
-                <div className="text-xl">{faq.answer}</div>
+              <div key={index} className="p-6 bg-white border border-emerald-500/5 rounded-2xl shadow-premium hover:shadow-premium-hover transition-all duration-300">
+                <div className="text-lg font-bold text-ink-dark mb-2">{faq.question}</div>
+                <div className="text-base text-body/90 font-light leading-relaxed">{faq.answer}</div>
               </div>
             );
           })}
