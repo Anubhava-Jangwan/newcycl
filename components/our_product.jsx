@@ -51,10 +51,11 @@ const ACCENT_GREEN = "#4CAF2E"; // vivid green — subtitle + CTA button
 const BODY = "#3E4A38"; // muted green-grey — description copy
 const MUTED = "#6B7A63"; // secondary / caption text
 
-const SWATCHES = [
-  { name: "Warm Grey", swatch: "#E7E2D8", images: ["Warm Grey — front", "Warm Grey — open lid", "Warm Grey — side"] },
-  { name: "Forest Green", swatch: "#1F3A24", images: ["Forest Green — front", "Forest Green — open lid", "Forest Green — side"] },
-  { name: "Coffee Brown", swatch: "#4A3226", images: ["Coffee Brown — front", "Coffee Brown — open lid", "Coffee Brown — side"] },
+const RAWBIN_IMAGES = [
+  { label: "Front View", path: "/rawbin/rawbin-main-white-bg.jpeg" },
+  { label: "Side View", path: "/rawbin/side-view.png" },
+  { label: "Back View", path: "/rawbin/back-view.png" },
+  { label: "Top-Down View", path: "/rawbin/Top-Down-view.png" }
 ];
 
 const FEATURES = [
@@ -82,55 +83,32 @@ const FEATURES = [
 
 
 function ProductGallery() {
-  const [swatchIndex, setSwatchIndex] = useState(2); // Coffee Brown selected by default, matching your screenshot
   const [slideIndex, setSlideIndex] = useState(0);
-
-  const images = SWATCHES[swatchIndex].images;
-  const goTo = (i) => setSlideIndex((i + images.length) % images.length);
+  const goTo = (i) => setSlideIndex((i + RAWBIN_IMAGES.length) % RAWBIN_IMAGES.length);
 
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto">
-      {/* Colorway picker */}
-      <div className="flex items-center gap-3 mb-8">
-        <span className="text-xs uppercase tracking-widest text-ink/60 font-semibold mr-1">Color:</span>
-        {SWATCHES.map((s, i) => (
-          <button
-            key={s.name}
-            onClick={() => {
-              setSwatchIndex(i);
-              setSlideIndex(0);
-            }}
-            aria-label={s.name}
-            className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
-            style={{ 
-              border: i === swatchIndex ? `3px solid #4CAF2E` : "2px solid rgba(31, 46, 27, 0.15)",
-              backgroundColor: "#FFF"
-            }}
-          >
-            <span className="w-6 h-6 rounded-full shadow-inner" style={{ background: s.swatch }} />
-          </button>
-        ))}
-      </div>
-
       {/* Image slot + arrows — polished as a premium display container */}
       <div className="relative w-full aspect-[4/3] sm:aspect-[16/12]">
         <div
-          className="w-full h-full rounded-[2rem] flex flex-col items-center justify-center gap-4 p-8 transition-all duration-500 border border-emerald-500/10 shadow-glass"
+          className="w-full h-full rounded-[2rem] flex flex-col items-center justify-center p-4 transition-all duration-500 border border-emerald-500/10 shadow-glass"
           style={{ 
-            background: "linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%)",
+            background: "linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 100%)",
             backdropFilter: "blur(10px)"
           }}
         >
-          <div className="w-16 h-16 rounded-3xl bg-white shadow-premium flex items-center justify-center text-ink-light">
-            <ImagePlus size={28} strokeWidth={1.5} className="text-accent-green" />
+          <div className="w-full h-[82%] flex items-center justify-center overflow-hidden rounded-2xl bg-white/40">
+            <img
+              src={RAWBIN_IMAGES[slideIndex].path}
+              alt={RAWBIN_IMAGES[slideIndex].label}
+              className="w-full h-full object-contain p-2"
+            />
           </div>
-          <div className="text-center">
-            <h4 className="text-ink font-bold text-lg tracking-tight mb-1">{SWATCHES[swatchIndex].name}</h4>
+          <div className="text-center mt-2.5">
             <span
-              className="text-[10px] uppercase tracking-[0.2em] font-semibold block"
-              style={{ color: MUTED }}
+              className="text-[10px] uppercase tracking-[0.25em] font-extrabold block text-ink"
             >
-              {images[slideIndex]}
+              {RAWBIN_IMAGES[slideIndex].label}
             </span>
           </div>
         </div>
@@ -138,14 +116,14 @@ function ProductGallery() {
         <button
           onClick={() => goTo(slideIndex - 1)}
           aria-label="Previous image"
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-premium border border-emerald-500/5 transition-all duration-300 hover:scale-110 hover:bg-neutral-50 active:scale-95"
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-premium border border-emerald-500/5 transition-all duration-300 hover:scale-110 hover:bg-neutral-50 active:scale-95 z-10"
         >
           <ChevronLeft size={18} className="text-ink" />
         </button>
         <button
           onClick={() => goTo(slideIndex + 1)}
           aria-label="Next image"
-          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-premium border border-emerald-500/5 transition-all duration-300 hover:scale-110 hover:bg-neutral-50 active:scale-95"
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-premium border border-emerald-500/5 transition-all duration-300 hover:scale-110 hover:bg-neutral-50 active:scale-95 z-10"
         >
           <ChevronRight size={18} className="text-ink" />
         </button>
@@ -153,7 +131,7 @@ function ProductGallery() {
 
       {/* Dots */}
       <div className="flex items-center gap-2 mt-6">
-        {images.map((_, i) => (
+        {RAWBIN_IMAGES.map((_, i) => (
           <button
             key={i}
             onClick={() => setSlideIndex(i)}

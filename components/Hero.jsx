@@ -3,26 +3,16 @@ import React, { useEffect, useState } from "react";
 const NAVBAR_HEIGHT = "116px";
 
 const Hero = () => {
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(true);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
 
-    if (prefersReducedMotion || !isDesktop) {
-      return;
+    if (prefersReducedMotion) {
+      setShouldLoadVideo(false);
     }
-
-    const idleCallback =
-      window.requestIdleCallback ||
-      ((callback) => window.setTimeout(callback, 1200));
-    const cancelIdleCallback =
-      window.cancelIdleCallback || ((id) => window.clearTimeout(id));
-    const idleId = idleCallback(() => setShouldLoadVideo(true));
-
-    return () => cancelIdleCallback(idleId);
   }, []);
 
   return (
