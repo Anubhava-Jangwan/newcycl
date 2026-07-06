@@ -44,7 +44,7 @@ const RecognisedBy = () => {
         }
       `}</style>
 
-      <section className="w-full py-16 bg-[#000]">
+      <section className="w-full py-16 bg-neutral-950">
         <p className="text-center text-white/70 text-sm font-medium tracking-widest uppercase mb-10">
           Supported &amp; Recognised by
         </p>

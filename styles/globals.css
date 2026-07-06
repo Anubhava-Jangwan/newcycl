@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -19,9 +19,9 @@
 }
 
 body {
-  color: #273266;
-  background: #e7e1e1;
-  font-family: "Source Sans 3", "Open Sans", sans-serif;
+  color: #1F2E1B;
+  background: #F4F1EA;
+  font-family: "Inter", sans-serif;
 }
 
 h1,
@@ -30,11 +30,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Source Sans 3", "Raleway", sans-serif;
+  font-family: "Fraunces", serif;
 }
 
 .font-source-sans {
-  font-family: "Source Sans 3", "Open Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .bg-nc-purple {

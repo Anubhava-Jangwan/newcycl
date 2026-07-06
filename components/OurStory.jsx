@@ -6,8 +6,8 @@ import { ChevronRight, ImagePlus } from "lucide-react";
  *
  * Landing: a full-bleed grid of dots that flee the cursor.
  * Click anywhere to enter the story, which scrolls sideways —
- * each panel has an image slot on the left and an empty text
- * slot on the right, ready for real copy and photography.
+ * each panel has an image slot on the left and a text slot on
+ * the right. Write your copy directly in the SLIDES array below.
  * Page position is shown as three dots that grow on the active page.
  */
 
@@ -18,27 +18,61 @@ const REPEL_RADIUS = 110;
 const MAX_PUSH = 26;
 const EASE = 0.15;
 
-const BG = "#b9c0b4";
-const DOT_COLOR = "#0a061f";
-const INK = "#150303";
+const BG = "#F4F1EA";
+const DOT_COLOR = "#6B7A63";
+const INK = "#1F2E1B";
 
+// ---- Write your story here --------------------------------------------
+// `label` is the small eyebrow tag, `heading` is the slide's title,
+// `text` is the body copy. Leave a blank line between paragraphs in
+// `text` and it'll show up as a real paragraph break.
 const SLIDES = [
-  { label: "Chapter 01" },
-  { label: "Chapter 02" },
-  { label: "Chapter 03" },
-];
+  {
+    label: "Phase 01",
+    heading: "The Uncomfortable Truth",
+    text: `We thought waste was someone else's problem. Throw it away. Someone takes it away. Problem solved.
 
-function useGoogleFonts() {
-  useEffect(() => {
-    if (document.getElementById(FONT_ID)) return;
-    const link = document.createElement("link");
-    link.id = FONT_ID;
-    link.rel = "stylesheet";
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap";
-    document.head.appendChild(link);
-  }, []);
-}
+But it wasn't. It was just moved—to a landfill.
+
+India generates 150 million tonnes of waste yearly. In Bengaluru alone, households dump 2,000 tonnes of organic waste to landfills every day. It doesn't disappear. It rots. It produces methane. It fuels climate change.
+
+We asked ourselves the uncomfortable question: What if waste was our responsibility? What if the power to change lived in our homes, not in someone else's policy? What if the person who created the problem could solve it?
+
+These questions haunted us. They still do.`,
+  },
+  {
+    label: "Phase 02",
+    heading: "The Garage Experiments",
+    text: `We tried everything. Pit composting. Worm bins. Bokashi. We failed miserably. Apartments smelled. Worms died. Systems demanded time we didn't have.
+
+We discovered the real problem: traditional composting doesn't fit modern life.
+
+It demands too much—time, space, knowledge, consistency. Most people give up. So waste stays someone else's problem.
+
+Then we asked differently: What if composting was as easy as throwing food in a bin and pressing a button? What if technology could handle the complexity while you lived your life?
+
+That obsession changed everything.`,
+  },
+  {
+    label: "Phase 03",
+    heading: "Rawbin — The Solution",
+    text: `Rawbin isn't just a composter. It's us saying: your waste is your responsibility. And we made it effortless.
+Cook. Eat. Throw scraps into Rawbin. Get compost in 7 days.
+
+When you compost with Rawbin, you remove 1,500 kg CO2e annually—more impact than solar panels. You build soil instead of feeding landfills. You teach your kids that their actions matter. You prove that one household can change the world.
+
+Rawbin exists for everyone: the climate-anxious Gen Z. The busy millennial who cares. The parent modeling responsibility. Anyone who wants to do something—without it becoming another burden.
+
+Rawbin works because people don't change for the planet. They change for convenience. The planet just benefits.
+
+Rawbin is the tool. You're the revolution. We're just making it easy.
+
+Cook. Eat. Compost.™`,
+  },
+];
+// -------------------------------------------------------------------------
+
+
 
 function DotField({ onEnter }) {
   const wrapperRef = useRef(null);
@@ -152,22 +186,22 @@ function DotField({ onEnter }) {
       aria-label="Enter our story"
     >
       <canvas ref={canvasRef} className="absolute inset-0" />
-      <div className="relative h-full w-full flex flex-col items-center justify-center px-6 pointer-events-none">
+      <div className="relative h-full w-full flex flex-col items-center justify-center px-6 pointer-events-none ">
         <h1
-          className="text-5xl md:text-6xl text-center"
-          style={{ fontFamily: "'Fraunces', serif", fontWeight: 500, color: INK }}
+          className="text-5xl md:text-6xl text-center font-medium"
+          style={{ color: INK }}
         >
           OUR STORY
         </h1>
         <p
           className="mt-4 text-base md:text-lg text-center"
-          style={{ fontFamily: "'Inter', sans-serif", color: "#4A4640" }}
+          style={{ color: "#4A4640" }}
         >
           the way we throw waste is broken. we’re here to fix it.
         </p>
         <p
           className="mt-10 text-xs uppercase tracking-widest"
-          style={{ fontFamily: "'Inter', sans-serif", color: "#8A8378", letterSpacing: "0.25em" }}
+          style={{ color: DOT_COLOR, letterSpacing: "0.25em" }}
         >
           Click to begin
         </p>
@@ -176,14 +210,19 @@ function DotField({ onEnter }) {
   );
 }
 
-function StorySlide({ label }) {
+function StorySlide({ label, heading, text }) {
   return (
+    // w-full (not min-w-full) is the fix: with flex-shrink-0 and no width,
+    // this item's size was being driven by its content's max-content width —
+    // which for a long paragraph means "as one unbroken line" — so it blew
+    // out to thousands of px wide instead of wrapping. w-full pins it to
+    // 100% of the scroller, forcing the text to wrap inside that instead.
     <div
-      className="min-w-full h-full flex-shrink-0 grid md:grid-cols-2"
+      className="w-full h-full flex-shrink-0 grid md:grid-cols-2"
       style={{ scrollSnapAlign: "start" }}
     >
       {/* Image slot, left */}
-      <div className="flex items-center justify-center p-10 md:p-16" style={{ background: BG }}>
+      <div className="min-w-0 flex items-center justify-center p-10 md:p-16" style={{ background: BG }}>
         <div
           className="w-full h-full rounded-2xl flex flex-col items-center justify-center gap-3"
           style={{ border: `1.5px dashed ${DOT_COLOR}55` }}
@@ -191,26 +230,38 @@ function StorySlide({ label }) {
           <ImagePlus size={32} color={DOT_COLOR} strokeWidth={1.5} />
           <span
             className="text-xs uppercase tracking-widest"
-            style={{ fontFamily: "'Inter', sans-serif", color: "#8A8378", letterSpacing: "0.2em" }}
+            style={{ color: "#8A8378", letterSpacing: "0.2em" }}
           >
             Import image
           </span>
         </div>
       </div>
 
-      {/* Text slot, right */}
-      <div className="flex flex-col justify-center p-10 md:p-16" style={{ background: "#FFFFFF" }}>
+      {/* Text slot, right — label / heading / text all come from SLIDES up top */}
+      <div className="min-w-0 flex flex-col justify-center p-10 md:p-16 overflow-y-auto" style={{ background: "#FFFFFF" }}>
         <span
-          className="text-xs uppercase tracking-widest mb-4"
-          style={{ fontFamily: "'Inter', sans-serif", color: DOT_COLOR, letterSpacing: "0.2em" }}
+          className="text-xs uppercase tracking-widest mb-3"
+          style={{ color: DOT_COLOR, letterSpacing: "0.2em" }}
         >
           {label}
         </span>
+
+        {heading && (
+          <h3
+            className="text-2xl md:text-3xl mb-4 font-medium"
+            style={{ color: INK }}
+          >
+            {heading}
+          </h3>
+        )}
+
+        {/* whitespace-pre-line keeps the blank lines between paragraphs in
+            `text` as real breaks, instead of collapsing them into one line. */}
         <p
-          className="text-lg md:text-xl italic"
-          style={{ fontFamily: "'Fraunces', serif", color: "#B4ADA2" }}
+          className="text-base md:text-lg leading-relaxed whitespace-pre-line"
+          style={{ color: "#3A352F" }}
         >
-          Write your story here...
+          {text}
         </p>
       </div>
     </div>
@@ -241,7 +292,6 @@ function PageDots({ count, activeIndex, onSelect }) {
 }
 
 export default function OurStory() {
-  useGoogleFonts();
   const [entered, setEntered] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollerRef = useRef(null);
@@ -287,7 +337,7 @@ export default function OurStory() {
             style={{ scrollSnapType: "x mandatory", scrollBehavior: "smooth" }}
           >
             {SLIDES.map((s) => (
-              <StorySlide key={s.label} label={s.label} />
+              <StorySlide key={s.label} label={s.label} heading={s.heading} text={s.text} />
             ))}
           </div>
 

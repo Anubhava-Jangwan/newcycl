@@ -3,32 +3,26 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-
-
 const metrics = [
   {
     value: 7,
     label: "Households empowered",
-    unit: null,
-    icon: null,
+    unit: "HOUSES",
   },
   {
     value: 1341,
-    label: "Food waste diverted from landfill",
+    label: "waste diverted",
     unit: "tonnes",
-    icon: null,
   },
   {
     value: 5325,
     label: "Compost produced",
-    unit: "Tonnes",
-    icon: null,
+    unit: "tonnes",
   },
   {
     value: 2355,
     label: "CO₂eq. avoided",
     unit: "tonnes CO₂e",
-    icon: null,
   },
 ];
 
@@ -41,7 +35,6 @@ function useCountUp(target, duration = 2200, started = false) {
     const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      // easeOutExpo — fast start, gentle landing
       const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setCount(Math.floor(eased * target));
       if (progress < 1) requestAnimationFrame(animate);
@@ -58,21 +51,23 @@ function MetricCard({ metric, started, isLast }) {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center text-center px-6 py-10 flex-1 min-w-0
+      className={`flex flex-col items-center justify-center text-center px-6 py-10 flex-1 
         ${!isLast ? "border-b md:border-b-0 md:border-r border-gray-100" : ""}`}
     >
-
-      <p className="text-5xl xl:text-6xl font-light tracking-tight text-[#1a1f4e] leading-none">
+      {/* Number with monospace font for consistent width */}
+      <p className="font-mono text-5xl lg:text-6xl font-light tracking-tight text-ink leading-none tabular-nums">
         {count.toLocaleString()}
       </p>
 
+      {/* Unit label */}
       {metric.unit && (
-        <p className="mt-2 text-base text-gray-400 font-light">
+        <p className="mt-2.5 text-xs font-light text-gray-400 uppercase letter-spacing">
           {metric.unit}
         </p>
       )}
 
-      <p className="mt-4 text-sm text-gray-500 leading-snug max-w-[150px]">
+      {/* Description */}
+      <p className="mt-5 text-sm text-gray-600 leading-relaxed max-w-xs font-light">
         {metric.label}
       </p>
     </div>
@@ -98,17 +93,16 @@ export default function ImpactMetrics() {
   }, []);
 
   return (
-    // Negative margin pulls the card up to overlap the section above — adjust -mt value to taste
-    <div className="relative z-10 px-0 sm:px-2 -mt-2 mb-20">
+    <div className="relative z-10 px-0 sm:px-2 -mt-16 sm:-mt-24 md:-mt-28 mb-20">
       <Link
         href="/impact"
         ref={ref}
-        className="group relative mx-auto block max-w-6xl overflow-hidden rounded-[2.5rem] bg-white
-          shadow-[0_8px_48px_rgba(0,0,0,0.10)] hover:shadow-[0_16px_64px_rgba(0,0,0,0.15)]
-          border border-gray-100 transition-all duration-500"
+        className="group relative mx-auto block max-w-6xl overflow-hidden rounded-3xl bg-white
+          shadow-lg hover:shadow-2xl
+          border border-gray-100 transition-shadow duration-500"
       >
         {/* 4-column metric grid */}
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-100">
           {metrics.map((metric, i) => (
             <MetricCard
               key={metric.label}
@@ -119,16 +113,13 @@ export default function ImpactMetrics() {
           ))}
         </div>
 
-        {/* Hover CTA — slides up from bottom */}
+        {/* Hover CTA */}
         <p className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-center
-          text-xs font-medium text-[#1a1f4e] opacity-0 transition-all duration-500
+          text-xs font-medium text-ink opacity-0 transition-all duration-500
           group-hover:bottom-3 group-hover:opacity-100 max-md:hidden">
-          View Newcycl's full impact report →
+          View full impact report →
         </p>
-
-       
       </Link>
     </div>
   );
-  
 }

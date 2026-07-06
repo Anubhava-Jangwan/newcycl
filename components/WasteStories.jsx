@@ -65,51 +65,7 @@ const stories = [
 
 const WS = () => {
   return (
-    <>
-      <div className="smoke pb-24">
-        <div className={`mx-auto text-center px-12 py-6`}>
-          <h2
-            className={`w-full my-2 text-5xl font-bold text-center ${dancingScript.className}`}
-          >
-            Waste Stories
-          </h2>
-          <div className={`my-4 ${pangolin.className}`}>
-            These are some feedbacks we collected from Bengaluru people who deal
-            with waste daily.
-          </div>
-        </div>
-        <div className="flex flex-row px-6 mx-auto">
-          <Splide
-            options={{
-              rewind: true,
-              width: "100%",
-              gap: "1rem",
-              perPage: 4,
-              breakpoints: {
-                600: {
-                  perPage: 1,
-                },
-                1024: {
-                  perPage: 2,
-                },
-                1280: {
-                  perPage: 3,
-                },
-              },
-            }}
-            aria-label="Waste Stories"
-          >
-            {stories.map((story, index) => {
-              return (
-                <SplideSlide>
-                  <WasteStoryCard key={index} story={story} index={index} />
-                </SplideSlide>
-              );
-            })}
-          </Splide>
-        </div>
-      </div>
-    </>
+ <></>
   );
 };
 

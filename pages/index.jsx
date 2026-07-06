@@ -9,6 +9,8 @@ import Hero from "../components/Hero";
 import Impact from "../components/Impact";
 import LazySection from "../components/LazySection";
 import MissionVisionCarousel from "../components/mission-vission";
+import { useEffect, useState } from "react";
+import OurProduct from "../components/our_product";
 
 
 const AboutTheProduct = dynamic(() => import("../components/AboutTheProductV2"));
@@ -18,6 +20,7 @@ const OurStory = dynamic(() => import("../components/OurStory"));
 const Earth = dynamic(() => import("../components/Earth"));
 const Curve = dynamic(() => import("../components/Curve"));
 const Cookie = dynamic(() => import("../components/Cookie"), { ssr: false });
+
 
 const Index = ({ user }) => {
   return (
@@ -66,29 +69,15 @@ const Index = ({ user }) => {
         <Hero />
         <Impact />
         <Recognisedby />
-        <LazySection minHeight={360}>
-          <AboutTheProduct />
-        </LazySection>
+        <OurProduct />
         <MissionVisionCarousel />
-        <LazySection minHeight={360}>
-          <AboutTheProduct />
-        </LazySection>
-        <LazySection minHeight={520}>
-          <WasteStories />
-        </LazySection>
-        <LazySection minHeight={360}>
-          <WeHearYou />
-        </LazySection>
+
         <LazySection minHeight={260}>
           <OurStory />
         </LazySection>
-        <LazySection minHeight={900}>
-          <Earth />
-        </LazySection>
+
       </section>
-      <LazySection minHeight={360}>
-        <Curve />
-      </LazySection>
+ 
       <Cookie />
       <Footer />
     </>

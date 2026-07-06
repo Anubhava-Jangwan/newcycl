@@ -17,7 +17,7 @@ const Cookie = () => {
 
   return (
     <section
-      className={`fixed flex items-center justify-between max-w-screen-lg mx-auto bg-nc-purple-900 text-white inset-x-5 p-2 bottom-16 md:w-2/3 rounded-lg drop-shadow-2xl z-50 ${
+      className={`fixed flex items-center justify-between max-w-screen-lg mx-auto bg-ink text-white inset-x-5 p-4 bottom-10 md:w-2/3 rounded-2xl shadow-2xl z-50 ${
         hideCookie ? "hidden" : ""
       }`}
     >

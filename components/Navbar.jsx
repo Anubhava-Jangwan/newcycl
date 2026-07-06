@@ -73,13 +73,13 @@ function BrandMark({ isScrolled }) {
       <span className="flex flex-col leading-none">
         <span className={classNames(
           "text-3xl font-black tracking-normal md:text-4xl transition-colors duration-300",
-          isScrolled ? "text-[#1f1f1f]" : "text-white"
+          isScrolled ? "text-ink" : "text-white"
         )}>
           NewCycl
         </span>
         <span className={classNames(
           "mt-0.5 text-[10px] font-bold uppercase tracking-normal md:text-xs transition-colors duration-300",
-          isScrolled ? "text-[#3a3a3a]" : "text-white/60"
+          isScrolled ? "text-ink/80" : "text-white/60"
         )}>
           Clean Technologies
         </span>
@@ -92,8 +92,8 @@ function NavLink({ item, pathname, mobile = false, isScrolled = false }) {
   const active = pathname === item.href;
   const className = classNames(
     active
-      ? isScrolled ? "text-[#111111] font-semibold" : "text-white font-semibold"
-      : isScrolled ? "text-[#2f2f2f]" : "text-white/80",
+      ? isScrolled ? "text-ink font-semibold" : "text-white font-semibold"
+      : isScrolled ? "text-ink/80" : "text-white/80",
     item.featured && !mobile
       ? "rawbin-nav-highlight relative isolate rounded-full px-5 py-3"
       : "",
@@ -110,6 +110,41 @@ function NavLink({ item, pathname, mobile = false, isScrolled = false }) {
     <Link href={item.href} className={className} aria-current={active ? "page" : undefined}>
       {item.name}
     </Link>
+  );
+}
+
+function HamburgerButton({ isOpen, onClick, isScrolled }) {
+  const isFloating = isScrolled;
+  
+  return (
+    <button
+      type="button"
+      className={classNames(
+        "group relative flex h-14 w-14 flex-col items-center justify-center gap-1.5 rounded-full transition-colors duration-300 shadow-lg backdrop-blur-xl",
+        isFloating
+          ? "bg-backdrop/90 hover:bg-backdrop" 
+          : "bg-ink/60 hover:bg-ink/80"
+      )}
+      aria-label={isOpen ? "Close menu" : "Open menu"}
+      aria-expanded={isOpen}
+      onClick={onClick}
+    >
+      <span className={classNames(
+        isOpen ? "translate-y-1.5 rotate-45" : "",
+        "block h-0.5 w-5 origin-center rounded-full transition duration-300",
+        isFloating ? "bg-ink" : "bg-white"
+      )} />
+      <span className={classNames(
+        isOpen ? "opacity-0" : "",
+        "block h-0.5 w-5 rounded-full transition duration-300",
+        isFloating ? "bg-ink" : "bg-white"
+      )} />
+      <span className={classNames(
+        isOpen ? "-translate-y-1.5 -rotate-45" : "",
+        "block h-0.5 w-5 origin-center rounded-full transition duration-300",
+        isFloating ? "bg-ink" : "bg-white"
+      )} />
+    </button>
   );
 }
 
@@ -131,63 +166,62 @@ export default function Navbar() {
   return (
     <>
       <Banner />
-      <header className="sticky top-0 z-50 px-4 py-3 font-source-sans">
-        <div className={classNames(
-          "mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-10 rounded-[2rem] px-6 py-2.5 shadow-2xl shadow-black/20 backdrop-blur-2xl transition-all duration-300 md:rounded-full md:px-10",
-          // Dark glass over video → light glass over white content
-          isScrolled ? "bg-white/80" : "bg-black/55"
+      <header className="sticky top-0 z-50 font-source-sans">
+        {/* Full Navbar */}
+        <nav className={classNames(
+          "px-4 py-3 transition-transform duration-500 ease-out will-change-transform",
+          isScrolled ? "-translate-y-full" : "translate-y-0"
         )}>
-          <menu className="hidden list-none items-center gap-12 lg:flex">
-            {leftNavigation.map((item) => (
-              <li key={item.name}>
-                <NavLink item={item} pathname={pathname} isScrolled={isScrolled} />
-              </li>
-            ))}
-          </menu>
+          <div className={classNames(
+            "mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-10 rounded-[2rem] px-6 py-2.5 shadow-2xl shadow-black/20 backdrop-blur-2xl md:rounded-full md:px-10",
+            "bg-ink/60 transition-colors duration-300"
+          )}>
+            <menu className="hidden list-none items-center gap-12 lg:flex">
+              {leftNavigation.map((item) => (
+                <li key={item.name}>
+                  <NavLink item={item} pathname={pathname} isScrolled={false} />
+                </li>
+              ))}
+            </menu>
 
-          <div className="col-start-2 justify-self-center">
-            <BrandMark isScrolled={isScrolled} />
+            <div className="col-start-2 justify-self-center">
+              <BrandMark isScrolled={false} />
+            </div>
+
+            <menu className="hidden list-none items-center justify-end gap-12 lg:flex">
+              {rightNavigation.map((item) => (
+                <li key={item.name}>
+                  <NavLink item={item} pathname={pathname} isScrolled={false} />
+                </li>
+              ))}
+            </menu>
+
+            <div className="col-start-3 flex justify-end lg:hidden">
+              <HamburgerButton 
+                isOpen={menuOpen} 
+                onClick={() => setMenuOpen((current) => !current)}
+                isScrolled={false}
+              />
+            </div>
           </div>
+        </nav>
 
-          <menu className="hidden list-none items-center justify-end gap-12 lg:flex">
-            {rightNavigation.map((item) => (
-              <li key={item.name}>
-                <NavLink item={item} pathname={pathname} isScrolled={isScrolled} />
-              </li>
-            ))}
-          </menu>
-
-          <div className="col-start-3 flex justify-end lg:hidden">
-            <button
-              type="button"
-              className="group relative flex h-7 w-9 flex-col justify-between"
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
+        {/* Floating Menu Ball - Only appears when scrolled */}
+        {isScrolled && (
+          <div className="fixed top-6 right-6 z-50 will-change-transform">
+            <HamburgerButton 
+              isOpen={menuOpen} 
               onClick={() => setMenuOpen((current) => !current)}
-            >
-              <span className={classNames(
-                menuOpen ? "translate-y-0.5 rotate-45" : "",
-                "block h-0.5 w-full origin-top-left rounded-full transition",
-                isScrolled ? "bg-black" : "bg-white"
-              )} />
-              <span className={classNames(
-                menuOpen ? "opacity-0" : "",
-                "block h-0.5 w-full rounded-full transition",
-                isScrolled ? "bg-black" : "bg-white"
-              )} />
-              <span className={classNames(
-                menuOpen ? "-translate-y-0.5 -rotate-45" : "",
-                "block h-0.5 w-full origin-bottom-left rounded-full transition",
-                isScrolled ? "bg-black" : "bg-white"
-              )} />
-            </button>
+              isScrolled={true}
+            />
           </div>
-        </div>
+        )}
 
+        {/* Mobile Menu - Only renders when open */}
         {menuOpen && (
           <div className={classNames(
-            "mt-3 rounded-[2rem] px-4 pb-5 font-source-sans shadow-2xl shadow-black/20 backdrop-blur-2xl lg:hidden",
-            isScrolled ? "bg-white/90 text-gray-900" : "bg-black/65 text-white"
+            "mx-4 rounded-[2rem] px-4 pb-5 font-source-sans shadow-2xl shadow-black/20 backdrop-blur-2xl",
+            isScrolled ? "bg-backdrop/95 text-ink mt-0" : "bg-ink/75 text-white mt-3"
           )}>
             <div className="grid gap-1 pt-3">
               {mobileNavigation.map((item) => (

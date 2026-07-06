@@ -7,9 +7,9 @@ import Navbar from "../components/Navbar";
 import Curve from "../components/Curve";
 import Footer from "../components/Footer";
 
-import foodWaste from "../public/foodWaste.jpg";
-import soilDegradation from "../public/soilDegradation.jpg";
-import costOfLivingCrisis from "../public/costOfLivingCrisis.jpg";
+import foodWaste from "../public/mission_vision/foodWaste.jpg";
+import soilDegradation from "../public/mission_vision/soilDegradation.jpg";
+import costOfLivingCrisis from "../public/mission_vision/costOfLivingCrisis.jpg";
 
 import linearVsCicularGraph from "../public/linear-vs-circular-graph.png";
 

@@ -66,7 +66,7 @@ const linkClass =
 
 export default function Footer() {
   return (
-    <footer id="footer" className="relative bg-[#0B0B12] px-8 pt-16 pb-10 text-white">
+    <footer id="footer" className="relative bg-neutral-950 px-8 pt-16 pb-10 text-white">
       <div className="container mx-auto flex flex-col">
         {/* Logo */}
         <div className="mb-14">

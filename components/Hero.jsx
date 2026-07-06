@@ -27,10 +27,10 @@ const Hero = () => {
 
   return (
     <div
-      className="relative overflow-hidden bg-cover bg-center"
+      className="relative overflow-hidden bg-cover bg-center bg-black"
       style={{
         marginTop: `-${NAVBAR_HEIGHT}`,
-        height: `calc(400px + ${NAVBAR_HEIGHT})`,
+        height: `calc(480px + ${NAVBAR_HEIGHT})`,
         backgroundImage: "url('/newcycl-banner.png')",
       }}
     >
@@ -60,11 +60,11 @@ const Hero = () => {
         className="relative z-10 mx-auto text-center"
         style={{ paddingTop: `calc(${NAVBAR_HEIGHT} + 5rem)` }}
       >
-        <h1 className="w-full py-2 font-extrabold text-5xl lg:text-6xl tracking-tight text-center text-white">
+        <h1 className="w-full py-2 font-bold text-5xl lg:text-6xl tracking-tight leading-tight text-center text-white drop-shadow-md">
           UNLOCKING VALUE FROM THE WORLD'S LARGEST WASTE STREAM: FOOD
         </h1>
 
-        <div className="px-12 mt-12 mb-4 font-light text-2xl text-white/80">
+        <div className="px-12 mt-8 mb-4 font-normal text-xl lg:text-2xl text-white/90 leading-relaxed drop-shadow-sm max-w-4xl mx-auto">
           Newcycl is building breakthrough technologies that transform food
           waste into valuable products for households, communities, and
           industries.
