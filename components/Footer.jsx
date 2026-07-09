@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Separator with NEWCYCL logo text */}
         <div className="flex items-center justify-center my-12 opacity-80">
           <div className="flex-1 border-t border-white/20"></div>
-          <div className="px-6 md:px-10 font-serif text-2xl md:text-3xl text-white tracking-[0.2em] uppercase">
+          <div className="px-6 md:px-10 font-serif text-2xl md:text-3xl text-gray-400 tracking-[0.2em] uppercase">
             NEWCYCL
           </div>
           <div className="flex-1 border-t border-white/20"></div>

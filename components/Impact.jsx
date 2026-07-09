@@ -7,11 +7,11 @@ const metrics = [
   {
     value: 7,
     label: "Households empowered",
-    unit: "HOUSES",
+    unit: "PROCESSES",
   },
   {
     value: 1341,
-    label: "waste diverted",
+    label: "Waste diverted",
     unit: "tonnes",
   },
   {
@@ -51,23 +51,23 @@ function MetricCard({ metric, started, isLast }) {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center text-center px-6 py-10 flex-1 transition-all duration-300 hover:bg-emerald-50/30 group/card
-        ${!isLast ? "border-b md:border-b-0 md:border-r border-emerald-500/5" : ""}`}
+      className={`flex flex-col items-center justify-center text-center px-6 py-10 flex-1 transition-all duration-300 hover:bg-white/5 group/card
+        ${!isLast ? "border-b md:border-b-0 md:border-r border-white/5" : ""}`}
     >
-      {/* Number with monospace font for consistent width */}
-      <p className="font-mono text-5xl lg:text-6xl font-light tracking-tight text-ink-dark leading-none tabular-nums transition-transform duration-300 group-hover/card:scale-105">
-        {count.toLocaleString()}
-      </p>
-
       {/* Unit label */}
       {metric.unit && (
-        <p className="mt-3 text-[10px] font-bold text-accent-green uppercase tracking-widest">
+        <p className="mb-3 text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-[0.2em]">
           {metric.unit}
         </p>
       )}
 
+      {/* Number with sans font for consistent width */}
+      <p className="font-sans text-5xl lg:text-6xl font-bold tracking-tight text-white leading-none tabular-nums transition-transform duration-300 group-hover/card:scale-105">
+        {count.toLocaleString()}
+      </p>
+
       {/* Description */}
-      <p className="mt-4 text-sm text-body/90 leading-relaxed max-w-xs font-normal">
+      <p className="mt-4 text-sm text-gray-400 font-medium">
         {metric.label}
       </p>
     </div>
@@ -97,11 +97,11 @@ export default function ImpactMetrics() {
       <Link
         href="/impact"
         ref={ref}
-        className="group relative mx-auto block max-w-5xl overflow-hidden rounded-[2rem] bg-white
-          shadow-premium hover:shadow-premium-hover border border-emerald-500/10 transition-all duration-500"
+        className="group relative mx-auto block max-w-7xl overflow-hidden rounded-[1rem] bg-[#111111]
+          shadow-premium hover:shadow-premium-hover border border-white/5 transition-all duration-500"
       >
         {/* 4-column metric grid */}
-        <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-emerald-500/10">
+        <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/5">
           {metrics.map((metric, i) => (
             <MetricCard
               key={metric.label}
@@ -114,7 +114,7 @@ export default function ImpactMetrics() {
 
         {/* Hover CTA */}
         <p className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-center
-          text-xs font-semibold tracking-wider uppercase text-accent-green opacity-0 transition-all duration-300
+          text-xs font-semibold tracking-wider uppercase text-white opacity-0 transition-all duration-300
           group-hover:bottom-3 group-hover:opacity-100 max-md:hidden">
           View full impact report →
         </p>

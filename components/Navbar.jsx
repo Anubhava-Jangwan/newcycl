@@ -48,20 +48,20 @@ function BrandMark({ isScrolled, isLightPage }) {
           <path d="M35.8215 37.6986C35.6819 37.6227 35.5618 37.5122 35.4716 37.3765C35.3813 37.2409 35.3235 37.0843 35.3032 36.9199C35.2828 36.7556 35.3005 36.5885 35.3547 36.433C35.4089 36.2775 35.498 36.1381 35.6144 36.0268L67.1444 5.65034C69.6282 3.25749 67.1822 -1.00178 64.0225 0.213786L39.1368 8.8791C36.8404 9.76286 34.6302 12.0345 34.6302 14.8644V36.5931C34.6285 36.7585 34.6888 36.9179 34.798 37.0366C35.0293 37.2902 35.6204 37.5886 35.8124 37.6938L35.8215 37.6986Z" fill="url(#paint3_linear_2_2)" />
           <defs>
             <linearGradient id="paint0_linear_2_2" x1="36.0517" y1="40.0002" x2="54.1719" y2="36.0653" gradientUnits="userSpaceOnUse">
-              <stop offset="0.152251" stopColor="#4CAF2E" />
-              <stop offset="1" stopColor="#A5FECB" />
+              <stop offset="0.152251" stopColor="#9CA3AF" />
+              <stop offset="1" stopColor="#E5E7EB" />
             </linearGradient>
             <linearGradient id="paint1_linear_2_2" x1="32.2224" y1="40.0002" x2="14.1021" y2="36.0653" gradientUnits="userSpaceOnUse">
-              <stop offset="0.152251" stopColor="#4CAF2E" />
-              <stop offset="1" stopColor="#A5FECB" />
+              <stop offset="0.152251" stopColor="#9CA3AF" />
+              <stop offset="1" stopColor="#E5E7EB" />
             </linearGradient>
             <linearGradient id="paint2_linear_2_2" x1="40.9863" y1="42.5753" x2="34.3213" y2="-6.83518" gradientUnits="userSpaceOnUse">
-              <stop offset="0.152251" stopColor="#4CAF2E" />
-              <stop offset="1" stopColor="#A5FECB" />
+              <stop offset="0.152251" stopColor="#9CA3AF" />
+              <stop offset="1" stopColor="#E5E7EB" />
             </linearGradient>
-            <linearGradient id="paint3_linear_2_2" x1="27.1781" y1="42.5753" x2="33.8431" y2="-6.83518" gradientUnits="userSpaceOnUse">
-              <stop offset="0.152251" stopColor="#4CAF2E" />
-              <stop offset="1" stopColor="#A5FECB" />
+            <linearGradient id="paint3_linear_2_2" x1="27.2877" y1="42.5753" x2="33.9528" y2="-6.83518" gradientUnits="userSpaceOnUse">
+              <stop offset="0.152251" stopColor="#9CA3AF" />
+              <stop offset="1" stopColor="#E5E7EB" />
             </linearGradient>
           </defs>
         </svg>

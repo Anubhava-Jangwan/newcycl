@@ -4,6 +4,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar";
 import Recognisedby from "../components/RecognisedBy";
+import FoodWasteJourneySection from "../components/FoodWasteJourneySection";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Impact from "../components/Impact";
@@ -70,6 +71,7 @@ const Index = ({ user }) => {
         <Hero />
         <Impact />
         <Recognisedby />
+        <FoodWasteJourneySection />
         <OurProduct />
         <MissionVisionCarousel />
 

@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 
 const logos = [
-  { src: "/recognisedby_svg/banasthali .svg", alt: "AIC Banasthali", width: 120 },
-  { src: "/recognisedby_svg/climatelaunchpad.svg", alt: "ClimateLaunchpad", width: 160 },
-  { src: "/recognisedby_svg/nidhi_prayas.png", alt: "Nidhi Prayas", width: 140 },
-  { src: "/recognisedby_svg/villgro.svg", alt: "Villgro", width: 110 },
-  { src: "/recognisedby_svg/qwein.svg", alt: "Qualcome", width: 120, height: 48 },
+  { src: "/recognisedby_svg/banasthali .svg", alt: "AIC Banasthali", width: 240 },
+  { src: "/recognisedby_svg/climatelaunchpad.svg", alt: "ClimateLaunchpad", width: 320 },
+  { src: "/recognisedby_svg/nidhi_prayas.png", alt: "Nidhi Prayas", width: 280 },
+  { src: "/recognisedby_svg/villgro.svg", alt: "Villgro", width: 220 },
+  { src: "/recognisedby_svg/qwein.svg", alt: "Qualcome", width: 240 },
 ];
 
 const RecognisedBy = () => {
@@ -44,8 +44,8 @@ const RecognisedBy = () => {
         }
       `}</style>
 
-      <section className="w-full py-14 bg-ink-dark/95 border-y border-white/5 font-source-sans">
-        <p className="text-center text-white/40 text-xs font-bold tracking-[0.25em] uppercase mb-8">
+      <section className="w-full py-14 bg-black border-y border-white/5 font-source-sans">
+        <p className="text-center text-white/40 text-m font-bold tracking-[0.25em] uppercase mb-8">
           Supported &amp; Recognised by
         </p>
 
@@ -62,7 +62,7 @@ const RecognisedBy = () => {
                   alt={logo.alt}
                   width={logo.width}
                   height={40}
-                  className="h-8 w-auto object-contain opacity-70 brightness-0 invert hover:opacity-100 hover:scale-105 transition-all duration-300"
+                  className="h-10 md:h-14 w-auto object-contain opacity-70 brightness-0 invert hover:opacity-100 hover:scale-105 transition-all duration-300"
                   loading="lazy"
                 />
               </div>
