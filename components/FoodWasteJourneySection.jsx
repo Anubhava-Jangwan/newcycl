@@ -117,7 +117,7 @@ const CSS = `
   }
   .fwj-intro p {
     color: var(--slate);
-    font-size: 1.02rem;
+    font-size: 1.15rem;
     line-height: 1.6;
     margin: 0;
   }
@@ -168,7 +168,7 @@ const CSS = `
   }
   .fwj-bubble {
     position: relative;
-    width: min(74vw, 360px, 58vh);
+    width: min(84vw, 420px, 64vh);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
@@ -185,7 +185,7 @@ const CSS = `
     border-radius: 45%;
     background: var(--fill-color, #4FA857);
     transform: translateX(-50%);
-    transition: top 0.8s cubic-bezier(.4,0,.2,1), background-color 0.7s ease;
+    transition: background-color 0.7s ease;
   }
   .fwj-wave-back {
     top: 100%;
@@ -261,24 +261,37 @@ const CSS = `
   .fwj-step.fwj-active { opacity: 1; }
 
   .fwj-step-icon {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 1rem;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
   }
   .fwj-step-icon svg { width: 100%; height: 100%; }
 
   .fwj-step h3 {
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 800;
-    letter-spacing: -0.01em;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
     margin: 0 0 0.75rem;
+    transition: color 0.5s ease;
+  }
+  .fwj-step.fwj-active h3 {
+    color: var(--accent);
   }
   .fwj-step p {
-    max-width: 420px;
+    max-width: 650px;
+    font-family: var(--font-display, inherit);
+    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
     color: var(--slate);
-    font-size: 1.02rem;
-    line-height: 1.65;
     margin: 0;
+    transition: color 0.5s ease;
+  }
+  .fwj-step.fwj-active p {
+    color: #0d2a27;
   }
 
   .fwj-end-spacer { height: 20vh; }
@@ -310,7 +323,9 @@ const CSS = `
 
 export default function FoodWasteJourney() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const stepRefs = useRef([]);
+  const scrollyRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -332,8 +347,24 @@ export default function FoodWasteJourney() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrollyRef.current) return;
+      const rect = scrollyRef.current.getBoundingClientRect();
+      const totalScrollable = rect.height - window.innerHeight;
+      if (totalScrollable > 0) {
+        let p = -rect.top / totalScrollable;
+        p = Math.max(0, Math.min(1, p));
+        setScrollProgress(p);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const stage = STAGES[activeIndex];
-  const fillPercent = (activeIndex + 1) * 25;
+  const fillPercent = Math.max(10, scrollProgress * 100);
   const level = 100 - fillPercent;
   const frontTop = `${Math.max(level - 2, -8)}%`;
   const backTop = `${level + 3}%`;
@@ -345,14 +376,14 @@ export default function FoodWasteJourney() {
       <div className="fwj-intro">
         <div className="fwj-eyebrow">The Hidden Cost of Food Waste</div>
         <h1>From plate to planet</h1>
-        <p>
+        <p className="framer-text framer-styles-preset-14r17cu" data-styles-preset="ovnrA127c">
           Every tonne of food we throw away follows the same path — and ends
           where it hurts the climate most. Scroll to follow it.
         </p>
       </div>
       <div className="fwj-scroll-hint">↓ scroll to begin</div>
 
-      <div className="fwj-scrolly">
+      <div className="fwj-scrolly" ref={scrollyRef}>
         <div className="fwj-sticky-visual">
           <div className="fwj-bubble-row">
             <div
@@ -405,7 +436,7 @@ export default function FoodWasteJourney() {
             >
               <div className="fwj-step-icon">{step.icon}</div>
               <h3>{step.title}</h3>
-              <p>{step.text}</p>
+              <p className="framer-text framer-styles-preset-14r17cu" data-styles-preset="ovnrA127c">{step.text}</p>
             </section>
           ))}
           <div className="fwj-end-spacer" />

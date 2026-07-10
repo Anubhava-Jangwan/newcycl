@@ -82,7 +82,7 @@ const Index = ({ user }) => {
         <Founders />
 
       </section>
- 
+
       <Cookie />
       <Footer />
     </>

@@ -19,7 +19,7 @@ const MAX_PUSH = 26;
 const EASE = 0.15;
 
 const BG = "#F4F1EA";
-const DOT_COLOR = "#6B7A63";
+const DOT_COLOR = "#000000ff";
 const INK = "#1F2E1B";
 
 // ---- Write your story here --------------------------------------------
@@ -126,7 +126,7 @@ function DotField({ onEnter }) {
     const draw = () => {
       const { x: mx, y: my } = mouseRef.current;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = DOT_COLOR;
+      ctx.fillStyle = "#000000";
 
       const cx = canvas.width / 2;
       const cy = canvas.height / 2;
@@ -189,7 +189,12 @@ function DotField({ onEnter }) {
       <div className="relative h-full w-full flex flex-col items-center justify-center px-6 pointer-events-none z-10">
         <h1
           className="text-5xl md:text-7xl text-center font-black tracking-tight leading-none mb-4"
-          style={{ color: INK }}
+          style={{
+            fontFamily: 'var(--font-display, "Fraunces", serif)',
+            background: "linear-gradient(to right, #38bdf8, #1d4ed8)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent"
+          }}
         >
           OUR STORY
         </h1>
@@ -223,7 +228,7 @@ function StorySlide({ label, heading, text }) {
       <div className="min-w-0 flex items-center justify-center p-8 md:p-16" style={{ background: BG }}>
         <div
           className="w-full h-full rounded-3xl flex flex-col items-center justify-center gap-4 border border-emerald-500/10 shadow-glass"
-          style={{ 
+          style={{
             background: "linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.4) 100%)",
             backdropFilter: "blur(10px)"
           }}
@@ -283,7 +288,7 @@ function PageDots({ count, activeIndex, onSelect }) {
             style={{
               width: isActive ? 24 : 8,
               height: 8,
-              background: isActive ? "#4CAF2E" : "rgba(31, 46, 27, 0.2)",
+              background: isActive ? "#000000" : "rgba(0, 0, 0, 0.2)",
             }}
           />
         );
