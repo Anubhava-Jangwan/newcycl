@@ -153,13 +153,13 @@ const Hero = () => {
             className="fade-up delay-1"
             style={{
               fontFamily: 'var(--font-display, "Fraunces", serif)',
-              fontWeight: 800,
-              fontSize: 'clamp(2.0rem, 4vw, 3rem)',
-              lineHeight: 1.05,
-              letterSpacing: '-0.03em',
+              fontWeight: 900,
+              fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
+              lineHeight: 1,
+              letterSpacing: '-0.04em',
               color: '#000000',
               margin: '0px',
-              maxWidth: '860px'
+              maxWidth: '960px'
             }}
           >
             UNLOCKING VALUE FROM THE WORLD'S LARGEST
@@ -173,7 +173,7 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="mt-8 text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-8 text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-medium leading-relaxed">
             Newcycl is building breakthrough technologies that transform food
             waste into valuable products for households, communities, and industries.
           </p>
