@@ -163,7 +163,7 @@ export default function Navbar() {
           isScrolled ? "-translate-y-full" : "translate-y-0"
         )}>
           <div className={classNames(
-            "mx-auto grid max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-10 rounded-[2rem] px-6 py-2 border shadow-premium backdrop-blur-xl md:rounded-full md:px-8",
+            "mx-auto grid max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-2 md:gap-10 rounded-[2rem] px-4 py-2 md:py-2 border shadow-premium backdrop-blur-xl md:rounded-full md:px-8",
             isLightPage ? "bg-white/80 border-ink/10" : "bg-ink-dark/85 border-white/5"
           )}>
             <menu className="hidden list-none items-center gap-10 lg:flex">
