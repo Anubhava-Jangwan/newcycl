@@ -154,22 +154,23 @@ const Hero = () => {
             style={{
               fontFamily: 'var(--font-display, "Fraunces", serif)',
               fontWeight: 900,
-              fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
-              lineHeight: 1,
+              fontSize: 'clamp(2rem, 5vw, 3.8rem)',
+              lineHeight: 1.1,
               letterSpacing: '-0.04em',
               color: '#000000',
               margin: '0px',
-              maxWidth: '960px'
+              maxWidth: '960px',
+              textAlign: 'center'
             }}
           >
-            UNLOCKING VALUE FROM THE WORLD'S LARGEST
+            UNLOCKING VALUE FROM THE WORLD'S
             <br />
             <span style={{
               background: "linear-gradient(to right, #9dfccf, #28b8fb, #4b34f2)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent"
             }}>
-              WASTE STREAM: FOOD
+              LARGEST WASTE STREAM: FOOD
             </span>
           </h1>
 
