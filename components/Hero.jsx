@@ -36,7 +36,7 @@ const Hero = () => {
         clearOval = {
           cx: r.left - wrapLeft + r.width / 2,
           cy: r.top - wrapTop + r.height / 2,
-          rx: r.width / 1.8,
+          rx: r.width / 1.2,
           ry: r.height / 1.2
         };
       }
@@ -73,7 +73,7 @@ const Hero = () => {
     const draw = () => {
       const { x: mx, y: my } = mouseRef.current;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#000000";
+      ctx.fillStyle = "#cbd5e1";
 
       for (const dot of dotsRef.current) {
         const dx = dot.ox - mx;
@@ -92,7 +92,11 @@ const Hero = () => {
         dot.x += (targetX - dot.x) * EASE;
         dot.y += (targetY - dot.y) * EASE;
 
-        let opacity = 1;
+        // Vertical gradient: semi-transparent at top & bottom, transparent in the middle
+        const normY = dot.y / canvas.height; // 0 at top, 1 at bottom
+        const distFromCenter = Math.abs(normY - 0.5) * 2; // 0 at middle, 1 at edges
+        const baseOpacity = 0.70 + distFromCenter * 0.45; // 0.15 in middle, 0.6 at edges
+        let opacity = baseOpacity;
         if (clearOval) {
           const ndx = (dot.x - clearOval.cx) / clearOval.rx;
           const ndy = (dot.y - clearOval.cy) / clearOval.ry;
@@ -101,7 +105,7 @@ const Hero = () => {
           if (dist < 0.6) {
             opacity = 0;
           } else if (dist < 1.2) {
-            opacity = (dist - 0.6) / 0.6;
+            opacity = ((dist - 0.6) / 0.6) * baseOpacity;
           }
         }
 
@@ -139,44 +143,47 @@ const Hero = () => {
 
       {/* Content */}
       <div
-        className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 h-full flex flex-col justify-center items-center pb-28 md:pb-40 pointer-events-none text-center"
+        className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 h-full flex flex-col justify-center items-start pb-28 md:pb-40 pointer-events-none text-left"
         style={{
           paddingTop: NAVBAR_HEIGHT,
         }}
       >
         <div
-          className="max-w-4xl flex flex-col items-center"
+          className="max-w-4xl flex flex-col items-start"
           ref={textContainerRef}
           style={{ marginTop: "40px" }}
         >
           <h1
             className="fade-up delay-1"
             style={{
-              fontFamily: 'var(--font-display, "Fraunces", serif)',
-              fontWeight: 900,
-              fontSize: 'clamp(2rem, 5vw, 3.8rem)',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 400,
+              fontSize: 'clamp(3.5rem, 8vw, 5.5rem)',
               lineHeight: 1.1,
-              letterSpacing: '-0.04em',
-              color: '#000000',
+              letterSpacing: '-0.02em',
+              color: '#111827',
               margin: '0px',
-              maxWidth: '960px',
-              textAlign: 'center'
+              maxWidth: '1100px',
+              textAlign: 'left'
             }}
           >
-            UNLOCKING VALUE FROM THE WORLD'S
+            Unlocking value from
             <br />
-            <span style={{
-              background: "linear-gradient(to right, #9dfccf, #28b8fb, #4b34f2)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
-            }}>
-              LARGEST WASTE STREAM: FOOD
+            the world's largest
+            <br />
+            <span
+              style={{
+                background: "linear-gradient(to right, #9dfccf, #28b8fb, #4b34f2)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent"
+              }}
+            >
+              waste stream: Food.
             </span>
           </h1>
 
-          <p className="mt-8 text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-medium leading-relaxed">
-            Newcycl is building breakthrough technologies that transform food
-            waste into valuable products for households, communities, and industries.
+          <p className="mt-8 text-xl md:text-2xl text-gray-700 max-w-3xl font-medium leading-relaxed">
+
           </p>
         </div>
       </div>
