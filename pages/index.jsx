@@ -71,8 +71,8 @@ const Index = ({ user }) => {
         <Hero />
         <Impact />
         <Recognisedby />
-        <FoodWasteJourneySection />
         <OurProduct />
+        <FoodWasteJourneySection />
         <MissionVisionCarousel />
 
         <LazySection minHeight={260}>

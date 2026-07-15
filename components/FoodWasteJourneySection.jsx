@@ -95,39 +95,22 @@ const CSS = `
   .fwj-root * { box-sizing: border-box; }
 
   .fwj-intro {
-    max-width: 640px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
-    padding: 4.5rem 1.5rem 2.5rem;
-  }
-  .fwj-intro .fwj-eyebrow {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
+    padding: 5rem 1.5rem 3.5rem;
   }
   .fwj-intro h1 {
-    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    font-size: clamp(5.5rem, 5vw, 3.2rem);
     font-weight: 800;
     letter-spacing: -0.01em;
     line-height: 1.15;
-    margin: 0 0 0.9rem;
-  }
-  .fwj-intro p {
-    color: var(--slate);
-    font-size: 1.15rem;
-    line-height: 1.6;
     margin: 0;
+    color: var(--navy);
+    white-space: nowrap;
   }
-  .fwj-scroll-hint {
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--slate);
-    opacity: 0.7;
-    padding-bottom: 2rem;
-  }
+
 
   .fwj-scrolly {
     display: flex;
@@ -306,6 +289,8 @@ const CSS = `
       padding-right: 0;
       padding: 1.5rem 1rem;
       border-bottom: 1px solid rgba(22, 35, 63, 0.08);
+      background: #ffffff;
+      z-index: 10;
     }
     .fwj-steps { padding-left: 0; padding-top: 1.5rem; }
     .fwj-step { min-height: 58vh; }
@@ -374,14 +359,9 @@ export default function FoodWasteJourney() {
       <style>{CSS}</style>
 
       <div className="fwj-intro">
-        <div className="fwj-eyebrow">The Hidden Cost of Food Waste</div>
         <h1>From plate to planet</h1>
-        <p className="framer-text framer-styles-preset-14r17cu" data-styles-preset="ovnrA127c">
-          Every tonne of food we throw away follows the same path — and ends
-          where it hurts the climate most. Scroll to follow it.
-        </p>
       </div>
-      <div className="fwj-scroll-hint">↓ scroll to begin</div>
+
 
       <div className="fwj-scrolly" ref={scrollyRef}>
         <div className="fwj-sticky-visual">

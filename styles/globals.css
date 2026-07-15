@@ -404,6 +404,7 @@ div.fs-3dglobe-arrow_box {
       #999999 80%);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s linear infinite;
 }
