@@ -7,25 +7,29 @@ const SLIDES = [
     id: 1,
     name: "Startup Founder",
     role: "Incubated Startup",
-    testimonial: "Brilliant innovation, much needed for the environment. Kudos to your team 👏👏"
+    testimonial: "Brilliant innovation, much needed for the environment. Kudos to your team 👏👏",
+    avatar: "/avatar-m-1.svg"
   },
   {
     id: 2,
     name: "Shashi Bhatnagar",
     role: "Planetary Risk & Resilience",
-    testimonial: "Dream come true. Brilliant product and congratulations. So glad to see this."
+    testimonial: "Dream come true. Brilliant product and congratulations. So glad to see this.",
+    avatar: "/avatar-w-1.svg"
   },
   {
     id: 3,
     name: "Nischay Gupta",
     role: "Sustainability Advocate",
-    testimonial: "Real product solving a real problem 💯"
+    testimonial: "Real product solving a real problem 💯",
+    avatar: "/avatar-m-3.svg"
   },
   {
     id: 4,
-    name: "Apoorva Jhala",
-    role: "Manager | PwC | Ex 7N, Fidelity, Ericsson",
-    testimonial: "A great achievement and a great product much needed in today's time. We also compost waste at home and this would be incredibly handy and a way forward for everyone."
+    name: "Apoorva",
+    role: "Early Adopter",
+    testimonial: "Very practical design and zero hassle! Best composter out there.",
+    avatar: "/avatar-w-2.svg"
   }
 ];
 
@@ -161,12 +165,12 @@ export default function TestimonialsCarousel() {
 
                   {/* Author Info */}
                   <div className="flex items-center gap-4 mt-8 pt-6 border-t border-emerald-500/10">
-                    <div className="w-12 h-12 rounded-full bg-emerald-50 text-accent-green flex items-center justify-center font-bold text-lg border border-emerald-500/20 shrink-0">
-                      {slide.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                    <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-emerald-50 border border-emerald-500/20">
+                      <img src={slide.avatar} alt={slide.name} className="w-full h-full object-cover" />
                     </div>
                     <div>
                       <h4 className="font-bold text-ink-dark text-base leading-tight mb-0.5">{slide.name}</h4>
-                      <p className="text-xs text-body/70 leading-tight">{slide.role}</p>
+                      <p className="text-xs uppercase tracking-wider text-muted font-bold text-ink/60">{slide.role}</p>
                     </div>
                   </div>
                 </div>
