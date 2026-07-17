@@ -13,12 +13,13 @@ import MissionVisionCarousel from "../components/mission-vission";
 import { useEffect, useState } from "react";
 import OurProduct from "../components/our_product";
 import Founders from "../components/Founders";
+import Timeline from "../components/Timeline";
 
 
 const AboutTheProduct = dynamic(() => import("../components/AboutTheProductV2"));
 const WasteStories = dynamic(() => import("../components/WasteStories"));
 const WeHearYou = dynamic(() => import("../components/WeHearYou"));
-const OurStory = dynamic(() => import("../components/OurStory"));
+
 const Earth = dynamic(() => import("../components/Earth"));
 const Curve = dynamic(() => import("../components/Curve"));
 const Cookie = dynamic(() => import("../components/Cookie"), { ssr: false });
@@ -75,11 +76,9 @@ const Index = ({ user }) => {
         <FoodWasteJourneySection />
         <MissionVisionCarousel />
 
-        <LazySection minHeight={260}>
-          <OurStory />
-        </LazySection>
 
         <Founders />
+        <Timeline />
 
       </section>
 

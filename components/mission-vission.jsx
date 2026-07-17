@@ -26,9 +26,9 @@ const SLIDES = [
   },
   {
     id: 4,
-    name: "Apoorva",
-    role: "Early Adopter",
-    testimonial: "Very practical design and zero hassle! Best composter out there.",
+    name: "Apoorva Jhala",
+    role: "Manager | PwC | Ex 7N, Fidelity, Ericsson",
+    testimonial: "A great achievement and a great product much needed in today's time. We also compost waste at home and this would be incredibly handy and a way forward for everyone.",
     avatar: "/avatar-w-2.svg"
   }
 ];
@@ -79,23 +79,22 @@ export default function TestimonialsCarousel() {
   const position = ((((activeIndex - HOME) % N) + N) % N) + 1;
 
   return (
-    <div className="w-full max-w-5xl mx-auto py-24 px-6 sm:px-8 font-source-sans border-t border-emerald-500/5">
+    <div className="w-full py-24 bg-[#F7F7F7] font-source-sans border-t border-black/5">
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
         .facarousel-serif { font-family: 'Fraunces', serif; }
         .facarousel-sans { font-family: 'Inter', sans-serif; }
+        .handwriting { font-family: 'Caveat', cursive; }
       `}</style>
 
       {/* Section heading */}
-      <div className="text-center mb-16 max-w-2xl mx-auto">
-        <span className="text-[10px] tracking-[0.3em] uppercase text-accent-green font-bold block mb-2">
-
+      <div className="mb-16 max-w-5xl mx-auto px-6 sm:px-8">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-ink-dark/50 font-bold block mb-4 text-left">
+          TESTIMONIALS
         </span>
-        <h2 className="text-3xl sm:text-5xl font-black text-ink-dark tracking-tight leading-none mb-4">
-          What People Are Saying
+        <h2 className="text-4xl sm:text-6xl font-light text-ink-dark tracking-tight leading-tight text-left">
+          Don't take our word for it! <br/> Hear it from our partners.
         </h2>
-        <p className="text-body/70 text-base sm:text-lg">
-          Industry leaders, startup founders, sustainability advocates, and early adopters sharing their thoughts about Newcycl and Rawbin.
-        </p>
       </div>
 
       {/* Ambient glow behind the stage, tuned to focus area */}
@@ -135,43 +134,29 @@ export default function TestimonialsCarousel() {
                   zIndex,
                   pointerEvents: dist <= 1 ? "auto" : "none",
                   boxShadow: dist === 0
-                    ? "0 40px 80px -25px rgba(76, 175, 46, 0.25), 0 10px 30px -10px rgba(76, 175, 46, 0.15)"
-                    : "0 20px 40px -20px rgba(0,0,0,0.05)",
+                    ? "0 30px 60px -15px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.05)"
+                    : "0 10px 25px -10px rgba(0,0,0,0.05)",
                   transition: instant
                     ? "none"
                     : `transform ${DURATION}ms cubic-bezier(0.22, 1, 0.36, 1), opacity ${DURATION}ms ease, box-shadow ${DURATION}ms ease, border-color ${DURATION}ms ease`,
                 }}
               >
-                {/* Large Background Quote Icon */}
-                <div className="absolute -top-4 right-4 text-emerald-500/10 font-serif text-[180px] leading-none select-none pointer-events-none">
-                  "
-                </div>
-
-                <div className="relative z-10 flex flex-col h-full p-8 sm:p-10 text-left justify-between">
+                <div className="relative z-10 flex flex-col h-full p-8 sm:p-10 text-left justify-between bg-white rounded-[2.5rem]">
                   <div>
-                    {/* Star Rating */}
-                    <div className="flex gap-1 mb-6 text-accent-green">
-                      {[...Array(5)].map((_, idx) => (
-                        <svg key={idx} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
+                    {/* Avatar at the top left */}
+                    <div className="w-14 h-14 rounded-full overflow-hidden shrink-0 bg-gray-100 mb-6 shadow-sm border border-black/5">
+                      <img src={slide.avatar} alt={slide.name} className="w-full h-full object-cover" />
                     </div>
                     {/* Testimonial Text */}
-                    <p className="text-xl sm:text-2xl text-ink-dark leading-snug font-medium">
+                    <p className="text-lg sm:text-[19px] text-ink-dark/80 leading-relaxed font-normal">
                       "{slide.testimonial}"
                     </p>
                   </div>
 
                   {/* Author Info */}
-                  <div className="flex items-center gap-4 mt-8 pt-6 border-t border-emerald-500/10">
-                    <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-emerald-50 border border-emerald-500/20">
-                      <img src={slide.avatar} alt={slide.name} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-ink-dark text-base leading-tight mb-0.5">{slide.name}</h4>
-                      <p className="text-xs uppercase tracking-wider text-muted font-bold text-ink/60">{slide.role}</p>
-                    </div>
+                  <div className="mt-8 pt-6">
+                    <h4 className="text-3xl sm:text-4xl text-ink-dark mb-1 handwriting transform -rotate-2">{slide.name}</h4>
+                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider text-ink/40 font-semibold">{slide.role}</p>
                   </div>
                 </div>
               </div>
